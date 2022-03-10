@@ -18,3 +18,11 @@ body{
 .me-2 {
     margin-right: .5rem!important;
 }
+
+.centrale{
+	justify-content: center;
+}
+
+input[type=button] {
+	float: right;
+}
