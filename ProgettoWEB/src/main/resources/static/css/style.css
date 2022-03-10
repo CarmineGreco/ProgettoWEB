@@ -1,0 +1,53 @@
+*{box-sizing: border-box;}
+body,
+html{padding: 0;margin: 0;}
+
+body{
+	background: #d5dbe8;
+	
+	font-family: Arial;
+
+}
+
+p{
+	color: #000; font-size: 12px;
+}
+
+a{ color: #d13434;  text-decoration: none}
+
+.img-res{width: 100%;height: auto;}
+
+h1{color: #333}
+h3,
+h2{color: #333}
+
+NuoviArrivi{
+	color: #000;
+}
+
+.container{padding: 15px;}
+
+.paragrafo{
+	color: #000
+}
+
+.sfondo{
+	
+	background: #d5dbe8;
+}
+
+.sfond{
+	
+	background: #b6bfd4;
+}
+
+header{background: #fff;padding: 25px 15px 5px 15px;width: 100%;}
+
+.logo{text-align: center;width: 100%;dispaly: block;font-size: 20px;}
+
+#menu-principale{ text-align: center; }
+#menu-principale li{ display: inline; }
+#menu-principale li a{ margin: 10px; }
+
+footer{background: #333; padding: 20px;}
+footer p{color: #333;}
