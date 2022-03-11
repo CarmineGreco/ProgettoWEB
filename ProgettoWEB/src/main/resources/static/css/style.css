@@ -47,12 +47,21 @@ NuoviArrivi {
 	color: #000
 }
 
+.riga{
+	color: #333
+}
+
 .sfondo {
-	background: #d5dbe8;
+	background: #f5f3f2;
 }
 
 .sfond {
-	background: #b6bfd4;
+	background: #1f1d1c;
+}
+
+.colore{
+	
+	color: #fff;
 }
 
 header {
