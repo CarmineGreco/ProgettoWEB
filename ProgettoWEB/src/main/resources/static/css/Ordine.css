@@ -3,8 +3,11 @@ body {
 	background-size: cover;
 	font-family: 'Lato', sans-serif;
 	color: rgba(116, 116, 116, 0.667);
-	background: linear-gradient(140deg, #fff, 50%, #BA68C8)
+	background: linear-gradient(140deg, #fff, 50%, 
+#f5f3f2
+	)
 }
+
 
 .container-fluid {
 	margin-top: 200px
@@ -32,7 +35,7 @@ hr {
 }
 
 .change-color {
-	color: #AB47BC !important
+	color: #333 !important
 }
 
 .card-2 {
@@ -41,7 +44,7 @@ hr {
 
 .fa-circle.active {
 	font-size: 8px;
-	color: #AB47BC
+	color: #c9c7c5
 }
 
 .fa-circle {
@@ -53,9 +56,7 @@ hr {
 	border-radius: 2.25rem !important
 }
 
-.progress-bar {
-	background-color: #AB47BC !important
-}
+
 
 .progress {
 	height: 5px !important;
@@ -73,7 +74,7 @@ hr {
 }
 
 .card-footer {
-	background-color: #AB47BC;
+	background-color: #c9c7c5;
 	color: #fff
 }
 
