@@ -1,3 +1,3 @@
-function manda(Name, Email, Subject, Message){
-	alert(Name);
+function manda(user, password){
+	Utente = new Utente()
 }
