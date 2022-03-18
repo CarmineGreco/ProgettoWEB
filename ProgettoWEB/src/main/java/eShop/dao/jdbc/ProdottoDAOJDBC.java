@@ -54,13 +54,13 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 			ResultSet rs = st.executeQuery();
 			if (rs.next()) {				
 				prodotto.setId(rs.getInt("id"));				
-				prodotto.setPrezzo(rs.getFloat("modello"));
-				prodotto.setNome(rs.getString("marca"));
-				prodotto.setTaglia(rs.getInt("tipodevice"));
-				prodotto.setDescrizione(rs.getString("memoria"));
-				prodotto.setQuantita(rs.getInt("ram"));
-				prodotto.setCategoria(rs.getString("display"));
-				prodotto.setImg(rs.getString("batteria"));		
+				prodotto.setPrezzo(rs.getFloat("prezzo"));
+				prodotto.setNome(rs.getString("nome"));
+				prodotto.setTaglia(rs.getInt("taglia"));
+				prodotto.setDescrizione(rs.getString("descrizione"));
+				prodotto.setQuantita(rs.getInt("quantita"));
+				prodotto.setCategoria(rs.getString("categoria"));
+				prodotto.setImg(rs.getString("img"));		
 			st.close();
 			
 			}
@@ -82,13 +82,13 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 			while (rs.next()) {
 				Prodotto prodotto = new Prodotto();
 				prodotto.setId(rs.getInt("id"));				
-				prodotto.setPrezzo(rs.getFloat("modello"));
-				prodotto.setNome(rs.getString("marca"));
-				prodotto.setTaglia(rs.getInt("tipodevice"));
-				prodotto.setDescrizione(rs.getString("memoria"));
-				prodotto.setQuantita(rs.getInt("ram"));
-				prodotto.setCategoria(rs.getString("display"));
-				prodotto.setImg(rs.getString("batteria"));
+				prodotto.setPrezzo(rs.getFloat("prezzo"));
+				prodotto.setNome(rs.getString("nome"));
+				prodotto.setTaglia(rs.getInt("taglia"));
+				prodotto.setDescrizione(rs.getString("descrizione"));
+				prodotto.setQuantita(rs.getInt("quantita"));
+				prodotto.setCategoria(rs.getString("categoria"));
+				prodotto.setImg(rs.getString("img"));	
 				prodotti.add(prodotto);				
 			}
 			st.close();
@@ -153,13 +153,13 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 			while (rs.next()) {
 				Prodotto prodotto = new Prodotto();
 				prodotto.setId(rs.getInt("id"));				
-				prodotto.setPrezzo(rs.getFloat("modello"));
-				prodotto.setNome(rs.getString("marca"));
-				prodotto.setTaglia(rs.getInt("tipodevice"));
-				prodotto.setDescrizione(rs.getString("memoria"));
-				prodotto.setQuantita(rs.getInt("ram"));
-				prodotto.setCategoria(rs.getString("display"));
-				prodotto.setImg(rs.getString("batteria"));
+				prodotto.setPrezzo(rs.getFloat("prezzo"));
+				prodotto.setNome(rs.getString("nome"));
+				prodotto.setTaglia(rs.getInt("taglia"));
+				prodotto.setDescrizione(rs.getString("descrizione"));
+				prodotto.setQuantita(rs.getInt("quantita"));
+				prodotto.setCategoria(rs.getString("categoria"));
+				prodotto.setImg(rs.getString("img"));	
 				prodotti.add(prodotto);			
 			}
 			st.close();
@@ -168,7 +168,5 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 		}
 		return prodotti;
 	}
-	
-	
 	
 }

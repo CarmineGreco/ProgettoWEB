@@ -29,11 +29,12 @@ public class UtenteDAOJDBC implements UtenteDAO {
 
 			String query = "insert into utente values(?,?,?,?,?,?);"; // prendiamo la query
 			PreparedStatement st = conn.prepareStatement(query); // creiamo lo statement
-			st.setString(1, utente.getEmail());
-			st.setString(2, utente.getNome());
-			st.setString(3, utente.getCognome());
-			st.setString(4, BCrypt.hashpw(utente.getPassword(), BCrypt.gensalt(12)));
-			st.setString(5, utente.getUsername());
+			st.setString(1, utente.getUsername());
+			st.setString(2, BCrypt.hashpw(utente.getPassword(), BCrypt.gensalt(12)));
+			st.setBoolean(3, utente.isAdmin());
+			st.setString(4, utente.getEmail());
+			st.setString(5, utente.getNome());
+			st.setString(6, utente.getCognome());
 			st.executeUpdate();
 			
 		} catch (SQLException e) {
