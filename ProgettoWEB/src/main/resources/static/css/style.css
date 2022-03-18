@@ -22,6 +22,14 @@ a {
 	text-decoration: none
 }
 
+a:link{
+	color: #000;
+}
+
+a:visited{
+	color: #000;
+}
+
 .img-res {
 	width: 100%;
 	height: auto;
@@ -89,6 +97,13 @@ header {
 	margin: 10px;
 }
 
+#text{
+	color: #000;
+	font-size: 15px;
+	font-family: Arial;
+}
+
+
 footer {
 	background: #333;
 	padding: 20px;
@@ -102,3 +117,4 @@ footer p {
 	background: transparent;
 	border-color: transparent;
 }
+
