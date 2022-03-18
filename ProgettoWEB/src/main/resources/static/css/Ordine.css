@@ -3,14 +3,12 @@ body {
 	background-size: cover;
 	font-family: 'Lato', sans-serif;
 	color: rgba(116, 116, 116, 0.667);
-	background: linear-gradient(140deg, #fff, 50%, 
-#f5f3f2
-	)
+	background: linear-gradient(140deg, #fff, 50%, #f5f3f2;)
 }
 
 
 .container-fluid {
-	margin-top: 200px
+	margin-top: 200px;
 }
 
 p {
