@@ -1,4 +1,4 @@
-package dao.jdbc;
+package eShop.persistance;
 
 public class DBManager {
 	private static DBManager instance = null;

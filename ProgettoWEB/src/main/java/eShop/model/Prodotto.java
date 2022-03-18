@@ -1,29 +1,16 @@
-package model;
-
-import java.io.InputStream;
+package eShop.model;
 
 public class Prodotto {
 
 	private int id;
 	private float prezzo;
 	private String nome;
-	private char taglia;
+	private int taglia;
 	private String descrizione;
 	private int quantita;
 	private String categoria;
-	private InputStream img;
-	public Prodotto(int id, float prezzo, String nome, char taglia, String descrizione, int quantita, String categoria,
-			InputStream img) {
-		super();
-		this.id = id;
-		this.prezzo = prezzo;
-		this.nome = nome;
-		this.taglia = taglia;
-		this.descrizione = descrizione;
-		this.quantita = quantita;
-		this.categoria = categoria;
-		this.img = img;
-	}
+	private String img;
+
 	public int getId() {
 		return id;
 	}
@@ -33,7 +20,7 @@ public class Prodotto {
 	public String getNome() {
 		return nome;
 	}
-	public char getTaglia() {
+	public int getTaglia() {
 		return taglia;
 	}
 	public String getDescrizione() {
@@ -45,7 +32,7 @@ public class Prodotto {
 	public String getCategoria() {
 		return categoria;
 	}
-	public InputStream getImg() {
+	public String getImg() {
 		return img;
 	}
 	public void setId(int id) {
@@ -57,7 +44,7 @@ public class Prodotto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public void setTaglia(char taglia) {
+	public void setTaglia(int taglia) {
 		this.taglia = taglia;
 	}
 	public void setDescrizione(String descrizione) {
@@ -69,7 +56,7 @@ public class Prodotto {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	public void setImg(InputStream img) {
+	public void setImg(String img) {
 		this.img = img;
 	}
 	

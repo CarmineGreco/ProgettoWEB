@@ -1,4 +1,4 @@
-package model;
+package eShop.model;
 
 public class Utente {
 	
@@ -9,14 +9,6 @@ public class Utente {
 	private String nome;
 	private String cognome;
 	
-	public Utente(String username, String password, boolean admin, String email, String nome, String cognome){
-		this.username = username;
-		this.password = password;
-		this.admin = admin;
-		this.email = email;
-		this.nome = nome;
-		this.cognome = cognome;
-	}
 
 	public String getUsername() {
 		return username;

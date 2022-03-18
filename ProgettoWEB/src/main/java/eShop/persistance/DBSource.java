@@ -1,4 +1,4 @@
-package dao.jdbc;
+package eShop.persistance;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
