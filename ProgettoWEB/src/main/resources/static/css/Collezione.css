@@ -25,6 +25,9 @@ body {
 	margin-left: 15px;
 }
 
+.ro{
+	display:flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}
+
 .product.tumbnail {
 	box-shadow: 0 5px 25px 0 transparent;
 	transition: 0.3s linear;
