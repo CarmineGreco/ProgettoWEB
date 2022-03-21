@@ -158,7 +158,7 @@ footer p {
 @media screen and (min-width: 1000px){
 	.wrapper{
 	margin-left: 200px;
-	margin-right: 150px;
+	margin-right: 100px !important;
 	}
 }
 
