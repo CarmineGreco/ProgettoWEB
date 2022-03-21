@@ -8,7 +8,9 @@
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<script src="../js/index.js"></script>
+<script src="../js/login.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 
 <!DOCTYPE html>
 <html>
@@ -28,6 +30,7 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+<meta name="google-signin-client_id" content="782464217770-63a00nielsj79r2glhsh7vtrns0mcgfo.apps.googleusercontent.com">
 	<div class="container">
 		<div class="d-flex justify-content-center h-100">
 			<div class="card">
@@ -58,6 +61,7 @@
 						<div class="row align-items-center remember">
 							<input type="checkbox">Ricordami
 						</div>
+						<div class="g-signin2" data-onsuccess="onSignIn"></div>
 						<div class="form-group">
 							<input type="submit" value="Accedi"
 								class="btn float-right login_btn" onClick="manda(document.getElementById('user').value,document.getElementById('password').value)">
