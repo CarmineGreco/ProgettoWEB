@@ -26,6 +26,9 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- EMAIL -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>  
+<script src="../js/index.js"></script>
 <style>
 .w3-sidebar a {
 	font-family: "Roboto", sans-serif
@@ -173,23 +176,23 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 					<p>Inviaci la tua domanda.</p>
 					<form action="/action_page.php" target="_blank">
 						<p>
-							<input class="w3-input w3-border" type="text" placeholder="Nome"
+							<input class="w3-input w3-border" type="text" id="nome" placeholder="Nome"
 								name="Nome" required>
 						</p>
 						<p>
-							<input class="w3-input w3-border" type="text" placeholder="Email"
+							<input class="w3-input w3-border" type="text" id="email" placeholder="Email"
 								name="Email" required>
 						</p>
 						<p>
-							<input class="w3-input w3-border" type="text"
+							<input class="w3-input w3-border" id="oggetto" type="text"
 								placeholder="Oggetto" name="Oggetto" required>
 						</p>
 						<p>
-							<input class="w3-input w3-border" type="text"
+							<input class="w3-input w3-border" type="text" id="messaggio"
 								placeholder="Messaggio" name="Messaggio" required>
 						</p>
-						<button type="submit" class="w3-button w3-block w3-black"
-							onClick="">Invia</button>
+						<input type="button" class="w3-button w3-block w3-black" value="Invia"
+							onClick="sendEmail(document.getElementById('nome').value, document.getElementById('email').value, document.getElementById('oggetto').value, document.getElementById('messaggio').value)"/>
 					</form>
 				</div>
 
@@ -200,9 +203,9 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 					<p id="text">
 						<i class="fa fa-fw fa-phone w3-large"></i> 0965-810807
 					</p>
-					<p id="text"> <a href="mailto:carlaferronishopreggiocalabria@gmail.com">
+					<p id="text"> <a href="mailto:carlaferronirc@gmail.com">
 						<i class="fa fa-fw fa-envelope w3-large"></i>
-						carlaferronishopreggiocalabria@gmail.com</a>
+						carlaferronirc@gmail.com</a>
 					</p>
 					<p id="text"> <a href="https://www.facebook.com/CarlaFerroniReggioCalabria"><i
 						class="fa fa-facebook-official w3-hover-opacity w3-large"> Carla Ferroni Reggio Calabria</i></a>
