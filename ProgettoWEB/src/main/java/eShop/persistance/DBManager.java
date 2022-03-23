@@ -1,5 +1,12 @@
 package eShop.persistance;
 
+import eShop.dao.CommentoDAO;
+import eShop.dao.ProdottoDAO;
+import eShop.dao.UtenteDAO;
+import eShop.dao.jdbc.CommentoDAOJDBC;
+import eShop.dao.jdbc.ProdottoDAOJDBC;
+import eShop.dao.jdbc.UtenteDAOJDBC;
+
 public class DBManager {
 	private static DBManager instance = null;
 	static DBSource dataSource;
@@ -27,5 +34,17 @@ public class DBManager {
 	
 	public static DBSource getDataSource() {
 		return dataSource;
+	}
+	
+	public UtenteDAO utenteDAO() {
+		return new UtenteDAOJDBC(dataSource);
+	}
+	
+	public ProdottoDAO deviceDAO() {
+		return new ProdottoDAOJDBC(dataSource);
+	}
+	
+	public CommentoDAO commentoDAO() {
+		return new CommentoDAOJDBC(dataSource);
 	}
 }

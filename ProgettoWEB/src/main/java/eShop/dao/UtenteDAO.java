@@ -7,7 +7,7 @@ import eShop.model.Utente;
 public interface UtenteDAO {
 
 	public boolean save(Utente utente);  // Create  == insert/store
-	public Utente findByPrimaryKey(String email);     // Retrieve  == select stud
+	public Utente findByPrimaryKey(String username);     // Retrieve  == select stud
 	public List<Utente> findAll();     //  select*
 	public List<Utente> findAllOtherUsers(String email);     //  select*
 	public void update(Utente old, Utente newu); //Update
