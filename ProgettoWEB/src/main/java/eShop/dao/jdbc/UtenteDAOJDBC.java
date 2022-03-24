@@ -142,14 +142,14 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	}
 	
 	@Override
-	public boolean existsUser(String email) {
+	public boolean existsUser(String username) {
 		Utente utente = new Utente();
 			
 			try {
 				Connection conn = dbSource.getConnection();
-				String query = "select * from utente where email=?";
+				String query = "select * from utente where username=?";
 				PreparedStatement st = conn.prepareStatement(query);
-				st.setString(1, email);
+				st.setString(1, username);
 				ResultSet rs = st.executeQuery();
 				while (rs.next()) {
 					utente.setEmail(rs.getString("email"));
