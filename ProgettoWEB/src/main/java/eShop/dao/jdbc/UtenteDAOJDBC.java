@@ -163,7 +163,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				e.printStackTrace();
 			}	
 		
-			if (utente.getEmail()!=null)
+			if (utente.getUsername()!=null)
 				return true;
 			else
 				return false;
