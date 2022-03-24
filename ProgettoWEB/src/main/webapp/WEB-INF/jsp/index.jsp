@@ -53,12 +53,12 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 		</div>
 		<div class="w3-padding-64 w3-large w3-text-grey"
 			style="font-weight: bold">
-			<a href="../html/Collezione.html" class="w3-bar-item w3-button">Maglie</a>
-			<a href="../html/Collezione.html" class="w3-bar-item w3-button">Vestiti</a>
-			<a href="../html/Collezione.html" class="w3-bar-item w3-button">Pantaloni</a>
-			<a href="../html/Collezione.html" class="w3-bar-item w3-button">Felpe</a>
-			<a href="../html/Collezione.html" class="w3-bar-item w3-button">Camicie</a>
-			<a href="../html/Collezione.html" class="w3-bar-item w3-button">Borse</a>
+			<a href="Collezione" class="w3-bar-item w3-button">Maglie</a>
+			<a href="Collezione" class="w3-bar-item w3-button">Vestiti</a>
+			<a href="Collezione" class="w3-bar-item w3-button">Pantaloni</a>
+			<a href="Collezione" class="w3-bar-item w3-button">Felpe</a>
+			<a href="Collezione" class="w3-bar-item w3-button">Camicie</a>
+			<a href="Collezione" class="w3-bar-item w3-button">Borse</a>
 
 		</div>
 
@@ -90,14 +90,14 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 					<i class="fas fa-user" style="font-size: x-large;"></i>
 				</button>
 				<div class="dropdown-content" style="float:right;" >
-					<a id="text" href="../html/Profilo.html">Profilo</a> 
-					<a id="text" href="#">Preferiti</a> 
-					<a id="text" href="../html/ListaOrdini.html">I tuoi ordini</a> 
-					<a id="text" href="../html/Login.html">Logout</a>
+					<a id="text" href="Profilo">Profilo</a> 
+					<a id="text" href="Preferiti">Preferiti</a> 
+					<a id="text" href="ListaOrdini">I tuoi ordini</a> 
+					<a id="text" href="Login">Logout</a>
 				</div>
 			</div>
 			<p class="w3-right">
-				<a href="../html/Carrello.html"><button class="btn">
+				<a href="Carrello"><button class="btn">
 						<i class="fa fa-shopping-cart w3-margin-right"
 							style="font-size: x-large;"></i>
 					</button></a> <a href="#"><button class="btn">

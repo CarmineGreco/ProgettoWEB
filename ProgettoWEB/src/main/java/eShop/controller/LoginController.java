@@ -10,7 +10,7 @@ import eShop.persistance.DBManager;
 @RestController
 public class LoginController {
 
-	@PostMapping("/html/loginService")
+	@PostMapping("loginService")
 	public String failLogin(String username, String pass){
 		if(DBManager.getInstance().utenteDAO().existsUser(username))
 			System.out.println("Utente trovato nel db");
