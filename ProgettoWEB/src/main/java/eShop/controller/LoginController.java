@@ -1,5 +1,7 @@
 package eShop.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,9 +15,12 @@ import eShop.persistance.DBManager;
 public class LoginController {
 
 	@PostMapping("loginService")
-	public String failLogin(String username, String pass){
-		if(DBManager.getInstance().utenteDAO().existsUser(username))
+	public String failLogin(HttpSession session, String username, String pass){
+		if(DBManager.getInstance().utenteDAO().existsUser(username)) {
 			System.out.println("Utente trovato nel db");
+			session.setAttribute("username", username);
+			return "index";
+		}
 		else
 			System.out.println("Utente non trovato nel db");
 		return null;
