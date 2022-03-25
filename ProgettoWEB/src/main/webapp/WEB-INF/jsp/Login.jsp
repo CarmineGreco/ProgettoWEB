@@ -69,7 +69,7 @@
 				</div>
 				<div class="card-footer">
 					<div class="d-flex justify-content-center links">
-						Non hai un account?<a href="Registrazione.html">Registrati</a>
+						Non hai un account?<a href="Registrazione">Registrati</a>
 					</div>
 					<div class="d-flex justify-content-center">
 						<a href="#">Hai dimenticato la password?</a>

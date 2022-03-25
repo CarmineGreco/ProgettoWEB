@@ -1,5 +1,7 @@
 package eShop.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -7,7 +9,7 @@ import eShop.model.Utente;
 import eShop.persistance.DBManager;
 
 
-@RestController
+@Controller
 public class LoginController {
 
 	@PostMapping("loginService")
@@ -17,5 +19,11 @@ public class LoginController {
 		else
 			System.out.println("Utente non trovato nel db");
 		return null;
+	}
+	
+	
+	@GetMapping("/Registrazione")
+	public String vaiAllaRegistrazione() {
+		return "Registrazione";
 	}
 }
