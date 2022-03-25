@@ -39,12 +39,12 @@
 					<h3>Crea il tuo account</h3>
 				</div>
 				<div class="card-body">
-					<form>
+					<form method="post" action="registrationService">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="Username"
+							<input type="text" class="form-control" placeholder="Username" name="username"
 								required>
 						</div>
 						<div class="input-group form-group">
@@ -52,7 +52,7 @@
 								<span class="input-group-text"><i
 									class="fas fa-signature"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="Nome"
+							<input type="text" class="form-control" placeholder="Nome" name="nome"
 								required>
 						</div>
 						<div class="input-group form-group">
@@ -60,7 +60,7 @@
 								<span class="input-group-text"><i
 									class="fas fa-signature"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="Cognome"
+							<input type="text" class="form-control" placeholder="Cognome" name="cognome"
 								required>
 						</div>
 						<div class="input-group form-group">
@@ -68,22 +68,22 @@
 
 								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="Email"
+							<input type="text" class="form-control" placeholder="Email" name="email"
 								required>
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control"
+							<input type="password" class="form-control" name="pass" id="password"
 								placeholder="Password" required>
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control"
-								placeholder="Conferma password" required>
+							<input type="password" class="form-control"  id="password"
+								placeholder="Password" required>
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Registrati"

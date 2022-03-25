@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,8 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/v4-shims.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/v4-shims.min.js">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/v4-shims.min.js">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
@@ -27,7 +30,7 @@
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- EMAIL -->
-<script src="https://smtpjs.com/v3/smtp.js"></script>  
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="../js/index.js"></script>
 <style>
 .w3-sidebar a {
@@ -41,6 +44,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 </head>
 
 <body>
+
 	<!-- Sidebar/menu -->
 	<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top"
 		style="z-index: 3; width: 265px" id="mySidebar">
@@ -50,15 +54,17 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 			<h3 class="w3-wide">
 				<b>CARLA FERRONI REGGIO CALABRIA</b>
 			</h3>
+
+
 		</div>
 		<div class="w3-padding-64 w3-large w3-text-grey"
 			style="font-weight: bold">
-			<a href="Collezione" class="w3-bar-item w3-button">Maglie</a>
-			<a href="Collezione" class="w3-bar-item w3-button">Vestiti</a>
-			<a href="Collezione" class="w3-bar-item w3-button">Pantaloni</a>
-			<a href="Collezione" class="w3-bar-item w3-button">Felpe</a>
-			<a href="Collezione" class="w3-bar-item w3-button">Camicie</a>
-			<a href="Collezione" class="w3-bar-item w3-button">Borse</a>
+			<a href="Collezione" class="w3-bar-item w3-button">Maglie</a> <a
+				href="Collezione" class="w3-bar-item w3-button">Vestiti</a> <a
+				href="Collezione" class="w3-bar-item w3-button">Pantaloni</a> <a
+				href="Collezione" class="w3-bar-item w3-button">Felpe</a> <a
+				href="Collezione" class="w3-bar-item w3-button">Camicie</a> <a
+				href="Collezione" class="w3-bar-item w3-button">Borse</a>
 
 		</div>
 
@@ -85,24 +91,30 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 
 		<!-- Top header -->
 		<header class="w3-container w3-xlarge">
-					<div class="dropdown w3-right" >
+			<div class="dropdown w3-right">
 				<button class="dropbtn" type="button">
 					<i class="fas fa-user" style="font-size: x-large;"></i>
 				</button>
-				<div class="dropdown-content" style="float:right;" >
-					<a id="text" href="Profilo">Profilo</a> 
-					<a id="text" href="Preferiti">Preferiti</a> 
-					<a id="text" href="ListaOrdini">I tuoi ordini</a> 
-					<a id="text" href="Login">Logout</a>
+				<div class="dropdown-content" style="float: right;">
+					<c:if test="${username==null}">
+						<a id="text" href="Login">Login</a>
+					</c:if>
+					<c:if test="${username!=null}">
+						<a id="text" href="Carrello">Carrello</a>
+						<a id="text" href="Profilo">Profilo</a>
+						<a id="text" href="Preferiti">Preferiti</a>
+						<a id="text" href="ListaOrdini">I tuoi ordini</a>
+						<a id="text" href="Login">Logout</a>
+					</c:if>
 				</div>
 			</div>
 			<p class="w3-right">
-				<a href="Carrello"><button class="btn">
+				<a href="#"><button class="btn">
+						<i class="fa fa-search w3-margin-right" style="font-size: x-large"></i>
+					</button> <!--</a> <a href="Carrello"><button class="btn">
 						<i class="fa fa-shopping-cart w3-margin-right"
 							style="font-size: x-large;"></i>
-					</button></a> <a href="#"><button class="btn">
-						<i class="fa fa-search w3-margin-right" style="font-size: x-large"></i>
-					</button></a>
+					</button></a>  -->
 			</p>
 		</header>
 
@@ -159,12 +171,12 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 		<div class="colore sfond w3-container w3-padding-32">
 			<h2>La Nostra Storia</h2>
 			<h5>Su iniziativa di un piccolo imprenditore calabrese e con
-				l’approvazione dell’azienda CARLA FERRONI, nel Gennaio del 2007 in
-				Via Santa Caterina D’Alessandria, nasce il primo negozio Carla
-				Ferroni shop in Italia. Grazie alla professionalità trovata in
-				negozio e alla diretta collaborazione con l’azienda, i nostri punti
+				l'approvazione dell'azienda CARLA FERRONI, nel Gennaio del 2007 in
+				Via Santa Caterina D'Alessandria, nasce il primo negozio Carla
+				Ferroni shop in Italia. Grazie alla professionalità  trovata in
+				negozio e alla diretta collaborazione con l'azienda, i nostri punti
 				vendita diventeranno nel tempo tre, che attualmente si trovano in
-				Via Santa Caterina d’Alessandria n.165, Via Osanna n.37 e in Via
+				Via Santa Caterina d'Alessandria n.165, Via Osanna n.37 e in Via
 				Vico Furnari n.24.</h5>
 		</div>
 
@@ -176,12 +188,12 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 					<p>Inviaci la tua domanda.</p>
 					<form action="/action_page.php" target="_blank">
 						<p>
-							<input class="w3-input w3-border" type="text" id="nome" placeholder="Nome"
-								name="Nome" required>
+							<input class="w3-input w3-border" type="text" id="nome"
+								placeholder="Nome" name="Nome" required>
 						</p>
 						<p>
-							<input class="w3-input w3-border" type="text" id="email" placeholder="Email"
-								name="Email" required>
+							<input class="w3-input w3-border" type="text" id="email"
+								placeholder="Email" name="Email" required>
 						</p>
 						<p>
 							<input class="w3-input w3-border" id="oggetto" type="text"
@@ -191,8 +203,9 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 							<input class="w3-input w3-border" type="text" id="messaggio"
 								placeholder="Messaggio" name="Messaggio" required>
 						</p>
-						<input type="button" class="w3-button w3-block w3-black" value="Invia"
-							onClick="sendEmail(document.getElementById('nome').value, document.getElementById('email').value, document.getElementById('oggetto').value, document.getElementById('messaggio').value)"/>
+						<input type="button" class="w3-button w3-block w3-black"
+							value="Invia"
+							onClick="sendEmail(document.getElementById('nome').value, document.getElementById('email').value, document.getElementById('oggetto').value, document.getElementById('messaggio').value)" />
 					</form>
 				</div>
 
@@ -203,16 +216,22 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 					<p id="text">
 						<i class="fa fa-fw fa-phone w3-large"></i> 0965-810807
 					</p>
-					<p id="text"> <a href="mailto:carlaferronirc@gmail.com">
-						<i class="fa fa-fw fa-envelope w3-large"></i>
-						carlaferronirc@gmail.com</a>
+					<p id="text">
+						<a href="mailto:carlaferronirc@gmail.com"> <i
+							class="fa fa-fw fa-envelope w3-large"></i>
+							carlaferronirc@gmail.com
+						</a>
 					</p>
-					<p id="text"> <a href="https://www.facebook.com/CarlaFerroniReggioCalabria"><i
-						class="fa fa-facebook-official w3-hover-opacity w3-large"> Carla Ferroni Reggio Calabria</i></a>
+					<p id="text">
+						<a href="https://www.facebook.com/CarlaFerroniReggioCalabria"><i
+							class="fa fa-facebook-official w3-hover-opacity w3-large">
+								Carla Ferroni Reggio Calabria</i></a>
 					</p>
-					<p id="text"> <a href="https://www.instagram.com/carlaferronirc/">
-					<i class="fa fa-instagram w3-hover-opacity w3-large"> carlaferronirc</i></a>
-						</p>
+					<p id="text">
+						<a href="https://www.instagram.com/carlaferronirc/"> <i
+							class="fa fa-instagram w3-hover-opacity w3-large">
+								carlaferronirc</i></a>
+					</p>
 				</div>
 				<div class="w3-row-padding">
 					<p></p>
