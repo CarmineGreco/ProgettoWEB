@@ -1,0 +1,170 @@
+* {
+	box-sizing: border-box;
+}
+
+body, html {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: #d5dbe8;
+	font-family: Arial;
+}
+
+p {
+	color: #000;
+	font-size: 12px;
+}
+
+a {
+	color: #d13434;
+	text-decoration: none
+}
+
+a:link{
+	color: #000;
+}
+
+a:visited{
+	color: #000;
+}
+
+.img-res {
+	width: 100%;
+	height: auto;
+}
+
+h1 {
+	color: #333
+}
+
+h3, h2 {
+	color: #333
+}
+
+NuoviArrivi {
+	color: #000;
+}
+
+.container {
+	padding: 15px;
+}
+
+.paragrafo {
+	color: #000
+}
+
+.riga{
+	color: #333
+}
+
+.sfondo {
+	background: #f5f3f2;
+}
+
+.sfond {
+	background: #1f1d1c;
+}
+
+.colore{
+	
+	color: #fff;
+}
+
+header {
+	background: #fff;
+	padding: 25px 15px 5px 15px;
+	width: 100%;
+}
+
+.logo {
+	text-align: center;
+	width: 100%;
+	dispaly: block;
+	font-size: 20px;
+}
+
+#menu-principale {
+	text-align: center;
+}
+
+#menu-principale li {
+	display: inline;
+}
+
+#menu-principale li a {
+	margin: 10px;
+}
+
+#text{
+	color: #000;
+	font-size: 15px;
+	font-family: Arial;
+}
+
+
+footer {
+	background: #333;
+	padding: 20px;
+}
+
+footer p {
+	color: #333;
+}
+
+.btn {
+	background: transparent;
+	border-color: transparent;
+}
+
+.dropbtn {
+  background-color: transparent ;
+  color: black;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right:0;
+  background-color: #d5dbe8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+@media screen and (min-width: 1000px){
+	.wrapper{
+	margin-left: 200px;
+	margin-right: 100px !important;
+	}
+}
+
+@media screen and (min-width: 100px){
+	.wrapper{
+	margin-right: 30px;
+	display: table-row;
+	}
+}

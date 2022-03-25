@@ -38,4 +38,10 @@ public class HomeController {
 	public String vaiAlLogin() {
 		return "Login";
 	}
+	
+
+	@GetMapping("/Registrazione")
+	public String vaiAllaRegistrazione() {
+		return "Registrazione";
+	}
 }

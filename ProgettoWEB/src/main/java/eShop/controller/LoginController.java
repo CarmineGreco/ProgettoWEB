@@ -20,10 +20,23 @@ public class LoginController {
 			System.out.println("Utente non trovato nel db");
 		return null;
 	}
-	
-	
-	@GetMapping("/Registrazione")
-	public String vaiAllaRegistrazione() {
-		return "Registrazione";
+	@PostMapping("registrationService")
+	public String faiRegistration(String username, String nome, String cognome, String email, String pass){
+		if(DBManager.getInstance().utenteDAO().existsUser(username)) {
+			System.out.println("Username già presente!");
+			return "Login";
+		}
+		else {
+			Utente ut = new Utente();
+			ut.setUsername(username);
+			ut.setNome(nome);
+			ut.setCognome(cognome);
+			ut.setEmail(email);
+			ut.setPassword(pass);
+			ut.setAdmin(false);
+			DBManager.getInstance().utenteDAO().save(ut);
+			return "index";
+		}
 	}
+	
 }

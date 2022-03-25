@@ -110,28 +110,28 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	}
 
 	@Override
-	public List<Utente> findAllOtherUsers(String email) {
+	public List<Utente> findAllOtherUsers(String username) {
 		List<Utente> utenti = new ArrayList<Utente>();
 		
 			try {
 				Connection conn = dbSource.getConnection();
-				String query = "select * from utente where email!=?";
+				String query = "select * from utente where username!=?";
 				PreparedStatement st = conn.prepareStatement(query);
-				st.setString(1, email);
+				st.setString(1, username);
 				ResultSet rs = st.executeQuery();
 				while (rs.next()) {
 					String email1 = rs.getString("email");
 					String nome = rs.getString("nome");
 					String cognome = rs.getString("cognome");
 					String password = rs.getString("password");
-					String username = rs.getString("username");									
+					String user = rs.getString("username");									
 					Utente utente = new Utente();
 					
 					utente.setEmail(email1);
 					utente.setNome(nome);
 					utente.setCognome(cognome);
 					utente.setPassword(password);
-					utente.setUsername(username);
+					utente.setUsername(user);
 					
 					utenti.add(utente);					
 				}

@@ -11,6 +11,9 @@ public class Prodotto {
 	private String categoria;
 	private String img;
 
+	public Prodotto() {
+		
+	}
 	public int getId() {
 		return id;
 	}
