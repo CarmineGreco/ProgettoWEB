@@ -20,5 +20,5 @@ public interface UtenteDAO {
 	public boolean existsUsername (String username);
 	public void setPassword(String email, String password); //Update
 	public List<Utente> findByName(String cercaNome);     // Retrieve  == select stud
-	
+	public Utente getUtente(String username);
 }

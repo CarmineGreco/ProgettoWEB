@@ -104,7 +104,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 						<a id="text" href="Profilo">Profilo</a>
 						<a id="text" href="Preferiti">Preferiti</a>
 						<a id="text" href="ListaOrdini">I tuoi ordini</a>
-						<a id="text" href="Login">Logout</a>
+						<a id="text" href="Logout">Logout</a>
 					</c:if>
 				</div>
 			</div>
@@ -171,12 +171,12 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 		<div class="colore sfond w3-container w3-padding-32">
 			<h2>La Nostra Storia</h2>
 			<h5>Su iniziativa di un piccolo imprenditore calabrese e con
-				l'approvazione dell'azienda CARLA FERRONI, nel Gennaio del 2007 in
-				Via Santa Caterina D'Alessandria, nasce il primo negozio Carla
+				l'approvazione dell'azienda CARLA FERRONI, nel Gennaio del 2007 in
+				Via Santa Caterina d'Alessandria, nasce il primo negozio Carla
 				Ferroni shop in Italia. Grazie alla professionalità  trovata in
-				negozio e alla diretta collaborazione con l'azienda, i nostri punti
+				negozio e alla diretta collaborazione con l'azienda, i nostri punti
 				vendita diventeranno nel tempo tre, che attualmente si trovano in
-				Via Santa Caterina d'Alessandria n.165, Via Osanna n.37 e in Via
+				Via Santa Caterina d'Alessandria n.165, Via Osanna n.37 e in Via
 				Vico Furnari n.24.</h5>
 		</div>
 

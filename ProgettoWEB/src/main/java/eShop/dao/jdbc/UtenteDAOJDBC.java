@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
+
 import eShop.dao.UtenteDAO;
 import eShop.model.Utente;
 import eShop.persistance.DBSource;
@@ -378,4 +379,26 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			return true;
 	}
 
+	@Override
+	public Utente getUtente(String username) {
+		String query = "select * from utente where Username=?";
+		try {
+			Connection conn = dbSource.getConnection();
+			PreparedStatement st = conn.prepareStatement(query);
+			st.setString(1, username);
+			ResultSet result = st.executeQuery();
+			if (result.isClosed()) {
+				return null;
+			}
+			Utente u=new Utente();
+			u.setUsername(username);
+			u.setPassword(result.getString("password"));
+			u.setEmail(result.getString("email"));
+			u.setNome(result.getString("nome"));
+			u.setCognome(result.getString("cognome"));
+			return u;
+		} catch (SQLException e) {
+			return null;
+		}
+	}
 }
