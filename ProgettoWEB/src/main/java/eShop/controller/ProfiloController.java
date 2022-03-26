@@ -20,6 +20,7 @@ public class ProfiloController {
 			utNew.setNome(nome);
 			utNew.setUsername(session.getAttribute("username").toString());
 			utNew.setEmail(email);
+			utNew.setPassword(pass);
 			DBManager.getInstance().utenteDAO().update(utOld, utNew);
 			session.setAttribute("nome", utNew.getNome());
 			session.setAttribute("cognome", utNew.getCognome());

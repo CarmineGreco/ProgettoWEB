@@ -237,8 +237,8 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			statement.setString(1, newu.getNome());			
 			statement.setString(2, newu.getCognome());			
 			statement.setString(3, BCrypt.hashpw(newu.getPassword(), BCrypt.gensalt(12)));		
-			statement.setString(4, newu.getUsername());					
-			statement.setString(5, old.getEmail());
+			statement.setString(4, newu.getEmail());					
+			statement.setString(5, old.getUsername());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -319,14 +319,14 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	}
 
 	@Override
-	public boolean checkPassword(String email, String password) {
+	public boolean checkPassword(String username, String password) {
 		String password_hash=null;
 		
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select password from utente where email=?";
+			String query = "select password from utente where username=?";
 			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, email);
+			st.setString(1, username);
 			ResultSet rs = st.executeQuery();
 			if (rs.next()) {
 				password_hash = rs.getString("password");

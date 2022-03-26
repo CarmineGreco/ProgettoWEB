@@ -2,6 +2,7 @@ package eShop.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,12 +19,18 @@ public class LoginController {
 	public String failLogin(HttpSession session, String username, String pass){
 		if(DBManager.getInstance().utenteDAO().existsUser(username)) {
 			Utente u = DBManager.getInstance().utenteDAO().findByPrimaryKey(username);
-			session.setAttribute("nome", u.getNome());
-			session.setAttribute("cognome", u.getCognome());
-			session.setAttribute("email", u.getEmail());
-			session.setAttribute("password", pass);
-			session.setAttribute("username", username);
-			return "index";
+			if(DBManager.getInstance().utenteDAO().checkPassword(username, pass)) {
+				session.setAttribute("nome", u.getNome());
+				session.setAttribute("cognome", u.getCognome());
+				session.setAttribute("email", u.getEmail());
+				session.setAttribute("password", pass);
+				session.setAttribute("username", username);
+				return "index";
+			}
+			else {
+				System.out.println("Password errata");
+				return "Login";
+			}
 		}
 		else
 			System.out.println("Utente non trovato nel db");
