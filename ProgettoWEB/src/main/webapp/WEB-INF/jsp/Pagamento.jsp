@@ -26,6 +26,20 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body style="background: #f5f3f2;">
+
+	<div id="nav-placeholder"></div>
+	<script>
+		$(function() {
+			$("#nav-placeholder").load("http://localhost:8080/navbar");
+		});
+	</script>
+	<div id="side-bar"></div>
+	<script>
+		$(function() {
+			$("#side-bar").load("http://localhost:8080/sidebar");
+		});
+	</script>
+
 	<div class="card" style="border-color: #f5f3f2;">
 		<div class="card-body">
 			<div class="row">

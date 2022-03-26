@@ -11,6 +11,16 @@ public class HomeController {
 		return "index";
 	}
 	
+	@GetMapping("/navbar")
+	public String navbar() {
+		return "Navbar";
+	}
+	
+	@GetMapping("/sidebar")
+	public String sidebar() {
+		return "Sidebar";
+	}
+	
 	@GetMapping("/Carrello")
 	public String vaiAlCarrello() {
 		return "Carrello";

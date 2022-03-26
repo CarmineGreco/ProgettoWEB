@@ -26,6 +26,20 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+
+	<div id="nav-placeholder"></div>
+	<script>
+		$(function() {
+			$("#nav-placeholder").load("http://localhost:8080/navbar");
+		});
+	</script>
+	<div id="side-bar"></div>
+	<script>
+		$(function() {
+			$("#side-bar").load("http://localhost:8080/sidebar");
+		});
+	</script>
+
 	<div class="container pb-5 mt-n2 mt-md-n3">
 		<div class="row">
 			<div class="col-xl-9 col-md-8">

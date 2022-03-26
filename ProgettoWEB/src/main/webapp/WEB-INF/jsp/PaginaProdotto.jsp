@@ -15,6 +15,20 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<div id="nav-placeholder"></div>
+	<script>
+		$(function() {
+			$("#nav-placeholder").load("http://localhost:8080/navbar");
+		});
+	</script>
+	<div id="side-bar"></div>
+	<script>
+		$(function() {
+			$("#side-bar").load("http://localhost:8080/sidebar");
+		});
+	</script>
+
 <main class="container">
  
   <!-- Left Column / Headphones Image -->

@@ -27,7 +27,22 @@
 <!--Custom styles-->
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body style="background: #f5f3f2">
+
+	<div id="nav-placeholder"></div>
+	<script>
+		$(function() {
+			$("#nav-placeholder").load("http://localhost:8080/navbar");
+		});
+	</script>
+	<div id="side-bar"></div>
+	<script>
+		$(function() {
+			$("#side-bar").load("http://localhost:8080/sidebar");
+		});
+	</script>
+
 	<div class="container">
 		<div class="main-body">
 			<div class="row centrale">
@@ -53,7 +68,7 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="${username}" name="username"
+							<input type="text" class="form-control" value="${username}" name="username" disabled="True"
 								required>
 						</div>
 						<div class="input-group form-group">
@@ -61,7 +76,7 @@
 								<span class="input-group-text"><i
 									class="fas fa-signature"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="${nome}" name="nome"
+							<input type="text" class="form-control" value="${nome}" name="nome"
 								required>
 						</div>
 						<div class="input-group form-group">
@@ -69,7 +84,7 @@
 								<span class="input-group-text"><i
 									class="fas fa-signature"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="${cognome}" name="cognome"
+							<input type="text" class="form-control" value="${cognome}" name="cognome"
 								required>
 						</div>
 						<div class="input-group form-group">
@@ -77,7 +92,7 @@
 
 								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 							</div>
-							<input type="text" class="form-control" placeholder="${email}" name="email"
+							<input type="text" class="form-control" value="${email}" name="email"
 								required>
 						</div>
 						<div class="form-group">
