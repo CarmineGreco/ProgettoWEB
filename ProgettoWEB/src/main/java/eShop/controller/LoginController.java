@@ -23,7 +23,7 @@ public class LoginController {
 		}
 		else
 			System.out.println("Utente non trovato nel db");
-		return null;
+		return "Login";
 	}
 	@PostMapping("registrationService")
 	public String faiRegistration(String username, String nome, String cognome, String email, String pass){
