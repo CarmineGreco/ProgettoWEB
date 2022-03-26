@@ -21,6 +21,7 @@ public class LoginController {
 			session.setAttribute("nome", u.getNome());
 			session.setAttribute("cognome", u.getCognome());
 			session.setAttribute("email", u.getEmail());
+			session.setAttribute("password", pass);
 			session.setAttribute("username", username);
 			return "index";
 		}

@@ -231,14 +231,14 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		
 		try {
 			connection = this.dbSource.getConnection();
-			String update = "update utente SET nome = ?, cognome = ?, password = ?, username = ? WHERE email=?";
+			String update = "update utente SET nome = ?, cognome = ?, password = ?, email = ? WHERE username=?";
 			PreparedStatement statement = connection.prepareStatement(update);
 			
 			statement.setString(1, newu.getNome());			
 			statement.setString(2, newu.getCognome());			
 			statement.setString(3, BCrypt.hashpw(newu.getPassword(), BCrypt.gensalt(12)));		
 			statement.setString(4, newu.getUsername());					
-			statement.setString(7, old.getEmail());
+			statement.setString(5, old.getEmail());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {

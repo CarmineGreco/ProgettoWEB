@@ -95,6 +95,13 @@
 							<input type="text" class="form-control" value="${email}" name="email"
 								required>
 						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
+							</div>
+							<input type="password" class="form-control" name="pass" id="password"
+								value="${password}">
+						</div>
 						<div class="form-group">
 							<input type="submit" value="Modifica"
 								class="btn float-right registrazione_btn">
