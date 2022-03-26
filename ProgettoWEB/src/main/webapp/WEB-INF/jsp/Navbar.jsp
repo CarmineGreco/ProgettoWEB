@@ -46,7 +46,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 <!-- Top header -->
 		<header class="w3-container w3-xlarge">
 			<div class="dropdown w3-right">
-				<button class="dropbtn" type="button">
+				<button class="dropbtn btn" type="button">
 					<i class="fas fa-user" style="font-size: x-large;"></i>
 				</button>
 				<div class="dropdown-content" style="float: right;">
@@ -73,7 +73,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 		</header>
 	<!-- Top menu on small screens -->
 	<header class="w3-bar w3-w3-top w3-hide-large w3-white w3-xlarge">
-		<div class="w3-bar-item w3-white w3-padding-24 w3-wide">CARLA
+		<div class="w3-bar-item w3-white w3-padding-24 w3-wide col-8">CARLA
 			FERRONI REGGIO CALABRIA</div>
 		<a href="javascript:void(0)"
 			class="w3-bar-item w3-button w3-white w3-padding-24 w3-right"

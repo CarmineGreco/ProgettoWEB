@@ -5,7 +5,6 @@ window.addEventListener("load", function(){ //"load"-->al caricamento della pagi
 var modalLogin=true;
 
 function  checklogin(){
-	 
 	$("#registrati").click(function() {	
 		$("#first").fadeOut("fast", function() {
 			$("#second").fadeIn("fast");
