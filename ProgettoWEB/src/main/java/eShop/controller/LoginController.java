@@ -17,7 +17,10 @@ public class LoginController {
 	@PostMapping("loginService")
 	public String failLogin(HttpSession session, String username, String pass){
 		if(DBManager.getInstance().utenteDAO().existsUser(username)) {
-			System.out.println("Utente trovato nel db");
+			Utente u = DBManager.getInstance().utenteDAO().findByPrimaryKey(username);
+			session.setAttribute("nome", u.getNome());
+			session.setAttribute("cognome", u.getCognome());
+			session.setAttribute("email", u.getEmail());
 			session.setAttribute("username", username);
 			return "index";
 		}

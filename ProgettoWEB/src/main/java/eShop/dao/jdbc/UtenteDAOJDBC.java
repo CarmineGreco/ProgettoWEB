@@ -279,14 +279,16 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		Connection connection = null;
 		
 		try {
+			String userOld = old.getUsername();
 			connection = this.dbSource.getConnection();
-			String update = "update utente SET nome = ?, cognome = ?, username = ? WHERE email=?";
+			String update = "update utente SET nome = ?, cognome = ?, username = ?, email = ? WHERE username= ?";
 			PreparedStatement statement = connection.prepareStatement(update);
+			statement.setString(5, userOld);
 			
 			statement.setString(1, newu.getNome());			
 			statement.setString(2, newu.getCognome());			
 			statement.setString(3, newu.getUsername());							
-			statement.setString(6, old.getEmail());
+			statement.setString(4, newu.getEmail());
 			statement.executeUpdate();
 			
 		} catch (SQLException e) {

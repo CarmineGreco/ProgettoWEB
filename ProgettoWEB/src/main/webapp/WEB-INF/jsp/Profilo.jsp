@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -36,7 +38,6 @@
 								<img src="https://bootdey.com/img/Content/avatar/avatar6.png"
 									alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
 								<div class="mt-3">
-									<h4>John Doe</h4>
 								</div>
 							</div>
 						</div>
@@ -47,54 +48,43 @@
 				<div class="col-8">
 					<div class="card">
 						<div class="card-body">
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Username</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="JohnDoe">
-								</div>
+							<form method="post" action="modificaProfilo">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Nome</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="John">
-								</div>
+							<input type="text" class="form-control" placeholder="${username}" name="username"
+								required>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i
+									class="fas fa-signature"></i></span>
 							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Cognome</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="Doe">
-								</div>
+							<input type="text" class="form-control" placeholder="${nome}" name="nome"
+								required>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i
+									class="fas fa-signature"></i></span>
 							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Email</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control"
-										value="john@example.com">
-								</div>
+							<input type="text" class="form-control" placeholder="${cognome}" name="cognome"
+								required>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Password</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="password" class="form-control"
-										value="(239) 816-9029">
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-12">
-									<input type="button" class="btn btn-primary"
-										value="Save Changes">
-								</div>
-							</div>
+							<input type="text" class="form-control" placeholder="${email}" name="email"
+								required>
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Modifica"
+								class="btn float-right registrazione_btn">
+						</div>
+					</form>
 						</div>
 					</div>
 				</div>

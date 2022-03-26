@@ -63,7 +63,7 @@
 						<div class="g-signin2" data-onsuccess="onSignIn"></div>
 						<div class="form-group">
 							<input type="submit" value="Accedi"
-								class="btn float-right login_btn" onClick="manda(document.getElementById('user').value,document.getElementById('password').value)">
+								class="btn float-right login_btn">
 						</div>
 					</form>
 				</div>
