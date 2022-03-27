@@ -53,13 +53,12 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 		</div>
 		<div class="w3-padding-64 w3-large w3-text-grey"
 			style="font-weight: bold">
-			<a href="Collezione" class="w3-bar-item w3-button">Maglie</a> <a
-				href="Collezione" class="w3-bar-item w3-button">Vestiti</a> <a
-				href="Collezione" class="w3-bar-item w3-button">Pantaloni</a> <a
-				href="Collezione" class="w3-bar-item w3-button">Felpe</a> <a
-				href="Collezione" class="w3-bar-item w3-button">Camicie</a> <a
-				href="Collezione" class="w3-bar-item w3-button">Borse</a>
-
+			<a href="CollezioneMaglia" class="w3-bar-item w3-button">Maglie</a> <a
+				href="CollezioneVestiti" class="w3-bar-item w3-button">Vestiti</a> <a
+				href="CollezionePantaloni" class="w3-bar-item w3-button">Pantaloni</a> <a
+				href="CollezioneFelpe" class="w3-bar-item w3-button">Felpe</a> <a
+				href="CollezioneCamicie" class="w3-bar-item w3-button">Camicie</a> <a
+				href="CollezioneBorse" class="w3-bar-item w3-button">Borse</a>
 		</div>
 
 	</nav>

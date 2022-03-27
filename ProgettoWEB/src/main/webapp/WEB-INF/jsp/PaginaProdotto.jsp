@@ -34,7 +34,7 @@
 	
 
 <main class="container">
- 
+ <c:forEach items="${prodotti}" var="prod">
   <!-- Left Column / Headphones Image -->
   <div class="left-column">
     <img data-image="black" src="images/black.png" alt="">
@@ -47,52 +47,52 @@
   <div class="right-column">
  
 <!--     Product Description -->
-<!--     <div class="product-description"> -->
-<!--       <span>Headphones</span> -->
-<!--       <h1>Beats EP</h1> -->
-<!--       <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p> -->
-<!--     </div> -->
+     <div class="product-description"> 
+       <span>Headphones</span>
+       <h1>${prod.nome}</h1> 
+       <p>${prod.descrizione}</p>
+     </div> 
  
 <!--     Product Configuration -->
-<!--     <div class="product-configuration"> -->
+     <div class="product-configuration"> 
  
 <!--       Product Color -->
-<!--       <div class="product-color"> -->
-<!--         <span>Aggiungi ai Preferiti</span> -->
+       <div class="product-color"> 
+         <span>Aggiungi ai Preferiti</span> 
  
-<!--         <div class="color-choose"> -->
-<!--           <div> -->
-<!--             <input data-image="red" type="radio" id="red" name="color" value="red" checked> -->
-<!--             <label for="red"><span></span></label> -->
-<!--           </div> -->
+         <div class="color-choose"> 
+           <div> 
+             <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+             <label for="red"><span></span></label>
+           </div> 
           
  
-<!--       </div> -->
+       </div> 
  
 <!--       Cable Configuration -->
-<!--       <div class="cable-config"> -->
-<!--         <span>Seleziona una taglia</span> -->
+       <div class="cable-config"> 
+         <span>Seleziona una taglia</span> 
  
-<!--         <div class="cable-choose"> -->
-<!--           <button>S</button> -->
-<!--           <button>M</button> -->
-<!--           <button>L</button> -->
-<!--         </div> -->
+         <div class="cable-choose"> 
+           <button>S</button> 
+           <button>M</button> 
+           <button>L</button> 
+         </div> 
  
         
-<!--       </div> -->
-<!--     </div> -->
+       </div> 
+     </div> 
  
 <!--     Product Pricing -->
-<!--     <div class="product-price"> -->
-<!--       <span>48€</span> -->
-<!--       <a href="#" class="cart-btn">Aggiungi al carrello</a> -->
-<!--     </div> -->
-<!--   </div> -->
-
+     <div class="product-price"> 
+       <span>${prod.prezzo}€</span> 
+       <a href="#" class="cart-btn">Aggiungi al carrello</a>
+     </div> 
+   </div> 
+</c:forEach>
 
 	<table>
-		<thead>
+<!--		<thead>
 			<tr>
 				<th>Prezzo</th>
 				<th>Nome</th>
@@ -113,6 +113,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	  -->
 </main>
 </body>
 </html>

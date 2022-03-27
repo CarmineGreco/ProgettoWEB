@@ -38,9 +38,10 @@
 			$("#side-bar").load("http://localhost:8080/sidebar");
 		});
 	</script>
-
-	<div class="container bootstrap snipets">
-		<h1 class="text-center text-muted">Product catalog</h1>
+	
+		<div class="container bootstrap snipets">
+		<h1 class="text-center text-muted">Catalogo ${prodotti.categoria}</h1>
+ <c:forEach items="${prodotti}" var="prod">
 		<div class="row" style="display: flex; justify-content: center;">
 			<div class="col-xs-12 col-md-6">
 				<div class="product tumbnail" style="width: fit-content;">
@@ -49,87 +50,13 @@
 						style="max-width: 500px" alt=""></a>
 					<div class="caption">
 						<h6>
-							<a href="#">Short Sleeve T-Shirt</a>
+							<a href="#">${prod.nome}</a>
 						</h6>
-						<span class="price"> <del>$24.99</del></span><span
-							class="price sale">$12.49</span>
+						<span class="price"> <del>${prod.prezzo}</del></span>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-6">
-				<div class="product tumbnail" style="width: fit-content;">
-					<a href="#"><img
-						src="https://via.placeholder.com/350x280/87CEFA/000000"
-						style="max-width: 500px" alt=""></a>
-					<div class="caption">
-						<h6>
-							<a href="#">Short Sleeve T-Shirt</a>
-						</h6>
-						<span class="price"> <del>$24.99</del></span><span
-							class="price sale">$12.49</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row" style="display: flex; justify-content: center;">
-			<div class="col-xs-12 col-md-6">
-				<div class="product tumbnail" style="width: fit-content;">
-					<a href="#"><img
-						src="https://via.placeholder.com/350x280/87CEFA/000000"
-						style="max-width: 500px" alt=""></a>
-					<div class="caption">
-						<h6>
-							<a href="#">Short Sleeve T-Shirt</a>
-						</h6>
-						<span class="price"> <del>$24.99</del></span><span
-							class="price sale">$12.49</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6">
-				<div class="product tumbnail" style="width: fit-content;">
-					<a href="#"><img
-						src="https://via.placeholder.com/350x280/87CEFA/000000"
-						style="max-width: 500px" alt=""></a>
-					<div class="caption">
-						<h6>
-							<a href="#">Short Sleeve T-Shirt</a>
-						</h6>
-						<span class="price"> <del>$24.99</del></span><span
-							class="price sale">$12.49</span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row" style="display: flex; justify-content: center;">
-			<div class="col-xs-12 col-md-6">
-				<div class="product tumbnail" style="width: fit-content;">
-					<a href="#"><img
-						src="https://via.placeholder.com/350x280/87CEFA/000000"
-						style="max-width: 500px" alt=""></a>
-					<div class="caption">
-						<h6>
-							<a href="#">Short Sleeve T-Shirt</a>
-						</h6>
-						<span class="price"> <del>$24.99</del></span><span
-							class="price sale">$12.49</span>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-6">
-				<div class="product tumbnail" style="width: fit-content;">
-					<a href="#"><img
-						src="https://via.placeholder.com/350x280/87CEFA/000000"
-						style="max-width: 500px" alt=""></a>
-					<div class="caption">
-						<h6>
-							<a href="#">Short Sleeve T-Shirt</a>
-						</h6>
-						<span class="price"> <del>$24.99</del></span><span
-							class="price sale">$12.49</span>
-					</div>
-				</div>
-			</div>
-		</div>
+		</div>		
+</c:forEach>
 </body>
 </html>
