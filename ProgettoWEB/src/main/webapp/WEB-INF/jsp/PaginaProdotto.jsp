@@ -7,7 +7,9 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +31,8 @@
 		});
 	</script>
 
+	
+
 <main class="container">
  
   <!-- Left Column / Headphones Image -->
@@ -42,49 +46,73 @@
   <!-- Right Column -->
   <div class="right-column">
  
-    <!-- Product Description -->
-    <div class="product-description">
-      <span>Headphones</span>
-      <h1>Beats EP</h1>
-      <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p>
-    </div>
+<!--     Product Description -->
+<!--     <div class="product-description"> -->
+<!--       <span>Headphones</span> -->
+<!--       <h1>Beats EP</h1> -->
+<!--       <p>The preferred choice of a vast range of acclaimed DJs. Punchy, bass-focused sound and high isolation. Sturdy headband and on-ear cushions suitable for live performance</p> -->
+<!--     </div> -->
  
-    <!-- Product Configuration -->
-    <div class="product-configuration">
+<!--     Product Configuration -->
+<!--     <div class="product-configuration"> -->
  
-      <!-- Product Color -->
-      <div class="product-color">
-        <span>Aggiungi ai Preferiti</span>
+<!--       Product Color -->
+<!--       <div class="product-color"> -->
+<!--         <span>Aggiungi ai Preferiti</span> -->
  
-        <div class="color-choose">
-          <div>
-            <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-            <label for="red"><span></span></label>
-          </div>
+<!--         <div class="color-choose"> -->
+<!--           <div> -->
+<!--             <input data-image="red" type="radio" id="red" name="color" value="red" checked> -->
+<!--             <label for="red"><span></span></label> -->
+<!--           </div> -->
           
  
-      </div>
+<!--       </div> -->
  
-      <!-- Cable Configuration -->
-      <div class="cable-config">
-        <span>Seleziona una taglia</span>
+<!--       Cable Configuration -->
+<!--       <div class="cable-config"> -->
+<!--         <span>Seleziona una taglia</span> -->
  
-        <div class="cable-choose">
-          <button>S</button>
-          <button>M</button>
-          <button>L</button>
-        </div>
+<!--         <div class="cable-choose"> -->
+<!--           <button>S</button> -->
+<!--           <button>M</button> -->
+<!--           <button>L</button> -->
+<!--         </div> -->
  
         
-      </div>
-    </div>
+<!--       </div> -->
+<!--     </div> -->
  
-    <!-- Product Pricing -->
-    <div class="product-price">
-      <span>48€</span>
-      <a href="#" class="cart-btn">Aggiungi al carrello</a>
-    </div>
-  </div>
+<!--     Product Pricing -->
+<!--     <div class="product-price"> -->
+<!--       <span>48€</span> -->
+<!--       <a href="#" class="cart-btn">Aggiungi al carrello</a> -->
+<!--     </div> -->
+<!--   </div> -->
+
+
+	<table>
+		<thead>
+			<tr>
+				<th>Prezzo</th>
+				<th>Nome</th>
+				<th>taglia</th>
+				<th>Descrizione</th>
+				<th>Categoria</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${prodotti}" var="prod">
+				<tr>
+					<td>${prod.prezzo}</td>
+					<td>${prod.nome}</td>
+					<td>${prod.taglia}</td>
+					<td>${prod.descrizione}</td>
+					<td>${prod.categoria}</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </main>
 </body>
 </html>

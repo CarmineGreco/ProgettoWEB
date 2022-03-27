@@ -1,9 +1,11 @@
 package eShop.persistance;
 
 import eShop.dao.CommentoDAO;
+import eShop.dao.ListaPreferitiDAO;
 import eShop.dao.ProdottoDAO;
 import eShop.dao.UtenteDAO;
 import eShop.dao.jdbc.CommentoDAOJDBC;
+import eShop.dao.jdbc.ListaPreferitiDAOJDBC;
 import eShop.dao.jdbc.ProdottoDAOJDBC;
 import eShop.dao.jdbc.UtenteDAOJDBC;
 
@@ -40,11 +42,15 @@ public class DBManager {
 		return new UtenteDAOJDBC(dataSource);
 	}
 	
-	public ProdottoDAO deviceDAO() {
+	public ProdottoDAO prodottoDAO() {
 		return new ProdottoDAOJDBC(dataSource);
 	}
 	
 	public CommentoDAO commentoDAO() {
 		return new CommentoDAOJDBC(dataSource);
+	}
+	
+	public ListaPreferitiDAO listaPreferitiDAO() {
+		return new ListaPreferitiDAOJDBC(dataSource);
 	}
 }
