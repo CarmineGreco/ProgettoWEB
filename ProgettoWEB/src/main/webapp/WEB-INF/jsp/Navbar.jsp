@@ -43,34 +43,38 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 </style>
 </head>
 <body>
-<!-- Top header -->
-		<header class="w3-container w3-xlarge">
-			<div class="dropdown w3-right">
-				<button class="dropbtn btn" type="button">
-					<i class="fas fa-user" style="font-size: x-large;"></i>
-				</button>
-				<div class="dropdown-content" style="float: right;">
-					<c:if test="${username==null}">
-						<a id="text" href="Login">Login</a>
-					</c:if>
-					<c:if test="${username!=null}">
-						<a id="text" href="Carrello">Carrello</a>
-						<a id="text" href="Profilo">Profilo</a>
-						<a id="text" href="Preferiti">Preferiti</a>
-						<a id="text" href="ListaOrdini">I tuoi ordini</a>
-						<a id="text" href="Logout">Logout</a>
-					</c:if>
-				</div>
+	<!-- Top header -->
+	<header class="row">
+			<!--  <img class="col-3" src="img/Logo.jpg" height="150" width="300" /> -->
+			<span class="col-3" style="font-size: 24px;">CARLA<br>FERRONI<br>REGGIO<br>CALABRIA</span>
+		<div class="col-9" style="float: right">
+		<div class="dropdown w3-right">
+			<button class="dropbtn btn" type="button"">
+				<i class="fas fa-user" style="font-size: x-large;"></i>
+			</button>
+			<div class="dropdown-content" style="float: right;">
+				<c:if test="${username==null}">
+					<a id="text" href="Login">Login</a>
+				</c:if>
+				<c:if test="${username!=null}">
+					<a id="text" href="Carrello">Carrello</a>
+					<a id="text" href="Profilo">Profilo</a>
+					<a id="text" href="Preferiti">Preferiti</a>
+					<a id="text" href="ListaOrdini">I tuoi ordini</a>
+					<a id="text" href="Logout">Logout</a>
+				</c:if>
 			</div>
-			<p class="w3-right">
-				<a href="#"><button class="btn">
-						<i class="fa fa-search w3-margin-right" style="font-size: x-large"></i>
-					</button> <!--</a> <a href="Carrello"><button class="btn">
+		</div>
+		<p class="w3-right">
+			<a href="#"><button class="btn">
+					<i class="fa fa-search w3-margin-right" style="font-size: x-large"></i>
+				</button> <!--</a> <a href="Carrello"><button class="btn">
 						<i class="fa fa-shopping-cart w3-margin-right"
 							style="font-size: x-large;"></i>
 					</button></a>  -->
-			</p>
-		</header>
+		</p>
+		</div>
+	</header>
 	<!-- Top menu on small screens -->
 	<header class="w3-bar w3-w3-top w3-hide-large w3-white w3-xlarge">
 		<div class="w3-bar-item w3-white w3-padding-24 w3-wide col-8">CARLA
