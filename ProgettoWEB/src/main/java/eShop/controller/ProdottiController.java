@@ -15,17 +15,19 @@ public class ProdottiController {
 	
 	@GetMapping("/PaginaProdotto")
 	public String vaiAllaPaginaProdotto(HttpSession session) {
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findAll();
 		
-		for(Prodotto i : prodotti) {
-			System.out.println(i.getId());
-			System.out.println(i.getNome());
-			System.out.println(i.getPrezzo());
-			System.out.println(i.getDescrizione());
-			System.out.println(i.getCategoria());
-		}
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findAll();
 		session.setAttribute("prodotti", prodotti);
 		
 		return "PaginaProdotto";
+	}
+	
+	@GetMapping("/Collezione")
+	public String vaiAllaCollezione(HttpSession session) {
+		
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findAll();
+		session.setAttribute("prodotti", prodotti);
+		
+		return "Collezione";
 	}
 }
