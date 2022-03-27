@@ -142,13 +142,13 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 	}
 
 	@Override
-	public List<Prodotto> findByTipology(Integer tipologia) {
+	public List<Prodotto> findByTipology(String categoria) {
 		List<Prodotto> prodotti = new ArrayList <Prodotto>();
 		try {
 			Connection con = dbSource.getConnection();
 			String query = "select * from prodotto where categoria=?;";
 			PreparedStatement st = con.prepareStatement(query);
-			st.setInt(1, tipologia);
+			st.setString(1, categoria);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				Prodotto prodotto = new Prodotto();

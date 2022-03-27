@@ -26,10 +26,6 @@ public class HomeController {
 		return "Carrello";
 	}
 	
-	@GetMapping("/Collezione")
-	public String vaiAllaCollezione() {
-		return "Collezione";
-	}
 	
 	@GetMapping("/Profilo")
 	public String vaiAlProfilo() {

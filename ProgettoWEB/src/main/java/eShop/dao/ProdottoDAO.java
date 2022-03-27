@@ -10,5 +10,5 @@ public interface ProdottoDAO {
 	public List<Prodotto> findAll();       
 	public void update(Prodotto prodotto);	//Update
 	public void delete(int  idProdotto);	//Delete	
-	public List<Prodotto> findByTipology(Integer tipologia);
+	public List<Prodotto> findByTipology(String categoria);
 }
