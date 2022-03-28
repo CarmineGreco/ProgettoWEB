@@ -46,8 +46,8 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 	<!-- Top header -->
 	<header class="row">
 			<!--  <img class="col-3" src="img/Logo.jpg" height="150" width="300" /> -->
-			<span class="col-3" style="font-size: 24px;">CARLA<br>FERRONI<br>REGGIO<br>CALABRIA</span>
-		<div class="col-9" style="float: right">
+			<a href="/"class="w3-bar-item w3-button"><span class="col-3" style="font-size: 24px;">CARLA<br>FERRONI<br>REGGIO<br>CALABRIA</span></a>
+		<div class="col-10" style="float: right">
 		<div class="dropdown w3-right">
 			<button class="dropbtn btn" type="button"">
 				<i class="fas fa-user" style="font-size: x-large;"></i>
@@ -68,10 +68,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 		<p class="w3-right">
 			<a href="#"><button class="btn">
 					<i class="fa fa-search w3-margin-right" style="font-size: x-large"></i>
-				</button> <!--</a> <a href="Carrello"><button class="btn">
-						<i class="fa fa-shopping-cart w3-margin-right"
-							style="font-size: x-large;"></i>
-					</button></a>  -->
+				</button>
 		</p>
 		</div>
 	</header>

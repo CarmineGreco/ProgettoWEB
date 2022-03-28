@@ -70,6 +70,33 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 		}
 		return prodotto;
 	}
+	@Override
+	public Prodotto findByName(String nome) {
+		Prodotto prodotto = new Prodotto();
+		try {
+			
+			Connection con = dbSource.getConnection();
+			String query = "select * from prodotto where nome=?;";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, nome);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {				
+				prodotto.setId(rs.getInt("id"));				
+				prodotto.setPrezzo(rs.getFloat("prezzo"));
+				prodotto.setNome(rs.getString("nome"));
+				prodotto.setTaglia(rs.getInt("taglia"));
+				prodotto.setDescrizione(rs.getString("descrizione"));
+				prodotto.setQuantita(rs.getInt("quantita"));
+				prodotto.setCategoria(rs.getString("categoria"));
+				prodotto.setImg(rs.getString("img"));		
+			st.close();
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return prodotto;
+	}
 
 	@Override
 	public List<Prodotto> findAll() {

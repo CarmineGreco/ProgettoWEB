@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+
+a{
+	color:#000;
+}
+
+a:link {
+  color: #000;
+}
+
+a:visited {
+  color: #000;
+}
+
+/* mouse over link */
+a:hover {
+  color: #000;
+}
+
+/* selected link */
+a:active {
+  color: #000;
+}

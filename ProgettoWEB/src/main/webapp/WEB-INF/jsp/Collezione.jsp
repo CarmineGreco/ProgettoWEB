@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -38,63 +41,24 @@
 			$("#side-bar").load("http://localhost:8080/sidebar");
 		});
 	</script>
-	
-<main class="container">
- <c:forEach items="${prodotti}" var="prod">
-  <!-- Left Column / Headphones Image -->
-  <div class="left-column">
-    <img data-image="black" src="images/black.png" alt="">
-    <img data-image="blue" src="images/blue.png" alt="">
-    <img data-image="red" class="active" src="images/red.png" alt="">
-  </div>
- 
- 
-  <!-- Right Column -->
-  <div class="right-column">
- 
-<!--     Product Description -->
-     <div class="product-description"> 
-       <span>Headphones</span>
-       <h1>${prod.nome}</h1> 
-       <p>${prod.descrizione}</p>
-     </div> 
- 
-<!--     Product Configuration -->
-     <div class="product-configuration"> 
- 
-<!--       Product Color -->
-       <div class="product-color"> 
-         <span>Aggiungi ai Preferiti</span> 
- 
-         <div class="color-choose"> 
-           <div> 
-             <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-             <label for="red"><span></span></label>
-           </div> 
-          
- 
-       </div> 
- 
-<!--       Cable Configuration -->
-       <div class="cable-config"> 
-         <span>Seleziona una taglia</span> 
- 
-         <div class="cable-choose"> 
-           <button>S</button> 
-           <button>M</button> 
-           <button>L</button> 
-         </div> 
- 
-        
-       </div> 
-     </div> 
- 
-<!--     Product Pricing -->
-     <div class="product-price"> 
-       <span>${prod.prezzo}€</span> 
-       <a href="#" class="cart-btn">Aggiungi al carrello</a>
-     </div> 
-   </div> 
-</c:forEach>
+	<div class="container bootstrap snipets">
+		<h1 class="text-center text-muted">Catalogo</h1>
+		<div class="row" style="display: flex; justify-content: center;">
+			<c:forEach items="${prodotti}" var="prod">
+				<div class="col-xs-12 col-md-6">
+					<div class="product tumbnail" style="width: fit-content;">
+						<a href="#"><img
+							src="https://via.placeholder.com/350x280/87CEFA/000000"
+							style="max-width: 500px" alt=""></a>
+						<div class="caption">
+							<h6>
+								<a href="PaginaProdotto">${prod.nome}</a>
+							</h6>
+							<span class="price"> <del>€${prod.prezzo}</del></span>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
 </body>
 </html>

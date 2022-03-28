@@ -31,15 +31,10 @@
 		});
 	</script>
 
-	
-
 <main class="container">
- <c:forEach items="${prodotti}" var="prod">
   <!-- Left Column / Headphones Image -->
   <div class="left-column">
-    <img data-image="black" src="images/black.png" alt="">
-    <img data-image="blue" src="images/blue.png" alt="">
-    <img data-image="red" class="active" src="images/red.png" alt="">
+    <img data-image="red" class="active" src="img/Logo.jpg" alt="">
   </div>
  
  
@@ -48,7 +43,6 @@
  
 <!--     Product Description -->
      <div class="product-description"> 
-       <span>Headphones</span>
        <h1>${prod.nome}</h1> 
        <p>${prod.descrizione}</p>
      </div> 
@@ -89,31 +83,6 @@
        <a href="#" class="cart-btn">Aggiungi al carrello</a>
      </div> 
    </div> 
-</c:forEach>
-
-	<table>
-<!--		<thead>
-			<tr>
-				<th>Prezzo</th>
-				<th>Nome</th>
-				<th>taglia</th>
-				<th>Descrizione</th>
-				<th>Categoria</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach items="${prodotti}" var="prod">
-				<tr>
-					<td>${prod.prezzo}</td>
-					<td>${prod.nome}</td>
-					<td>${prod.taglia}</td>
-					<td>${prod.descrizione}</td>
-					<td>${prod.categoria}</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	  -->
 </main>
 </body>
 </html>

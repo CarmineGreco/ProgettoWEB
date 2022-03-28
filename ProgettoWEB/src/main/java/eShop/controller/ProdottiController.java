@@ -13,6 +13,8 @@ import eShop.persistance.DBManager;
 @Controller
 public class ProdottiController {
 	
+	
+	
 	@GetMapping("/PaginaProdotto")
 	public String vaiAllaPaginaProdotto(HttpSession session) {
 		
@@ -25,7 +27,7 @@ public class ProdottiController {
 	@GetMapping("/CollezioneMaglia")
 	public String vaiAllaCollezioneMaglia(HttpSession session) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("Maglie");
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("maglia");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
@@ -39,6 +41,7 @@ public class ProdottiController {
 		
 		return "Collezione";
 	}
+	
 	
 	@GetMapping("/CollezionePantaloni")
 	public String vaiAllaCollezionePantaloni(HttpSession session) {
