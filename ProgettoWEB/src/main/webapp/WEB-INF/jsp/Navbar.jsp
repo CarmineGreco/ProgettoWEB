@@ -32,6 +32,8 @@
 <!-- EMAIL -->
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script src="../js/index.js"></script>
+
+<link rel="stylesheet" href="/css/Navbar.css">
 <style>
 .w3-sidebar a {
 	font-family: "Roboto", sans-serif
@@ -40,37 +42,52 @@
 body, h1, h2, h3, h4, h5, h6, .w3-wide {
 	font-family: "Montserrat", sans-serif;
 }
+
 </style>
 </head>
 <body>
+	<div id="search-bar"></div>
 	<!-- Top header -->
-	<header class="row">
-			<!--  <img class="col-3" src="img/Logo.jpg" height="150" width="300" /> -->
-			<a href="/"class="w3-bar-item w3-button"><span class="col-3" style="font-size: 24px;">CARLA<br>FERRONI<br>REGGIO<br>CALABRIA</span></a>
-		<div class="col-10" style="float: right">
-		<div class="dropdown w3-right">
-			<button class="dropbtn btn" type="button"">
-				<i class="fas fa-user" style="font-size: x-large;"></i>
-			</button>
-			<div class="dropdown-content" style="float: right;">
-				<c:if test="${username==null}">
-					<a id="text" href="Login">Login</a>
-				</c:if>
-				<c:if test="${username!=null}">
-					<a id="text" href="Carrello">Carrello</a>
-					<a id="text" href="Profilo">Profilo</a>
-					<a id="text" href="Preferiti">Preferiti</a>
-					<a id="text" href="ListaOrdini">I tuoi ordini</a>
-					<a id="text" href="Logout">Logout</a>
-				</c:if>
+	<header class="row" style="background:#f5f3f2">
+		<!--  <img class="col-3" src="img/Logo.jpg" height="150" width="300" /> -->
+		<div class="col-5" style="sfondo">
+		<a href="/" class="w3-bar-item w3-button"><span class="col-3"
+			style="font-size: 24px;">CARLA<br>FERRONI<br>REGGIO<br>CALABRIA
+		</span></a>
+		</div>
+		<div class="col-5">
+			<div class="mx-auto order-0">
+				<div class="form-inline my-lg-0">
+					<div class="input-group ">
+						<input class="form-control mr-sm-1"  type="search" placeholder="Cerca"
+							aria-label="Cerca" required>
+						<div class="input-group-append">
+							<button type="submit" class="btn btn-light"><i class="fa fa-search w3-margin-right"
+								style="font-size: x-large"></i></button>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<p class="w3-right">
-			<a href="#"><button class="btn">
-					<i class="fa fa-search w3-margin-right" style="font-size: x-large"></i>
-				</button>
-		</p>
-		</div>
+			</div>
+			<div class="col-2" style="float: right">
+				<div class="dropdown w3-right">
+					<button class="dropbtn btn" type="button"">
+						<i class="fas fa-user" style="font-size: x-large;"></i>
+					</button>
+					<div class="dropdown-content" style="float: right;">
+						<c:if test="${username==null}">
+							<a id="text" href="Login">Login</a>
+						</c:if>
+						<c:if test="${username!=null}">
+							<a id="text" href="Carrello">Carrello</a>
+							<a id="text" href="Profilo">Profilo</a>
+							<a id="text" href="Preferiti">Preferiti</a>
+							<a id="text" href="ListaOrdini">I tuoi ordini</a>
+							<a id="text" href="Logout">Logout</a>
+						</c:if>
+					</div>
+				</div>
+			</div>
 	</header>
 	<!-- Top menu on small screens -->
 	<header class="w3-bar w3-w3-top w3-hide-large w3-white w3-xlarge">
