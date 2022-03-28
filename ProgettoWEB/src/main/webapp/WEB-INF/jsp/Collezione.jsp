@@ -44,7 +44,7 @@
 	<div class="container bootstrap snipets">
 		<h1 class="text-center text-muted">Catalogo</h1>
 		<div class="row" style="display: flex; justify-content: center;">
-			<c:forEach items="${prodotti}" var="prod">
+			<c:forEach items="${prodotti}" var="prod" id="idProdotto" name="idProdotto" value="${prod.id}">
 				<div class="col-xs-12 col-md-6">
 					<div class="product tumbnail" style="width: fit-content;">
 						<a href="#"><img

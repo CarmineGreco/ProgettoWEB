@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import eShop.model.Prodotto;
 import eShop.persistance.DBManager;
@@ -16,10 +17,11 @@ public class ProdottiController {
 	
 	
 	@GetMapping("/PaginaProdotto")
-	public String vaiAllaPaginaProdotto(HttpSession session) {
+	public String vaiAllaPaginaProdotto(HttpSession session, @RequestParam Integer idProdotto) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findAll();
-		session.setAttribute("prodotti", prodotti);
+		System.out.println(idProdotto);
+		Prodotto prodotto = DBManager.getInstance().prodottoDAO().findByPrimaryKey(idProdotto);
+		session.setAttribute("prodotto", prodotto);
 		
 		return "PaginaProdotto";
 	}
@@ -46,7 +48,7 @@ public class ProdottiController {
 	@GetMapping("/CollezionePantaloni")
 	public String vaiAllaCollezionePantaloni(HttpSession session) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("pantalone");
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("pantaloni");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
