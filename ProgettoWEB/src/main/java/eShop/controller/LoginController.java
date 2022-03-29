@@ -18,43 +18,36 @@ import eShop.persistance.DBManager;
 public class LoginController {
 
 	@PostMapping("loginService")
-	public String failLogin(HttpSession session, String username, String pass){
-		if(DBManager.getInstance().utenteDAO().existsUser(username)) {
-			Utente u = DBManager.getInstance().utenteDAO().findByPrimaryKey(username);
-			if(DBManager.getInstance().utenteDAO().checkPassword(username, pass)) {
-				session.setAttribute("nome", u.getNome());
-				session.setAttribute("cognome", u.getCognome());
-				session.setAttribute("email", u.getEmail());
-				session.setAttribute("password", pass);
-				session.setAttribute("username", username);
-				return "index";
+	public String failLogin(HttpSession session, Utente u){
+		if(DBManager.getInstance().utenteDAO().existsUser(u.getUsername())) {
+			if(DBManager.getInstance().utenteDAO().checkPassword(u.getUsername(), u.getPassword())) {
+				Utente utenteLoggato = DBManager.getInstance().utenteDAO().findByPrimaryKey(u.getUsername());
+				session.setAttribute("nome", utenteLoggato.getNome());
+				session.setAttribute("cognome", utenteLoggato.getCognome());
+				session.setAttribute("email", utenteLoggato.getEmail());
+//				session.setAttribute("password", u.getPassword());
+				session.setAttribute("username", utenteLoggato.getUsername());
+				return "successo";
 			}
 			else {
 				System.out.println("Password errata");
-				return "Login";
+				return "errore";
 			}
 		}
 		else
 			System.out.println("Utente non trovato nel db");
-		return "Login";
+		return "nonRegistrato";
 	}
 	
 	@PostMapping("registrationService")
-	public String faiRegistration(String username, String nome, String cognome, String email, String pass, String confermaPass){
-		if(DBManager.getInstance().utenteDAO().existsUser(username)) {
+	public String faiRegistration( HttpSession session, Utente u){
+		if(DBManager.getInstance().utenteDAO().existsUser(u.getUsername())) {
 			System.out.println("Username già presente!");
-			return "Login";
+			return "errore";
 		}
 		else {
-			Utente ut = new Utente();
-			ut.setUsername(username);
-			ut.setNome(nome);
-			ut.setCognome(cognome);
-			ut.setEmail(email);
-			ut.setPassword(pass);
-			ut.setAdmin(false);
-			DBManager.getInstance().utenteDAO().save(ut);
-			return "index";
+			DBManager.getInstance().utenteDAO().save(u);
+			return "successo";
 		}
 	}
 	

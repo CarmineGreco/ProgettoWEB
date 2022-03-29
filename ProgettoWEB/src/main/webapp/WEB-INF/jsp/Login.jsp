@@ -1,5 +1,4 @@
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <link href="../css/Login.css" rel="stylesheet" type="text/css"
 	/ id="bootstrap-css">
