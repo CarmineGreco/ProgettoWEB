@@ -15,12 +15,10 @@ import eShop.persistance.DBManager;
 public class ProdottiController {
 	
 	@GetMapping("/PaginaProdotto")
-	public String vaiAllaPaginaProdotto(HttpSession session, @RequestParam Integer idProdotto) {
+	public String vaiAllaPaginaProdotto(HttpSession session, int idProdotto) {
 		
-		System.out.println(idProdotto);
 		Prodotto prodotto = DBManager.getInstance().prodottoDAO().findByPrimaryKey(idProdotto);
 		session.setAttribute("prodotto", prodotto);
-		
 		return "PaginaProdotto";
 	}
 	
@@ -72,6 +70,15 @@ public class ProdottiController {
 	@GetMapping("/CollezioneBorse")
 	public String vaiAllaCollezioneBorse(HttpSession session) {
 		
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("borsa");
+		session.setAttribute("prodotti", prodotti);
+		
+		return "Collezione";
+	}
+	
+	@GetMapping("/Preferiti")
+	public String vaiAiPreferiti(HttpSession session) {
+		//mettere metodo per prendere i preferiti
 		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("borsa");
 		session.setAttribute("prodotti", prodotti);
 		

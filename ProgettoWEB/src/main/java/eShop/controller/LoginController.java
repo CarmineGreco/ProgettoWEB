@@ -53,15 +53,12 @@ public class LoginController {
 			ut.setEmail(email);
 			ut.setPassword(pass);
 			ut.setAdmin(false);
-			if(checkDati(username, nome, cognome, email, pass, confermaPass)) {
-				DBManager.getInstance().utenteDAO().save(ut);
-				return "index";
-			}
-			return "Registrazione";
+			DBManager.getInstance().utenteDAO().save(ut);
+			return "index";
 		}
 	}
 	
-	public boolean checkDati(String username, String nome, String cognome, String email, String pass, String confermaPass) {
+	/*public boolean checkDati(String username, String nome, String cognome, String email, String pass, String confermaPass) {
 		if (!Pattern.matches("([a-zA-Z]+|[0-9]*|[\\.|_|-|]*)+@([a-zA-Z]+\\.)+(com|gov|it)", email)) {
 			System.out.println("errore email");
 			return false;
@@ -75,5 +72,5 @@ public class LoginController {
 			return false;
 		}
 	return true;
-	}
+	}*/
 }
