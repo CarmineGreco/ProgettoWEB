@@ -26,7 +26,7 @@
 <!--Custom styles-->
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
+<body style="background:#f5f3f2">
 
 	<div id="nav-placeholder"></div>
 	<script>

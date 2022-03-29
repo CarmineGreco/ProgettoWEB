@@ -28,8 +28,8 @@
 <!--Custom styles-->
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
-	<div id="nav-placeholder"></div>
+<body style="background:#f5f3f2">
+	<div id="nav-placeholder" ></div>
 	<script>
 		$(function() {
 			$("#nav-placeholder").load("http://localhost:8080/navbar");
@@ -41,10 +41,10 @@
 			$("#side-bar").load("http://localhost:8080/sidebar");
 		});
 	</script>
-	<div class="container bootstrap snipets">
+	<div class="container bootstrap snipets" >
 		<h1 class="text-center text-muted">Catalogo</h1>
 		<div class="row" style="display: flex; justify-content: center;">
-			<c:forEach items="${prodotti}" var="prod" id="idProdotto" name="idProdotto" value="${prod.id}">
+			<c:forEach items="${prodotti}" var="prod">
 				<div class="col-xs-12 col-md-6">
 					<div class="product tumbnail" style="width: fit-content;">
 						<a href="#"><img

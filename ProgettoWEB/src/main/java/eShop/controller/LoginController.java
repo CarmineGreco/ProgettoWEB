@@ -1,5 +1,7 @@
 package eShop.controller;
 
+import java.util.regex.Pattern;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
@@ -36,8 +38,9 @@ public class LoginController {
 			System.out.println("Utente non trovato nel db");
 		return "Login";
 	}
+	
 	@PostMapping("registrationService")
-	public String faiRegistration(String username, String nome, String cognome, String email, String pass){
+	public String faiRegistration(String username, String nome, String cognome, String email, String pass, String confermaPass){
 		if(DBManager.getInstance().utenteDAO().existsUser(username)) {
 			System.out.println("Username già presente!");
 			return "Login";
@@ -50,9 +53,27 @@ public class LoginController {
 			ut.setEmail(email);
 			ut.setPassword(pass);
 			ut.setAdmin(false);
-			DBManager.getInstance().utenteDAO().save(ut);
-			return "index";
+			if(checkDati(username, nome, cognome, email, pass, confermaPass)) {
+				DBManager.getInstance().utenteDAO().save(ut);
+				return "index";
+			}
+			return "Registrazione";
 		}
 	}
 	
+	public boolean checkDati(String username, String nome, String cognome, String email, String pass, String confermaPass) {
+		if (!Pattern.matches("([a-zA-Z]+|[0-9]*|[\\.|_|-|]*)+@([a-zA-Z]+\\.)+(com|gov|it)", email)) {
+			System.out.println("errore email");
+			return false;
+		}
+		if(!Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()�[{}]:;',?/*~$^+=<>\\.]).{8,20}$",pass)) {
+			System.out.println("errore password");
+			return false;
+		}
+		if(!pass.equals(confermaPass)) {
+			System.out.println("errore conferma password");
+			return false;
+		}
+	return true;
+	}
 }

@@ -25,7 +25,7 @@
 <!--Custom styles-->
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
+<body style="background:#f5f3f2">
 
 	<div id="nav-placeholder"></div>
 	<script>
@@ -41,7 +41,7 @@
 	</script>
 
 	<div class="container pb-5 mt-n2 mt-md-n3">
-		<div class="row">
+		<div class="row" >
 			<div class="col-xl-9 col-md-8">
 				<h2
 					class="h6 d-flex flex-wrap justify-content-between align-items-center px-4 py-3 bg-secondary">

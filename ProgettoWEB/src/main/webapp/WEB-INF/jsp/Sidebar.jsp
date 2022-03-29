@@ -42,29 +42,30 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 }
 </style>
 </head>
-<body>
+<body style="background:#e9e4e2">
 	<!-- Sidebar/menu -->
-	<nav class="w3-sidebar w3-bar-block w3-white w3-collapse"
+	
+	<nav class="w3-sidebar w3-bar-block w3-white w3-collapse" style="background:#e9e4e2"
 		style=" width: fit-content;" id="mySidebar">
-		<div class="w3-container w3-display-container w3-padding-16" style="background:#f5f3f2">
+		<div class="w3-container w3-display-container w3-padding-16" style="background:#e9e4e2">
 			<i onclick="w3_close()"
-				class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+				class="fa fa-remove w3-hide-large w3-button w3-display-topright" style="background:#e9e4e2"></i>
 
 		</div>
 		<div class="w3-padding-64 w3-large w3-text-grey"
-			style="font-weight: bold; background:#f5f3f2">
-			<a href="CollezioneMaglia" class="w3-bar-item w3-button" style="background:#f5f3f2">Maglie</a> <a
-				href="CollezioneVestiti" class="w3-bar-item w3-button" style="background:#f5f3f2">Vestiti</a> <a
-				href="CollezionePantaloni" class="w3-bar-item w3-button" style="background:#f5f3f2">Pantaloni</a> <a
-				href="CollezioneFelpe" class="w3-bar-item w3-button" style="background:#f5f3f2">Felpe</a> <a
-				href="CollezioneCamicie" class="w3-bar-item w3-button" style="background:#f5f3f2">Camicie</a> <a
-				href="CollezioneBorse" class="w3-bar-item w3-button" style="background:#f5f3f2">Borse</a>
+			style="font-weight: bold; background:#e9e4e2;">
+			<a href="CollezioneMaglia" class="w3-bar-item w3-button" >Maglie</a> <a
+				href="CollezioneVestiti" class="w3-bar-item w3-button">Vestiti</a> <a
+				href="CollezionePantaloni" class="w3-bar-item w3-button">Pantaloni</a> <a
+				href="CollezioneFelpe" class="w3-bar-item w3-button">Felpe</a> <a
+				href="CollezioneCamicie" class="w3-bar-item w3-button">Camicie</a> <a
+				href="CollezioneBorse" class="w3-bar-item w3-button">Borse</a>
 		</div>
 
 	</nav>
 	<!-- Overlay effect when opening sidebar on small screens -->
 	<div class="w3-overlay w3-hide-large" onclick="w3_close()"
-		style="cursor: pointer" title="close side menu" id="myOverlay"></div>
+		style="cursor: pointer" title="close side menu" style="background:#e9e4e2" id="myOverlay"></div>
 	
 </body>
 </html>

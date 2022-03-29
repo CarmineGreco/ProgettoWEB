@@ -26,7 +26,7 @@
 <!--Custom styles-->
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
+<body style="background: #f5f3f2">
 
 	<div id="nav-placeholder"></div>
 	<script>
@@ -42,17 +42,15 @@
 	</script>
 
 	<div class="container-fluid my-5 d-flex justify-content-center">
-		<div class="card card-1">
+		<div class="card card-1" style="background: #f5f3f2">
 			<div class="card-header bg-white">
 				<div
 					class="media flex-sm-row flex-column-reverse justify-content-between ">
 					<div class="co my-auto">
-						<h4 class="mb-0">
-							LA TUA LISTA PREFERITI
-						</h4>
+						<h4 class="mb-0">LA TUA LISTA PREFERITI</h4>
 					</div>
 					<div class="col-auto text-center my-auto pl-0 pt-sm-4">
-						
+
 						<p class="mb-4 pt-0 Glasses">Carla Ferroni Reggio Calabria</p>
 					</div>
 				</div>
@@ -62,9 +60,7 @@
 					<div class="col-auto">
 						<h6 class="color-1 mb-0 change-color">I tuoi preferiti:</h6>
 					</div>
-					<div class="col-auto ">
-						
-					</div>
+					<div class="col-auto "></div>
 				</div>
 				<div class="row">
 					<div class="col">
@@ -86,39 +82,33 @@
 												<small>Golden Rim </small>
 											</div>
 											<div class="color-choose">
-          <div>
-            <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-            <label for="red"><span></span></label>
-          </div>
-											<div class="co my-auto">
-												
-											</div>
-											<div class="co my-auto">
-												<h6 class="mb-0">&#8377;3,600.00</h6>
+												<div>
+													<input data-image="red" type="radio" id="red" name="color"
+														value="red" checked> <label for="red"><span></span></label>
+												</div>
+												<div class="co my-auto"></div>
+												<div class="co my-auto">
+													<h6 class="mb-0">&#8377;3,600.00</h6>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								
-								<div class="row">
-									<div class="col-md-3 mb-3">
-										<small>  <span><i
-												class=" ml-2 fa fa-refresh" aria-hidden="true"></i></span></small>
-									</div>
-									<div class="co mt-auto">
-										
-										<div class="media row justify-content-between ">
-											<div class="col-auto text-right">
-												
-											</div>
-											<div class="flex-col">
-												
-														
-											</div>
-											<div class="col-auto flex-col-auto">
-												
-													
-												</span>
+
+									<div class="row">
+										<div class="col-md-3 mb-3">
+											<small> <span><i class=" ml-2 fa fa-refresh"
+													aria-hidden="true"></i></span></small>
+										</div>
+										<div class="co mt-auto">
+
+											<div class="media row justify-content-between ">
+												<div class="col-auto text-right"></div>
+												<div class="flex-col"></div>
+												<div class="col-auto flex-col-auto">
+
+
+													</span>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -126,55 +116,44 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row mt-4">
-					<div class="col">
-						<div class="card card-2">
-							<div class="card-body">
-								<div class="media">
-									<div class="sq align-self-center ">
-										<img
-											class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0"
-											src="https://i.imgur.com/fUWWpRS.jpg" width="135"
-											height="135" />
-									</div>
-									<div class="media-body my-auto text-right">
-										<div class="row my-auto flex-column flex-md-row">
-											<div class="col-auto my-auto ">
-												<h6 class="mb-0">Michel Mark</h6>
-											</div>
-											<div class="co my-auto ">
-												<small>Black Rim </small>
-											</div>
-											<div class="co my-auto ">
-												
-											</div>
-											<div class="co my-auto ">
-												
-											</div>
-											<div class="co my-auto ">
-												<h6 class="mb-0">&#8377;1,235.00</h6>
+					<div class="row mt-4">
+						<div class="col">
+							<div class="card card-2">
+								<div class="card-body">
+									<div class="media">
+										<div class="sq align-self-center ">
+											<img
+												class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0"
+												src="https://i.imgur.com/fUWWpRS.jpg" width="135"
+												height="135" />
+										</div>
+										<div class="media-body my-auto text-right">
+											<div class="row my-auto flex-column flex-md-row">
+												<div class="col-auto my-auto ">
+													<h6 class="mb-0">Michel Mark</h6>
+												</div>
+												<div class="co my-auto ">
+													<small>Black Rim </small>
+												</div>
+												<div class="co my-auto "></div>
+												<div class="co my-auto "></div>
+												<div class="co my-auto ">
+													<h6 class="mb-0">&#8377;1,235.00</h6>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								
-								<div class="row ">
-									<div class="col-md-3 mb-3">
-										
-									</div>
-									<div class="co mt-auto">
-										
-										<div class="media row justify-content-between ">
-											<div class="col-auto text-right">
-												<span> 
-												</span>
-											</div>
-											<div class="flex-col">
-												
-											</div>
-											<div class="col-auto flex-col-auto">
-												
+
+									<div class="row ">
+										<div class="col-md-3 mb-3"></div>
+										<div class="co mt-auto">
+
+											<div class="media row justify-content-between ">
+												<div class="col-auto text-right">
+													<span> </span>
+												</div>
+												<div class="flex-col"></div>
+												<div class="col-auto flex-col-auto"></div>
 											</div>
 										</div>
 									</div>
@@ -182,60 +161,41 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row mt-4">
-					<div class="col">
-						<div class="row justify-content-between">
-							<div class="col-auto">
-								<p class="mb-1 text-dark">
-									
-								</p>
+					<div class="row mt-4">
+						<div class="col">
+							<div class="row justify-content-between">
+								<div class="col-auto">
+									<p class="mb-1 text-dark"></p>
+								</div>
+								<div class="flex-sm-co text-right col">
+									<p class="mb-1"></p>
+								</div>
+								<div class="flex-sm-co col-auto"></div>
 							</div>
-							<div class="flex-sm-co text-right col">
-								<p class="mb-1">
-									
-								</p>
+							<div class="row justify-content-between">
+								<div class="flex-sm-co text-right col">
+									<p class="mb-1"></p>
+								</div>
+								<div class="flex-sm-co col-auto"></div>
 							</div>
-							<div class="flex-sm-co col-auto">
-								
+							<div class="row justify-content-between">
+								<div class="flex-sm-co text-right col">
+									<p class="mb-1"></p>
+								</div>
+								<div class="flex-sm-co col-auto"></div>
 							</div>
-						</div>
-						<div class="row justify-content-between">
-							<div class="flex-sm-co text-right col">
-								<p class="mb-1">
-									
-								</p>
-							</div>
-							<div class="flex-sm-co col-auto">
-								
-							</div>
-						</div>
-						<div class="row justify-content-between">
-							<div class="flex-sm-co text-right col">
-								<p class="mb-1">
-									
-								</p>
-							</div>
-							<div class="flex-sm-co col-auto">
-								
-							</div>
-						</div>
-						<div class="row justify-content-between">
-							<div class="flex-sm-co text-right col">
-								<p class="mb-1">
-									
-								</p>
-							</div>
-							<div class="flex-sm-co col-auto">
-								
+							<div class="row justify-content-between">
+								<div class="flex-sm-co text-right col">
+									<p class="mb-1"></p>
+								</div>
+								<div class="flex-sm-co col-auto"></div>
 							</div>
 						</div>
 					</div>
+
 				</div>
-				
+
 			</div>
-			
 		</div>
-	</div>
 </body>
 </html>

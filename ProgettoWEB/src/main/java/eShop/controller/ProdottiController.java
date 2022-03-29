@@ -14,8 +14,6 @@ import eShop.persistance.DBManager;
 @Controller
 public class ProdottiController {
 	
-	
-	
 	@GetMapping("/PaginaProdotto")
 	public String vaiAllaPaginaProdotto(HttpSession session, @RequestParam Integer idProdotto) {
 		

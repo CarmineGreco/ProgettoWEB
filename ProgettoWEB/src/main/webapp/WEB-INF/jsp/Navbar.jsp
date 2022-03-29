@@ -48,7 +48,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 <body>
 	<div id="search-bar"></div>
 	<!-- Top header -->
-	<header class="row" style="background:#f5f3f2">
+	<header class="row" style="background:#e9e4e2">
 		<!--  <img class="col-3" src="img/Logo.jpg" height="150" width="300" /> -->
 		<div class="col-5" style="sfondo">
 		<a href="/" class="w3-bar-item w3-button"><span class="col-3"
@@ -70,7 +70,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 			</div>
 			</div>
 			<div class="col-2" style="float: right">
-				<div class="dropdown w3-right">
+				<div class="dropdown w3-right" style="background:#e9e4e2">
 					<button class="dropbtn btn" type="button"">
 						<i class="fas fa-user" style="font-size: x-large;"></i>
 					</button>
@@ -90,9 +90,9 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 			</div>
 	</header>
 	<!-- Top menu on small screens -->
-	<header class="w3-bar w3-w3-top w3-hide-large w3-white w3-xlarge">
+	<header class="w3-bar w3-w3-top w3-hide-large w3-xlarge" style="background:#e9e4e2">
 		<a href="javascript:void(0)"
-			class="w3-bar-item w3-button w3-white w3-padding-24 w3-right"
+			class="w3-bar-item w3-button w3-padding-24 w3-right" style="background:#e9e4e2"
 			onclick="w3_open()"><i class="fa fa-bars"></i></a>
 	</header>
 

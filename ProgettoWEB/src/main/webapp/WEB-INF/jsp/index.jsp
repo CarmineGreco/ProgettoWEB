@@ -43,7 +43,7 @@ body, h1, h2, h3, h4, h5, h6, .w3-wide {
 </style>
 </head>
 
-<body style="background:#f5f3f2">
+<body style="background:#e9e4e2">
 	<div id="nav-placeholder"></div>
 	<script>
 		$(function() {

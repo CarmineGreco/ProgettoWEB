@@ -44,5 +44,4 @@ function ricarica(){
 	  			alert( "Request failed: " + textStatus );
 	          }        
 	    });	
-
 }
