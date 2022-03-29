@@ -76,12 +76,12 @@ public class ProdottiController {
 		return "Collezione";
 	}
 	
-	@GetMapping("/Preferiti")
+	/*@GetMapping("/Preferiti")
 	public String vaiAiPreferiti(HttpSession session) {
 		//mettere metodo per prendere i preferiti
 		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("borsa");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
-	}
+	}*/
 }
