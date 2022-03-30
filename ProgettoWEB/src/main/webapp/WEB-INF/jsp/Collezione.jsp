@@ -51,7 +51,7 @@
 							src="${prod.img}"
 							width="250" height="300" alt=""></a>
 						<div class="caption">
-							<form id="formSetContenuto" method="post" action="PaginaProdotto">
+							<form id="formSetContenuto" method="GET" action="PaginaProdotto">
 								<input type="hidden" id="idProdotto" name="idProdotto" value="${prod.id}">
 								<button type="submit" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Visualizza ${prod.nome} </button>
 							</form>

@@ -25,10 +25,11 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 
 		try {
 			conn = dbSource.getConnection();
-			String query = "insert into preferiti values(?,?);"; 
+			String query = "insert into preferiti values(?,?,?);"; 
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, utente);
 			st.setInt(2, idProdotto);
+			st.setInt(3, 40);
 			st.executeUpdate();
 			st.close();						
 		} catch (SQLException e) {
@@ -70,10 +71,9 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 	@Override
 	public List<Prodotto> getPreferiti(String utente) {
 		List<Prodotto> preferiti = new ArrayList<Prodotto>();
-		
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select prodotto.* from preferiti.prodotto where preferiti.utente=? and preferiti.prodotto=prodotto.id;";
+			String query="select * from prodotto inner join preferiti on (id = idprodotto and utente =?);";
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, utente);
 			ResultSet rs = st.executeQuery();
@@ -87,7 +87,6 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 				prodotto.setQuantita(rs.getInt("quantita"));
 				prodotto.setCategoria(rs.getString("categoria"));
 				prodotto.setImg(rs.getString("img"));	
-				
 				preferiti.add(prodotto);				
 			}
 		} catch (SQLException e) {
@@ -97,14 +96,14 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 	}
 
 	@Override
-	public void deletePreferito(String email, Integer idDevice) {
+	public void deletePreferito(String username, Integer idProdotto) {
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String delete = "delete FROM listapreferiti WHERE utente=? and device=?;";
+			String delete = "delete FROM preferiti WHERE utente=? and idProdotto=?;";
 			PreparedStatement statement = connection.prepareStatement(delete);
-			statement.setString(1, email);
-			statement.setInt(2, idDevice);
+			statement.setString(1, username);
+			statement.setInt(2, idProdotto);
 			statement.executeUpdate();
 			statement.close();
 		} catch (SQLException e) {

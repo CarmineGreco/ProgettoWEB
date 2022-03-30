@@ -66,15 +66,12 @@ $(document).ready(function(){
 			e.preventDefault();
 			var username1 = document.getElementById("usernameLogin").value;
 			var password1 = document.getElementById("passwordLogin").value;
-			
 			var utente1;
-			
 			if(username1=="admin"){
 				var utente1= new Utente(username1,password1,true,null,null,null);
 			}else{
 				var utente1= new Utente(username1,password1,false,null,null,null);
 			}
-		
 			$.ajax({
 					  url: "loginService",  
 			          method: "POST",	         

@@ -13,12 +13,33 @@ import Demo.eShop.persistance.DBManager;
 @Controller
 public class ProdottiController {
 	
-	@PostMapping("/PaginaProdotto")
+	@GetMapping("/PaginaProdotto")
 	public String vaiAllaPaginaProdotto(HttpSession session, @RequestParam Integer idProdotto) {
-		
 		Prodotto prodotto = DBManager.getInstance().prodottoDAO().findByPrimaryKey(idProdotto);
 		session.setAttribute("prodotto", prodotto);
+		List<Prodotto> prod=DBManager.getInstance().listaPreferitiDAO().getPreferiti(session.getAttribute("username").toString());
+		boolean trovato=false;
+		for(Prodotto p:prod) {
+			if(p.getId()==prodotto.getId()) {
+				session.setAttribute("prodPreferito", "OK");
+				trovato=true;
+			}
+		}
+		if(!trovato) {
+			session.removeAttribute("prodPreferito");
+		}
 		return "PaginaProdotto";
+	}
+	
+	@PostMapping("/AggiungiPreferiti")
+	public String aggiungiAiPreferiti(HttpSession session, @RequestParam Integer idProdotto) {
+		DBManager.getInstance().listaPreferitiDAO().savePreferito(session.getAttribute("username").toString(), idProdotto);
+		return "redirect:/PaginaProdotto?idProdotto="+idProdotto;
+	}
+	@PostMapping("/RimuoviPreferiti")
+	public String rimuoviDaiPreferiti(HttpSession session, @RequestParam Integer idProdotto) {
+		DBManager.getInstance().listaPreferitiDAO().deletePreferito(session.getAttribute("username").toString(), idProdotto);
+		return "redirect:/PaginaProdotto?idProdotto="+idProdotto;
 	}
 	
 	@GetMapping("/CollezioneMaglia")
