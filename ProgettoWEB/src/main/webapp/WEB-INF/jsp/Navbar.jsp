@@ -74,6 +74,7 @@
 			    			<i class="loginIcon fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login  -->   
 			    		</c:if>
 						<c:if test="${username != null}">
+							<i class="loginIcon fa fa-user-circle" style="font-size:36px" ></i>  <!-- icona login  -->   
 							<div class="dropdown-content" style="float: right;">
 								<a id="text" href="Carrello">Carrello</a>
 								<a id="text" href="Profilo">Profilo</a>

@@ -20,7 +20,6 @@ public class LoginController {
 				session.setAttribute("nome", utenteLoggato.getNome());
 				session.setAttribute("cognome", utenteLoggato.getCognome());
 				session.setAttribute("email", utenteLoggato.getEmail());
-//				session.setAttribute("password", u.getPassword());
 				session.setAttribute("username", utenteLoggato.getUsername());
 				return "successo";
 			}
@@ -42,6 +41,10 @@ public class LoginController {
 		}
 		else {
 			DBManager.getInstance().utenteDAO().save(u);
+			session.setAttribute("nome", u.getNome());
+			session.setAttribute("cognome", u.getCognome());
+			session.setAttribute("email", u.getEmail());
+			session.setAttribute("username", u.getUsername());
 			return "successo";
 		}
 	}
