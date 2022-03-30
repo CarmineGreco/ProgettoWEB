@@ -41,6 +41,8 @@ public class LoginController {
 	
 	@PostMapping("registrationService")
 	public String faiRegistration( HttpSession session, Utente u){
+		System.out.println(u.getUsername());
+		System.out.println(u.getPassword());
 		if(DBManager.getInstance().utenteDAO().existsUser(u.getUsername())) {
 			System.out.println("Username già presente!");
 			return "errore";
