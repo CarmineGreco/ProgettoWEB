@@ -34,7 +34,7 @@
 <main class="container">
   <!-- Left Column / Headphones Image -->
   <div class="left-column">
-    <img data-image="red" class="active" src="img/Logo.jpg" alt="">
+    <img data-image="red" class="active" src="${prodotto.img}" width="300" height="500" align="left">
   </div>
  
  

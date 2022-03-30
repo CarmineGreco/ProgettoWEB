@@ -48,8 +48,8 @@
 				<div class="col-xs-12 col-md-6">
 					<div class="product tumbnail" style="width: fit-content;">
 						<a href="#"><img
-							src="https://via.placeholder.com/350x280/87CEFA/000000"
-							style="max-width: 500px" alt=""></a>
+							src="${prod.img}"
+							width="250" height="300" alt=""></a>
 						<div class="caption">
 							<form id="formSetContenuto" method="post" action="PaginaProdotto">
 								<input type="hidden" id="idProdotto" name="idProdotto" value="${prod.id}">

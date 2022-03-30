@@ -17,10 +17,6 @@ public class ProdottiController {
 	public String vaiAllaPaginaProdotto(HttpSession session, @RequestParam Integer idProdotto) {
 		
 		Prodotto prodotto = DBManager.getInstance().prodottoDAO().findByPrimaryKey(idProdotto);
-		
-		System.out.println(prodotto.getId());
-		System.out.println(prodotto.getNome());
-		System.out.println(prodotto.getCategoria());
 		session.setAttribute("prodotto", prodotto);
 		return "PaginaProdotto";
 	}
