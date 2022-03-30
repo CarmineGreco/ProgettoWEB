@@ -10,7 +10,7 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<script src="../js/collezione.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,10 +51,11 @@
 							src="https://via.placeholder.com/350x280/87CEFA/000000"
 							style="max-width: 500px" alt=""></a>
 						<div class="caption">
-							<h6>
-								<a href="PaginaProdotto">${prod.nome}</a>
-							</h6>
-							<span class="price"> <del>€${prod.prezzo}</del></span>
+							<form id="formSetContenuto" method="post" action="PaginaProdotto">
+								<input type="hidden" id="idProdotto" name="idProdotto" value="${prod.id}">
+								<button type="submit" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Visualizza ${prod.nome} </button>
+							</form>
+							<span class="price">${prod.prezzo}</span>
 						</div>
 					</div>
 				</div>

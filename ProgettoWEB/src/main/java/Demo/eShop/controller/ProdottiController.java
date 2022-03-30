@@ -4,7 +4,8 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Demo.eShop.model.Prodotto;
 import Demo.eShop.persistance.DBManager;
@@ -12,10 +13,14 @@ import Demo.eShop.persistance.DBManager;
 @Controller
 public class ProdottiController {
 	
-	@GetMapping("/PaginaProdotto")
-	public String vaiAllaPaginaProdotto(HttpSession session, int idProdotto) {
+	@PostMapping("/PaginaProdotto")
+	public String vaiAllaPaginaProdotto(HttpSession session, @RequestParam Integer idProdotto) {
 		
 		Prodotto prodotto = DBManager.getInstance().prodottoDAO().findByPrimaryKey(idProdotto);
+		
+		System.out.println(prodotto.getId());
+		System.out.println(prodotto.getNome());
+		System.out.println(prodotto.getCategoria());
 		session.setAttribute("prodotto", prodotto);
 		return "PaginaProdotto";
 	}

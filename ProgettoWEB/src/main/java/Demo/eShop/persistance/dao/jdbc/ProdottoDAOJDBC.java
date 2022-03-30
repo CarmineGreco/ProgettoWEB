@@ -147,20 +147,20 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 		List<Prodotto> prodotti = new ArrayList <Prodotto>();
 		try {
 			Connection con = dbSource.getConnection();
-			String query = "select * from prodotto where categoria=?;";
+			String query = "select id from prodotto where categoria=? group by id;";
 			PreparedStatement st = con.prepareStatement(query);
 			st.setString(1, categoria);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
-				Prodotto prodotto = new Prodotto();
-				prodotto.setId(rs.getInt("id"));				
-				prodotto.setPrezzo(rs.getFloat("prezzo"));
-				prodotto.setNome(rs.getString("nome"));
-				prodotto.setTaglia(rs.getInt("taglia"));
-				prodotto.setDescrizione(rs.getString("descrizione"));
-				prodotto.setQuantita(rs.getInt("quantita"));
-				prodotto.setCategoria(rs.getString("categoria"));
-				prodotto.setImg(rs.getString("img"));	
+				Prodotto prodotto = findByPrimaryKey(rs.getInt("id"));
+//				prodotto.setId(rs.getInt("id"));				
+//				prodotto.setPrezzo(rs.getFloat("prezzo"));
+//				prodotto.setNome(rs.getString("nome"));
+//				prodotto.setTaglia(rs.getInt("taglia"));
+//				prodotto.setDescrizione(rs.getString("descrizione"));
+//				prodotto.setQuantita(rs.getInt("quantita"));
+//				prodotto.setCategoria(rs.getString("categoria"));
+//				prodotto.setImg(rs.getString("img"));	
 				prodotti.add(prodotto);			
 			}
 			st.close();
@@ -172,6 +172,42 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 
 	@Override
 	public Prodotto findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Prodotto> findByBorse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Prodotto> findByFelpe() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Prodotto> findByMaglioni() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Prodotto> findByCamicie() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Prodotto> findByidPantaloni() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Prodotto> findByidVestiti() {
 		// TODO Auto-generated method stub
 		return null;
 	}

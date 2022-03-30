@@ -12,4 +12,12 @@ public interface ProdottoDAO {
 	public void update(Prodotto prodotto);	//Update
 	public void delete(int  idProdotto);	//Delete	
 	public List<Prodotto> findByTipology(String categoria);
+	public List<Prodotto> findByBorse();
+	public List<Prodotto> findByFelpe();
+	public List<Prodotto> findByMaglioni();
+	public List<Prodotto> findByCamicie();
+	public List<Prodotto> findByidPantaloni();
+	public List<Prodotto> findByidVestiti();
+	
+	
 }

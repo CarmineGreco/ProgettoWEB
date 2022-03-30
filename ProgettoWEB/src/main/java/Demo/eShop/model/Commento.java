@@ -6,7 +6,7 @@ public class Commento {
 	
 	private int idcommento;
 	private int contenuto;
-	private String utente; //Equivale all'username/email
+	private String utente;
 	private Date data;
 	private String testo;
 	private int mipiace;

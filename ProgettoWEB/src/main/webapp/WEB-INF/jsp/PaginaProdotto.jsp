@@ -43,8 +43,8 @@
  
 <!--     Product Description -->
      <div class="product-description"> 
-       <h1>${prod.nome}</h1> 
-       <p>${prod.descrizione}</p>
+       <h1>${prodotto.nome}</h1> 
+       <p>${prodotto.descrizione}</p>
      </div> 
  
 <!--     Product Configuration -->
@@ -79,7 +79,7 @@
  
 <!--     Product Pricing -->
      <div class="product-price"> 
-       <span>${prod.prezzo}€</span> 
+       <span>${prodotto.prezzo}€</span> 
        <a href="#" class="cart-btn">Aggiungi al carrello</a>
      </div> 
    </div> 
