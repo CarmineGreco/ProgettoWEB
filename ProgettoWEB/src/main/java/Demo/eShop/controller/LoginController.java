@@ -1,17 +1,17 @@
 package Demo.eShop.controller;
 
 import javax.servlet.http.HttpSession;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 import Demo.eShop.model.Utente;
 import Demo.eShop.persistance.DBManager;
 
-@Controller
+@RestController
 public class LoginController {
 
 	@PostMapping("loginService")
-	public String failLogin(HttpSession session, Utente u){
+	public String failLogin(HttpSession session, @ RequestBody Utente u){
 		System.out.println(u.getUsername());
 		System.out.println(u.getPassword());
 		if(DBManager.getInstance().utenteDAO().existsUser(u.getUsername())) {
@@ -35,7 +35,7 @@ public class LoginController {
 	}
 	
 	@PostMapping("registrationService")
-	public String faiRegistration( HttpSession session, Utente u){
+	public String faiRegistration( HttpSession session, @RequestBody Utente u){
 		if(DBManager.getInstance().utenteDAO().existsUser(u.getUsername())) {
 			System.out.println("Username già presente!");
 			return "errore";

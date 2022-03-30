@@ -31,9 +31,8 @@ function  checklogin(){
 
 
 function Utente (username, password, admin, email, nome, cognome){
-	
 	this.username=username;
-	this.username.admin=admin;
+	this.admin=admin;
 	this.password=password;
 	this.email=email;
 	this.nome=nome;
@@ -105,10 +104,8 @@ $(document).ready(function(){
 		var username2 = document.getElementById("username").value;
 		var email = document.getElementById("email").value;
 		var password2 = document.getElementById("password").value;
-		
-		
 		var utente2= new Utente(username2,password2,false,email,nome,cognome);
-	
+		alert(username2+"  "+password2+" "+email+" "+nome+" "+cognome);
 		$.ajax({
 				  url: "registrationService",  
 		          method: "POST",	         
