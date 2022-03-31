@@ -45,7 +45,7 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 			Prodotto prodotto = new Prodotto();		
 		try {
 			Connection conn = dbSource.getConnection();
-			String query = "select prodotto.* from preferiti,device where preferiti.utente=? and preferiti.prodotto=? and preferiti.prodotto=prodotto.id;";
+			String query = "select prodotto.* from preferiti,device where preferiti.utente=? and preferiti.idprodotto=? and preferiti.idprodotto=prodotto.id;";
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, utente);
 			st.setInt(2, idProdotto);			
@@ -73,9 +73,10 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 		List<Prodotto> preferiti = new ArrayList<Prodotto>();
 		try {
 			Connection conn = dbSource.getConnection();
-			String query="select * from prodotto inner join preferiti on (id = idprodotto and utente =?);";
+			String query="select * from prodotto inner join preferiti on (prodotto.id = preferiti.idprodotto and utente =? and prodotto.taglia=?);";
 			PreparedStatement st = conn.prepareStatement(query);
 			st.setString(1, utente);
+			st.setInt(2,40);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				Prodotto prodotto = new Prodotto();
@@ -100,7 +101,7 @@ public class ListaPreferitiDAOJDBC implements ListaPreferitiDAO {
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String delete = "delete FROM preferiti WHERE utente=? and idProdotto=?;";
+			String delete = "delete FROM preferiti WHERE utente=? and idprodotto=?;";
 			PreparedStatement statement = connection.prepareStatement(delete);
 			statement.setString(1, username);
 			statement.setInt(2, idProdotto);

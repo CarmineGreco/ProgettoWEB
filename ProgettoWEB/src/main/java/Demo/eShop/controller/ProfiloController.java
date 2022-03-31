@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import Demo.eShop.model.Utente;
 import Demo.eShop.persistance.DBManager;
@@ -29,4 +30,18 @@ public class ProfiloController {
 			session.setAttribute("password",utNew.getPassword());
 			return "Profilo";
 	}
+	
+//	@PostMapping("modificaProfilo")
+//	public String modificaProf(HttpSession session, @ RequestBody Utente u){
+//		
+//			Utente utOld = DBManager.getInstance().utenteDAO().findByPrimaryKey(session.getAttribute("username").toString());;
+//			DBManager.getInstance().utenteDAO().update(utOld, u);
+//			session.setAttribute("nome", u.getNome());
+//			session.setAttribute("cognome", u.getCognome());
+//			session.setAttribute("email", u.getEmail());
+//			session.setAttribute("username",u.getUsername());
+//			session.setAttribute("password",u.getPassword());
+//			return "successo";
+//	}
 }
+

@@ -9,7 +9,7 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<script src="../js/modificaProfilo.js"></script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +63,7 @@
 				<div class="col-8">
 					<div class="card">
 						<div class="card-body">
-							<form method="post" action="modificaProfilo">
+							<form method="post" action="#" id="modificaProfilo">
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
@@ -103,7 +103,7 @@
 								value="${password}">
 						</div>
 						<div class="form-group">
-							<input type="submit" value="Modifica"
+							<input type="submit" id="btnModifica" value="Modifica"
 								class="btn float-right registrazione_btn">
 						</div>
 					</form>
