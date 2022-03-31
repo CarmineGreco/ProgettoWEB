@@ -101,14 +101,11 @@ public class ProdottiController {
 	@PostMapping("/aggiungiCarrello")
 	public String aggiungiAlCarrello(HttpSession session, @RequestParam Integer taglia, @RequestParam Integer idProdotto, @RequestParam Integer quantita) {
 		Carrello c = new Carrello();		
-		
 		c.setIdProdotto(idProdotto);
 		c.setQuantita(quantita);
 		c.setUtente(session.getAttribute("username").toString());
 		c.setTagliaProdotto(taglia);
-		
 		DBManager.getInstance().carrelloDAO().save(c);
-
 		return "Carrello";
 	}
 }

@@ -49,19 +49,4 @@ public class LoginController {
 		}
 	}
 	
-	/*public boolean checkDati(String username, String nome, String cognome, String email, String pass, String confermaPass) {
-		if (!Pattern.matches("([a-zA-Z]+|[0-9]*|[\\.|_|-|]*)+@([a-zA-Z]+\\.)+(com|gov|it)", email)) {
-			System.out.println("errore email");
-			return false;
-		}
-		if(!Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()�[{}]:;',?/*~$^+=<>\\.]).{8,20}$",pass)) {
-			System.out.println("errore password");
-			return false;
-		}
-		if(!pass.equals(confermaPass)) {
-			System.out.println("errore conferma password");
-			return false;
-		}
-	return true;
-	}*/
 }
