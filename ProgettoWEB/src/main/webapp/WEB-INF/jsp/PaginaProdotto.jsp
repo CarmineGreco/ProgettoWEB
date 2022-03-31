@@ -34,13 +34,13 @@
 
 <main class="container">
   <!-- Left Column / Headphones Image -->
-  <div class="left-column">
-    <img data-image="red" class="active" src="${prodotto.img}" width="300" height="500" align="left">
+  <div class="col-6">
+    <img data-image="red" class="active" src="${prodotto.img}" width="400" height="400" align="left" style="margin-left:150px">
   </div>
  
  
   <!-- Right Column -->
-  <div class="right-column">
+  <div class="right-column" style="margin-left:150px">
  
 <!--     Product Description -->
      <div class="product-description"> 
@@ -52,7 +52,7 @@
      <div class="product-configuration"> 
  
 <!--       Product Color -->
-       <div class="product-color">  
+<!--        <div class="product-color">   -->
  
          <div class="color-choose"> 
            <div> 
@@ -78,26 +78,37 @@
           
  
        </div> 
- 
+ <form id="formCarrello" method="post" action="aggiungiCarrello">
 <!--       Cable Configuration -->
        <div class="cable-config"> 
          <span>Seleziona una taglia</span> 
- 
-         <div class="cable-choose"> 
-           <button>S</button> 
-           <button>M</button> 
-           <button>L</button> 
-         </div> 
- 
-        
-       </div> 
-     </div> 
- 
+		  <div>
+		    <input type="radio" id="taglia1"
+		     name="taglia" value="40">
+		    <label for="contactChoice1">40</label>
+		
+		    <input type="radio" id="taglia2"
+		     name="taglia" value="42">
+		    <label for="contactChoice2">42</label>
+		
+		    <input type="radio" id="taglia3"
+		     name="taglia" value="44">
+		    <label for="contactChoice3">44</label>
+		  </div>
+       
+       </div>
+<!--      </div>  -->
+		<div class="form-group mb-2" >
+			<label>Quantity</label> <input class="form-control" type="number" id="quantity1" name = "quantita" value="1">
+			
+		</div>
 <!--     Product Pricing -->
      <div class="product-price"> 
-       <span>${prodotto.prezzo}€</span> 
-       <a href="#" class="cart-btn">Aggiungi al carrello</a>
-     </div> 
+       <span>${prodotto.prezzo}€</span>
+       <input type="hidden" id="idProdotto" name="idProdotto" value="${prodotto.id}">
+       <input type="submit" id="btnCarrello" name="btnCarrello">
+     </div>
+	</form>  
    </div> 
 </main>
 </body>

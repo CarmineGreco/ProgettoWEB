@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import Demo.eShop.model.Carrello;
 import Demo.eShop.model.Prodotto;
 import Demo.eShop.persistance.DBManager;
 
@@ -97,12 +98,17 @@ public class ProdottiController {
 		return "Collezione";
 	}
 	
-	/*@GetMapping("/Preferiti")
-	public String vaiAiPreferiti(HttpSession session) {
-		//mettere metodo per prendere i preferiti
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("borsa");
-		session.setAttribute("prodotti", prodotti);
+	@PostMapping("/aggiungiCarrello")
+	public String aggiungiAlCarrello(HttpSession session, @RequestParam Integer taglia, @RequestParam Integer idProdotto, @RequestParam Integer quantita) {
+		Carrello c = new Carrello();		
 		
-		return "Collezione";
-	}*/
+		c.setIdProdotto(idProdotto);
+		c.setQuantita(quantita);
+		c.setUtente(session.getAttribute("username").toString());
+		c.setTagliaProdotto(taglia);
+		
+		DBManager.getInstance().carrelloDAO().save(c);
+
+		return "Carrello";
+	}
 }

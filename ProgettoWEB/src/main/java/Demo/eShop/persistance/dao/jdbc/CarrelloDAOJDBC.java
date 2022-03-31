@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import Demo.eShop.model.Carrello;
 import Demo.eShop.model.Prodotto;
+import Demo.eShop.model.Utente;
 import Demo.eShop.persistance.DBSource;
 import Demo.eShop.persistance.dao.CarrelloDAO;
 
@@ -23,15 +24,20 @@ DBSource dbSource;
 	public void save(Carrello c) {
 		Connection conn;
 		try {
-			conn = dbSource.getConnection();
-			String query = "insert into carrello values(?,?,?,?);";
-			PreparedStatement st = conn.prepareStatement(query);
-			st.setString(1, c.getUtente());
-			st.setInt(2, c.getIdProdotto());
-			st.setInt(3, c.getTagliaProdotto());
-			st.setInt(4, c.getQuantita());
-			st.executeUpdate();
-			st.close();
+			if(!existsCarrello(c.getUtente(), c.getIdProdotto(), c.getTagliaProdotto())){
+				conn = dbSource.getConnection();
+				String query = "insert into carrello values(?,?,?,?);";
+				PreparedStatement st = conn.prepareStatement(query);
+				st.setString(1, c.getUtente());
+				st.setInt(2, c.getIdProdotto());
+				st.setInt(3, c.getTagliaProdotto());
+				st.setInt(4, c.getQuantita());
+				st.executeUpdate();
+				st.close();
+			}
+			else {
+				update(c);
+			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -137,5 +143,34 @@ DBSource dbSource;
 			e.printStackTrace();
 		}
 		return prodotti;
+	}
+
+	@Override
+	public boolean existsCarrello(String username, int idProdotto, int taglia) {
+			Carrello c = new Carrello();
+				
+				try {
+					Connection conn = dbSource.getConnection();
+					String query = "select * from carrello where utente=? and taglia_prodotto=? and id_prodotto=?";
+					PreparedStatement st = conn.prepareStatement(query);
+					st.setString(1, username);
+					st.setInt(2, taglia);
+					st.setInt(3, idProdotto);
+					ResultSet rs = st.executeQuery();
+					while (rs.next()) {
+						c.setUtente(rs.getString("utente"));
+						c.setIdProdotto(rs.getInt("id_prodotto"));
+						c.setTagliaProdotto(rs.getInt("taglia_prodotto"));
+						c.setQuantita(rs.getInt("quantita"));
+					}
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}	
+			
+				if (c.getUtente()!=null)
+					return true;
+				else
+					return false;
 	}
 }

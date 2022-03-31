@@ -1,10 +1,12 @@
 package Demo.eShop.persistance;
 
 
+import Demo.eShop.persistance.dao.CarrelloDAO;
 import Demo.eShop.persistance.dao.CommentoDAO;
 import Demo.eShop.persistance.dao.ListaPreferitiDAO;
 import Demo.eShop.persistance.dao.ProdottoDAO;
 import Demo.eShop.persistance.dao.UtenteDAO;
+import Demo.eShop.persistance.dao.jdbc.CarrelloDAOJDBC;
 import Demo.eShop.persistance.dao.jdbc.CommentoDAOJDBC;
 import Demo.eShop.persistance.dao.jdbc.ListaPreferitiDAOJDBC;
 import Demo.eShop.persistance.dao.jdbc.ProdottoDAOJDBC;
@@ -55,5 +57,9 @@ public class DBManager {
 	
 	public ListaPreferitiDAO listaPreferitiDAO() {
 		return new ListaPreferitiDAOJDBC(dataSource);
+	}
+	
+	public CarrelloDAO carrelloDAO() {
+		return new CarrelloDAOJDBC(dataSource);
 	}
 }
