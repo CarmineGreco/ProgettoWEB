@@ -1,58 +1,33 @@
 package Demo.eShop.controller;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import Demo.eShop.model.Utente;
 import Demo.eShop.persistance.DBManager;
-import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
 
-@RestController
+@Controller
 public class ProfiloController {
-	
-//	@PostMapping("modificaProfilo")
-//	public String modificaProf(HttpSession session, String nome, String cognome, String email, String pass){
-//		
-//			Utente utOld = DBManager.getInstance().utenteDAO().findByPrimaryKey(session.getAttribute("username").toString());
-//			Utente utNew = DBManager.getInstance().utenteDAO().findByPrimaryKey(session.getAttribute("username").toString());
-//			utNew.setCognome(cognome);
-//			utNew.setNome(nome);
-//			utNew.setUsername(session.getAttribute("username").toString());
-//			utNew.setEmail(email);
-//			utNew.setPassword(pass);
-//			DBManager.getInstance().utenteDAO().update(utOld, utNew);
-//			session.setAttribute("nome", utNew.getNome());
-//			session.setAttribute("cognome", utNew.getCognome());
-//			session.setAttribute("email", utNew.getEmail());
-//			session.setAttribute("username",utNew.getUsername());
-//			session.setAttribute("password",utNew.getPassword());
-//			return "Profilo";
-//	}
-	
+
 	@PostMapping("modificaProfilo")
-	public String modificaProf(HttpSession session, @RequestBody Utente u){
-		
-			System.out.println(u.getNome());
-			System.out.println(u.getCognome());
-			System.out.println(u.getPassword());
-			System.out.println(u.getEmail());
-			
-			Utente utOld = DBManager.getInstance().utenteDAO().findByPrimaryKey(session.getAttribute("username").toString());;
-			
-			if(DBManager.getInstance().utenteDAO().update(utOld, u)) {
-				session.setAttribute("nome", u.getNome());
-				session.setAttribute("cognome", u.getCognome());
-				session.setAttribute("email", u.getEmail());
-				session.setAttribute("username",u.getUsername());
-				session.setAttribute("password",u.getPassword());			
-				return "success";
-			}
-			return "error";				
-			
+	public String modificaProf(HttpSession session, String username, String nome, String cognome, String email){
+		if(!DBManager.getInstance().utenteDAO().existsUsername(username)) {
+			Utente utOld = DBManager.getInstance().utenteDAO().findByPrimaryKey(session.getAttribute("username").toString());
+			Utente utNew = DBManager.getInstance().utenteDAO().findByPrimaryKey(session.getAttribute("username").toString());
+			utNew.setCognome(cognome);
+			utNew.setNome(nome);
+			utNew.setUsername(username);
+			utNew.setUsername(session.getAttribute("username").toString());
+			utNew.setEmail(email);
+			DBManager.getInstance().utenteDAO().updateWithoutPsw(utOld, utNew);
+			DBManager.getInstance().utenteDAO().update(utOld, utNew);
+			session.setAttribute("nome", utNew.getNome());
+			session.setAttribute("cognome", utNew.getCognome());
+			session.setAttribute("email", utNew.getEmail());
+			session.setAttribute("username",utNew.getUsername());
+			return "index";
+		}
+		return "Profilo";
 	}
 }
-

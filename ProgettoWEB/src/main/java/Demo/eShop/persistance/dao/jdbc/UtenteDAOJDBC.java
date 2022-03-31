@@ -396,15 +396,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			return true;
 			
 		} catch (SQLException e) {
-			throw new RuntimeException(e.getMessage());				
-		} finally {			
-			try {
-				connection.close();
-				
-			} catch (SQLException e) {
-				throw new RuntimeException(e.getMessage());
-				
-			}
-		}			
+			return false;			
+		} 			
 	}
 }

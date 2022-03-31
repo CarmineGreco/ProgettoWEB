@@ -180,7 +180,7 @@ DBSource dbSource;
 		try {
 			
 			Connection con = dbSource.getConnection();
-			String query = "select * from prodotto inner join carrello on (id=id_prodotto)";
+			String query = "select * from prodotto inner join carrello on (id=id_prodotto and taglia=taglia_prodotto)";
 			PreparedStatement st = con.prepareStatement(query);
 			st.setString(1, username);
 			ResultSet rs = st.executeQuery();
@@ -207,7 +207,7 @@ DBSource dbSource;
 	@Override
 	public ArrayList<Carrello> getCarrelliUtente(Utente u) {
 		ArrayList<Carrello> carrelliUtente = new ArrayList<Carrello>();
-try {
+		try {
 			
 			Connection con = dbSource.getConnection();
 			String query = "select * from carrello where utente=?";
