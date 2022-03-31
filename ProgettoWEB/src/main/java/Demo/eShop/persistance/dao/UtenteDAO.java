@@ -10,7 +10,7 @@ public interface UtenteDAO {
 	public Utente findByPrimaryKey(String username);     // Retrieve  == select stud
 	public List<Utente> findAll();     //  select*
 	public List<Utente> findAllOtherUsers(String username);     //  select*
-	public void update(Utente old, Utente newu); //Update
+	public boolean update(Utente old, Utente newu); //Update
 	public void updateWithoutPsw(Utente old, Utente newu);
 	public void delete(String email); //Delete	
 	public String findUsername(String email);

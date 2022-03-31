@@ -21,6 +21,7 @@ public class LoginController {
 				session.setAttribute("cognome", utenteLoggato.getCognome());
 				session.setAttribute("email", utenteLoggato.getEmail());
 				session.setAttribute("username", utenteLoggato.getUsername());
+				session.setAttribute("password", utenteLoggato.getPassword());
 				return "successo";
 			}
 			else {
@@ -45,6 +46,7 @@ public class LoginController {
 			session.setAttribute("cognome", u.getCognome());
 			session.setAttribute("email", u.getEmail());
 			session.setAttribute("username", u.getUsername());
+			session.setAttribute("password", u.getPassword());		
 			return "successo";
 		}
 	}

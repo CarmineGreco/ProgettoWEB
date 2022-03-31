@@ -16,14 +16,15 @@ $(document).ready(function(){
 	$("#modificaProfilo").on("submit", function(e){
 		alert("Bottone premuto");
 		e.preventDefault();		
-		var nome = document.getElementById("name").value;
+		var nome = document.getElementById("nome").value;
 		alert(nome);
-		var cognome = document.getElementById("surname").value;
+		var cognome = document.getElementById("cognome").value;
 		alert(cognome);
-		var username = document.getElementById("user").value;
+		var username = document.getElementById("username").value;
 		alert(username);
 		var email = document.getElementById("email").value;
-		var password = document.getElementById("pass").value;
+		alert(email)
+		var password = document.getElementById("password").value;
 		alert(password);
 		var utente = new Utente(username ,password, false, email, nome, cognome);
 		$.ajax({

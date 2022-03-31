@@ -378,7 +378,7 @@ public class UtenteDAOJDBC implements UtenteDAO {
 	}
 
 	@Override
-	public void update(Utente old, Utente newu) {
+	public boolean update(Utente old, Utente newu) {
 		
 		Connection connection = null;
 		
@@ -393,15 +393,18 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			statement.setString(4, newu.getEmail());					
 			statement.setString(5, old.getUsername());
 			statement.executeUpdate();
+			return true;
 			
 		} catch (SQLException e) {
-			throw new RuntimeException(e.getMessage());
-		} finally {
+			throw new RuntimeException(e.getMessage());				
+		} finally {			
 			try {
 				connection.close();
+				
 			} catch (SQLException e) {
 				throw new RuntimeException(e.getMessage());
+				
 			}
-		}
+		}			
 	}
 }

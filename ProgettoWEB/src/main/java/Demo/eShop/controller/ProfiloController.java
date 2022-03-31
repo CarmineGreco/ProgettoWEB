@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import Demo.eShop.model.Utente;
 import Demo.eShop.persistance.DBManager;
+import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
 
 @RestController
 public class ProfiloController {
@@ -33,19 +34,25 @@ public class ProfiloController {
 //	}
 	
 	@PostMapping("modificaProfilo")
-	public String modificaProf(HttpSession session, @ RequestBody Utente u){
+	public String modificaProf(HttpSession session, @RequestBody Utente u){
 		
 			System.out.println(u.getNome());
 			System.out.println(u.getCognome());
+			System.out.println(u.getPassword());
 			System.out.println(u.getEmail());
+			
 			Utente utOld = DBManager.getInstance().utenteDAO().findByPrimaryKey(session.getAttribute("username").toString());;
-			DBManager.getInstance().utenteDAO().update(utOld, u);
-			session.setAttribute("nome", u.getNome());
-			session.setAttribute("cognome", u.getCognome());
-			session.setAttribute("email", u.getEmail());
-			session.setAttribute("username",u.getUsername());
-			session.setAttribute("password",u.getPassword());
-			return "successo";
+			
+			if(DBManager.getInstance().utenteDAO().update(utOld, u)) {
+				session.setAttribute("nome", u.getNome());
+				session.setAttribute("cognome", u.getCognome());
+				session.setAttribute("email", u.getEmail());
+				session.setAttribute("username",u.getUsername());
+				session.setAttribute("password",u.getPassword());			
+				return "success";
+			}
+			return "error";				
+			
 	}
 }
 
