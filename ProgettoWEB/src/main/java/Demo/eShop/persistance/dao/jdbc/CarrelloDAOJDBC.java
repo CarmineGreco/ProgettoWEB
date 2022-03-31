@@ -207,7 +207,26 @@ DBSource dbSource;
 	@Override
 	public ArrayList<Carrello> getCarrelliUtente(Utente u) {
 		ArrayList<Carrello> carrelliUtente = new ArrayList<Carrello>();
-		
-		return null;
+try {
+			
+			Connection con = dbSource.getConnection();
+			String query = "select * from carrello where utente=?";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, u.getUsername());
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {				
+				Carrello c = new Carrello();
+				c.setUtente(rs.getString("utente"));				
+				c.setIdProdotto(rs.getInt("id_prodotto"));
+				c.setTagliaProdotto(rs.getInt("taglia_prodotto"));
+				c.setQuantita(rs.getInt("quantita"));
+				carrelliUtente.add(c);
+				st.close();
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return carrelliUtente;
 	}
 }
