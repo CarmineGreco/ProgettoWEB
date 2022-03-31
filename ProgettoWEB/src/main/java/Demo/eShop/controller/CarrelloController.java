@@ -14,10 +14,13 @@ import Demo.eShop.persistance.DBManager;
 @Controller
 public class CarrelloController {
 
-	@GetMapping("/Carrello")
+	@GetMapping("/VisualizzaCarrello")
 	public String carrello(HttpSession session) {
+		System.out.println(session.getAttribute("username").toString());
 		List<Prodotto> prodotti = DBManager.getInstance().carrelloDAO().getProdotti(session.getAttribute("username").toString());
 		session.setAttribute("prodotti", prodotti);
+		List<Carrello> prodCarrello=DBManager.getInstance().carrelloDAO().getCarrelliUtente(session.getAttribute("username").toString());
+		session.setAttribute("prodCarrello", prodCarrello);
 		return "Carrello";
 	}
 	

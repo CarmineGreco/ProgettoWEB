@@ -76,12 +76,12 @@ DBSource dbSource;
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String update = "update carrello SET id_prodotto = ?, taglia_prodotto = ?, quantita = ? WHERE utente=?;";
+			String update = "update carrello SET quantita = ? WHERE utente=? and id_prodotto=? and taglia_prodotto=?;";
 			PreparedStatement st = connection.prepareStatement(update);			
-			st.setInt(1, c.getIdProdotto());
-			st.setInt(2, c.getTagliaProdotto());
-			st.setInt(3, c.getQuantita());
-			st.setString(4, c.getUtente());
+			st.setInt(1, c.getQuantita());
+			st.setString(2, c.getUtente());
+			st.setInt(3, c.getIdProdotto());
+			st.setInt(4, c.getTagliaProdotto());
 			st.executeUpdate();
 			st.close();
 		
@@ -178,13 +178,12 @@ DBSource dbSource;
 	public ArrayList<Prodotto> getProdotti(String username) {
 		ArrayList<Prodotto> prodotti = new ArrayList<Prodotto>();
 		try {
-			
 			Connection con = dbSource.getConnection();
-			String query = "select * from prodotto inner join carrello on (id=id_prodotto and taglia=taglia_prodotto)";
+			String query = "select * from prodotto inner join carrello on (id=id_prodotto and taglia=taglia_prodotto and utente=?);";
 			PreparedStatement st = con.prepareStatement(query);
-			st.setString(1, username);
+			st.setString(1,username);
 			ResultSet rs = st.executeQuery();
-			if (rs.next()) {				
+			while (rs.next()) {				
 				Prodotto prodotto=new Prodotto();
 				prodotto.setId(rs.getInt("id"));				
 				prodotto.setPrezzo(rs.getFloat("prezzo"));
@@ -195,7 +194,6 @@ DBSource dbSource;
 				prodotto.setCategoria(rs.getString("categoria"));
 				prodotto.setImg(rs.getString("img"));
 				prodotti.add(prodotto);
-				st.close();
 			}
 		}
 		catch (SQLException e) {
@@ -205,23 +203,21 @@ DBSource dbSource;
 	}
 
 	@Override
-	public ArrayList<Carrello> getCarrelliUtente(Utente u) {
+	public ArrayList<Carrello> getCarrelliUtente(String username) {
 		ArrayList<Carrello> carrelliUtente = new ArrayList<Carrello>();
 		try {
-			
 			Connection con = dbSource.getConnection();
-			String query = "select * from carrello where utente=?";
+			String query = "select * from carrello where utente=?;";
 			PreparedStatement st = con.prepareStatement(query);
-			st.setString(1, u.getUsername());
+			st.setString(1, username);
 			ResultSet rs = st.executeQuery();
-			if (rs.next()) {				
+			while (rs.next()) {				
 				Carrello c = new Carrello();
 				c.setUtente(rs.getString("utente"));				
 				c.setIdProdotto(rs.getInt("id_prodotto"));
 				c.setTagliaProdotto(rs.getInt("taglia_prodotto"));
 				c.setQuantita(rs.getInt("quantita"));
 				carrelliUtente.add(c);
-				st.close();
 			}
 		}
 		catch (SQLException e) {

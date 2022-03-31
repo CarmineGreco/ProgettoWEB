@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -42,7 +45,7 @@
 
 	<div class="container pb-5 mt-n2 mt-md-n3">
 		<div class="row" >
-			<div class="col-xl-9 col-md-8">
+			<div class="col-xl-9 col-md-8" style="margin-left:150px">
 				<h2>Prodotti</h2>
 				<!-- Item-->
 				<c:forEach items="${prodotti}" var="prod">
@@ -59,13 +62,15 @@
 						</div>
 					</div>
 				</div>
+				</c:forEach>
+				<c:forEach items="${prodCarrello}" var="prodCarrello">
 					<div
 						class="pt-2 pt-sm-0 pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left"
 						style="max-width: 10rem;">
 						<div class="form-group mb-2">
 							<label for="quantity4">Quantity</label> <input
 								class="form-control form-control-sm" type="number"
-								id="quantity4" value="1">
+								id="quantity4" value="${prodCarrello.quantita}">
 						</div>
 						<button class="btn btn-outline-secondary btn-sm btn-block mb-2"
 							type="button">
@@ -95,14 +100,13 @@
 							Remove
 						</button>
 					</div>
-					</c:forEach>
 				</div>
+				</c:forEach>
 			</div>
 			<!-- Sidebar-->
 			<div class="col-xl-3 col-md-4 pt-3 pt-md-0">
 				<h2 class="h6 px-4 py-3 bg-secondary text-center">Subtotal</h2>
 				<div class="h3 font-weight-semibold text-center py-3">$325.00</div>
-				<hr>
 				<a class="btn btn-primary btn-block" href="#"> <svg
 						xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 						viewBox="0 0 24 24" fill="none" stroke="currentColor"

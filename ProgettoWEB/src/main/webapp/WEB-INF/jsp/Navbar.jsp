@@ -76,7 +76,7 @@
 						<c:if test="${username != null}">
 							<i class="loginIcon fa fa-user-circle" style="font-size:36px" ></i>  <!-- icona login  -->   
 							<div class="dropdown-content" style="float: right;">
-								<a id="text" href="Carrello">Carrello</a>
+								<a id="text" href="VisualizzaCarrello">Carrello</a>
 								<a id="text" href="Profilo">Profilo</a>
 								<a id="text" href="PaginaPreferiti">Preferiti</a>
 								<a id="text" href="ListaOrdini">I tuoi ordini</a>

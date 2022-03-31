@@ -108,6 +108,6 @@ public class ProdottiController {
 		DBManager.getInstance().carrelloDAO().save(c);
 		
 		session.setAttribute("carrello", c);
-		return "Carrello";
+		return "PaginaProdotto";
 	}
 }
