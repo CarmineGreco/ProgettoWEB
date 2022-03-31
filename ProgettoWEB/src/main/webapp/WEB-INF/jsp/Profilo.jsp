@@ -68,7 +68,7 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" value="${username}" name="username" disabled="True"
+							<input type="text" class="form-control" value="admin"id="user" disabled="True"
 								required>
 						</div>
 						<div class="input-group form-group">
@@ -76,7 +76,7 @@
 								<span class="input-group-text"><i
 									class="fas fa-signature"></i></span>
 							</div>
-							<input type="text" class="form-control" value="${nome}" name="nome"
+							<input type="text" class="form-control" value="${nome}" id="name"
 								required>
 						</div>
 						<div class="input-group form-group">
@@ -84,7 +84,7 @@
 								<span class="input-group-text"><i
 									class="fas fa-signature"></i></span>
 							</div>
-							<input type="text" class="form-control" value="${cognome}" name="cognome"
+							<input type="text" class="form-control" value="${cognome}" id="surname"
 								required>
 						</div>
 						<div class="input-group form-group">
@@ -92,19 +92,18 @@
 
 								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 							</div>
-							<input type="text" class="form-control" value="${email}" name="email"
+							<input type="email" class="form-control" value="${email}" id="email"
 								required>
 						</div>
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control" name="pass" id="password"
+							<input type="password" class="form-control" id="pass"
 								value="${password}">
 						</div>
 						<div class="form-group">
-							<input type="submit" id="btnModifica" value="Modifica"
-								class="btn float-right registrazione_btn">
+							<button type="submit" id="btnModifica" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>                      
 						</div>
 					</form>
 						</div>

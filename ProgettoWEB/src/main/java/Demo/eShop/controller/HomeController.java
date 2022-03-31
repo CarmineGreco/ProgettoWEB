@@ -21,10 +21,10 @@ public class HomeController {
 		return "Sidebar";
 	}
 	
-	@GetMapping("/Carrello")
-	public String vaiAlCarrello() {
-		return "Carrello";
-	}
+//	@GetMapping("/Carrello")
+//	public String vaiAlCarrello() {
+//		return "Carrello";
+//	}
 	
 	
 	@GetMapping("/Profilo")

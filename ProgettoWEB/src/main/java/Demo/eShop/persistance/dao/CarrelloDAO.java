@@ -18,5 +18,6 @@ public interface CarrelloDAO {
 	public ArrayList<Prodotto> findProdottiByUser(Carrello c);
 	public ArrayList<Prodotto> getProdotti(String username);
 	public boolean existsCarrello(String username, int idProdotto, int taglia);
+	public ArrayList<Carrello> getCarrelliUtente(Utente u);
 	
 }

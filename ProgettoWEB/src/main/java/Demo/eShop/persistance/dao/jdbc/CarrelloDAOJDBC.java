@@ -203,4 +203,11 @@ DBSource dbSource;
 		}
 		return prodotti;
 	}
+
+	@Override
+	public ArrayList<Carrello> getCarrelliUtente(Utente u) {
+		ArrayList<Carrello> carrelliUtente = new ArrayList<Carrello>();
+		
+		return null;
+	}
 }
