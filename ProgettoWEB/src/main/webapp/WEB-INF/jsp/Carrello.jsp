@@ -45,6 +45,7 @@
 			<div class="col-xl-9 col-md-8">
 				<h2>Prodotti</h2>
 				<!-- Item-->
+				<c:forEach items="${prodotti}" var="prod">
 				<div class="d-sm-flex justify-content-between my-4">
 					<div class="media d-block d-sm-flex text-center text-sm-left">
 						<a class="cart-item-thumb mx-auto mr-sm-4" href="#"><img
@@ -52,17 +53,12 @@
 							alt="Product"></a>
 						<div class="media-body pt-3">
 							<h3 class="product-card-title font-weight-semibold border-0 pb-0">
-								<a href="#">Adidas Performance Hat</a>
+								<a href="#">${prod.nome}</a>
 							</h3>
-							<div class="font-size-sm">
-								<span class="text-muted mr-2">Material:</span>Acrylic
-							</div>
-							<div class="font-size-sm">
-								<span class="text-muted mr-2">Color:</span>Pink / Dark green
-							</div>
-							<div class="font-size-lg text-primary pt-2">$19.00</div>
+							<div class="font-size-lg text-primary pt-2">${prod.prezzo}</div>
 						</div>
 					</div>
+				</div>
 					<div
 						class="pt-2 pt-sm-0 pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left"
 						style="max-width: 10rem;">
@@ -99,6 +95,7 @@
 							Remove
 						</button>
 					</div>
+					</c:forEach>
 				</div>
 			</div>
 			<!-- Sidebar-->

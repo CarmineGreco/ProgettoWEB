@@ -173,4 +173,34 @@ DBSource dbSource;
 				else
 					return false;
 	}
+
+	@Override
+	public ArrayList<Prodotto> getProdotti(String username) {
+		ArrayList<Prodotto> prodotti = new ArrayList<Prodotto>();
+		try {
+			
+			Connection con = dbSource.getConnection();
+			String query = "select * from prodotto inner join carrello on (id=id_prodotto)";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, username);
+			ResultSet rs = st.executeQuery();
+			if (rs.next()) {				
+				Prodotto prodotto=new Prodotto();
+				prodotto.setId(rs.getInt("id"));				
+				prodotto.setPrezzo(rs.getFloat("prezzo"));
+				prodotto.setNome(rs.getString("nome"));
+				prodotto.setTaglia(rs.getInt("taglia"));
+				prodotto.setDescrizione(rs.getString("descrizione"));
+				prodotto.setQuantita(rs.getInt("quantita"));
+				prodotto.setCategoria(rs.getString("categoria"));
+				prodotto.setImg(rs.getString("img"));
+				prodotti.add(prodotto);
+				st.close();
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return prodotti;
+	}
 }
