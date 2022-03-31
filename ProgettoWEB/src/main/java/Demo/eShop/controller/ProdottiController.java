@@ -106,6 +106,8 @@ public class ProdottiController {
 		c.setUtente(session.getAttribute("username").toString());
 		c.setTagliaProdotto(taglia);
 		DBManager.getInstance().carrelloDAO().save(c);
+		
+		session.setAttribute("carrello", c);
 		return "Carrello";
 	}
 }
