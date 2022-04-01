@@ -16,6 +16,7 @@ public class ProdottiController {
 	
 	@GetMapping("/PaginaProdotto")
 	public String vaiAllaPaginaProdotto(HttpSession session, @RequestParam Integer idProdotto) {
+
 		Prodotto prodotto = DBManager.getInstance().prodottoDAO().findByPrimaryKey(idProdotto);
 		session.setAttribute("prodotto", prodotto);
 		List<Prodotto> prod=DBManager.getInstance().listaPreferitiDAO().getPreferiti(session.getAttribute("username").toString());
