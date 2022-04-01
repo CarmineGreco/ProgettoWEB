@@ -46,3 +46,29 @@ body {
 .font-weight-semibold {
 	font-weight: 600 !important;
 }
+
+.container2{
+	margin-left:200px;
+}
+
+.cont{
+	margin-left:200px;
+}
+
+@media screen and (max-width: 1000px){
+	.container2{
+	margin-left:0px;
+	}
+	.cont{
+	margin-left:50px;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	.container2{
+	margin-left:200px;
+	}
+	.cont{
+	margin-left:100px;
+	}
+}
