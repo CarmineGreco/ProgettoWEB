@@ -113,51 +113,47 @@
                     <i class="fa fa-calendar-o icon" aria-hidden="true"></i>
                 </div>
             </div>
-            <div class="input_box">
-                <input type="number" placeholder="Enter Amount" required class="name">
-                <i class="fa fa-money icon" aria-hidden="true"></i>
-            </div>
+            
             <!--Payment Details End-->
 
-            <div class="input_group">
-                <div class="input_box">
-                    
-                    <button onClick="generatePayment(document.getElementById('payInput').value)">paga</button>
-                </div>
-                <div style="background-color: green; display: none" id="transition">GRAZIE PER IL TUO PAGAMENTO</div>
-                
-                
-                <div id="paypal-button-container"></div>
-                
-            </div>
 
-        </form>
-    </div>
-
+			<div style="background-color: green; display: none" id="transition">GRAZIE PER IL TUO PAGAMENTO</div>
+    <input type="text" id="payInput" /><button onClick="generatePayment(document.getElementById('payInput').value)">paga</button>
+	<div id="paypal-button-container"></div>
+	
 	<script>
 	function generatePayment(value){
 		if(value==""){
 			alert("NESSUN IMPORTO");
 			return;
 		}
+		
 		paypal.Buttons({
 			createOrder: function(data, actions){
 				return actions.order.create({
 					purchase_units: [{
 						amount: {
-							value: value,
-						}
-					}]
-				})
-			}
-		});
-	},
+							value: value
+					}
+				}]
+			});
+		},
 	onApprove: function(data, actions){
-		return actions.order.capture().then(function(details)){
-			document.getElementById("transition").style.display="block"; 
-		}
-	}
+		return actions.order.capture().then(function(details) {
+			document.getElementById("transition").style.display= "block"; 
+		});
+	   }
+	}).render('#paypal-button-container');
+   }
 	</script>
+           
+        </form>
+        
+        
+        
+    </div>
+    
+    
 	
 	
 </body>
