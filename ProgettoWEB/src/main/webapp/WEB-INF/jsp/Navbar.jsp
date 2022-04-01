@@ -49,9 +49,10 @@
 		<!--  <img class="col-3" src="img/Logo.jpg" height="150" width="300" /> -->
 		<div class="col-5" style="sfondo">
 			<div id="contenitore_logo">
-			 	<a id="logo" href="/" >
+			 	<a id="logo" href="index" >
 			 		<span class="col-3" style="font-size: 24px;">CARLA<br>FERRONI<br>REGGIO<br>CALABRIA </span>
 			 	</a>
+			 	
 			</div>
 		</div>
 		<div class="col-5">

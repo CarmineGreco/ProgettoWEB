@@ -1,5 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,7 +108,7 @@
 			<h5>Su iniziativa di un piccolo imprenditore calabrese e con
 				l'approvazione dell'azienda CARLA FERRONI, nel Gennaio del 2007 in
 				Via Santa Caterina d'Alessandria, nasce il primo negozio Carla
-				Ferroni shop in Italia. Grazie alla professionalità  trovata in
+				Ferroni shop in Italia. Grazie alla professionalit� trovata in
 				negozio e alla diretta collaborazione con l'azienda, i nostri punti
 				vendita diventeranno nel tempo tre, che attualmente si trovano in
 				Via Santa Caterina d'Alessandria n.165, Via Osanna n.37 e in Via

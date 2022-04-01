@@ -1,11 +1,11 @@
-//alert("Sono nel file javascript!!");
+alert("Sono nel file javascript!!");
 window.addEventListener("load", function(){ //"load"-->al caricamento della pagina inizializziamo il form per effettuare login e sign up
 
-	checklogin();
-	$("#second").fadeOut("fast", function() {
-			$("#first").fadeIn("fast");
-			modalLogin=true;
-		});
+//	checklogin();
+//	$("#second").fadeOut("fast", function() {
+//			$("#first").fadeIn("fast");
+//			modalLogin=true;
+//		});
 	
 });
 
@@ -102,7 +102,7 @@ $(document).ready(function(){
 		var email = document.getElementById("email").value;
 		var password2 = document.getElementById("password").value;
 		var utente2= new Utente(username2,password2,false,email,nome,cognome);
-		alert(username2+"  "+password2+" "+email+" "+nome+" "+cognome);
+//		alert(username2+"  "+password2+" "+email+" "+nome+" "+cognome);
 		$.ajax({
 				  url: "registrationService",  
 		          method: "POST",	         
