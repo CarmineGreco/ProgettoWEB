@@ -47,9 +47,7 @@
 			<c:forEach items="${prodotti}" var="prod">
 				<div class="col-xs-12 col-md-6">
 					<div class="product tumbnail" style="width: fit-content;">
-						<a href="#"><img
-							src="${prod.img}"
-							width="250" height="300" alt=""></a>
+						<img src="${prod.img}" width="250" height="300" alt="">
 						<div class="caption">
 							<form id="formSetContenuto" method="GET" action="PaginaProdotto">
 								<input type="hidden" id="idProdotto" name="idProdotto" value="${prod.id}">

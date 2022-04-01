@@ -7,6 +7,7 @@ public class Carrello {
 	private int idProdotto;
 	private int tagliaProdotto;
 	private int quantita;
+	private float prezzo;
 	
 	public Carrello() {
 	}
@@ -41,6 +42,14 @@ public class Carrello {
 
 	public void setQuantita(int quantita) {
 		this.quantita = quantita;
+	}
+
+	public float getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(float prezzo) {
+		this.prezzo = prezzo;
 	}
 	
 	

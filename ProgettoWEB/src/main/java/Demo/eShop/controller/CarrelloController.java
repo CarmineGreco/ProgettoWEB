@@ -21,6 +21,7 @@ public class CarrelloController {
 		session.setAttribute("prodotti", prodotti);
 		List<Carrello> prodCarrello=DBManager.getInstance().carrelloDAO().getCarrelliUtente(session.getAttribute("username").toString());
 		session.setAttribute("prodCarrello", prodCarrello);
+		session.setAttribute("sommaProdotti", DBManager.getInstance().carrelloDAO().sommaTotale(session.getAttribute("username").toString()));
 		return "Carrello";
 	}
 	

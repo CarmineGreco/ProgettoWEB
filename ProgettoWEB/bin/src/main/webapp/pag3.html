@@ -1,0 +1,27 @@
+
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<link href="css/pag2.css" rel="stylesheet" type="text/css"
+	/ id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=AVTpbeGQa7-4WbeK2p0TPATh3T5rsoavzqsYM49CHKLYbJ0xD6B5krktKyLHMRTM_LbJ77mRUSqplmF7"></script>
+</head>
+<body>
+	<div style="background-color: green; display: none" id="transition">GRAZIE PER IL TUO PAGAMENTO</div>
+    <input type="text" id="payInput" /><button onClick="generatePayment(document.getElementById('payInput').value)">paga</button>
+	<div id="paypal-button-container"></div>
+</body>
+</html>

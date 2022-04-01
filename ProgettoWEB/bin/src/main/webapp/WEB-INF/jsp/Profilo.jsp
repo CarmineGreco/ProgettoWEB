@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -7,7 +9,6 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,16 +17,26 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
-
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 	crossorigin="anonymous">
-
 <!--Custom styles-->
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body style="background: #f5f3f2">
+	<div id="nav-placeholder"></div>
+	<script>
+		$(function() {
+			$("#nav-placeholder").load("http://localhost:8080/navbar");
+		});
+	</script>
+	<div id="side-bar"></div>
+	<script>
+		$(function() {
+			$("#side-bar").load("http://localhost:8080/sidebar");
+		});
+	</script>
 	<div class="container">
 		<div class="main-body">
 			<div class="row centrale">
@@ -36,7 +47,6 @@
 								<img src="https://bootdey.com/img/Content/avatar/avatar6.png"
 									alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
 								<div class="mt-3">
-									<h4>John Doe</h4>
 								</div>
 							</div>
 						</div>
@@ -47,54 +57,49 @@
 				<div class="col-8">
 					<div class="card">
 						<div class="card-body">
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Username</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="JohnDoe">
-								</div>
+							<form method="post" action="modificaProfilo">
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Nome</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="John">
-								</div>
+							<input type="text" class="form-control" value="${username}" name="username" disabled="True"
+								required>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i
+									class="fas fa-signature"></i></span>
 							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Cognome</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control" value="Doe">
-								</div>
+							<input type="text" class="form-control" value="${nome}" name="nome"
+								required>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i
+									class="fas fa-signature"></i></span>
 							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Email</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="text" class="form-control"
-										value="john@example.com">
-								</div>
+							<input type="text" class="form-control" value="${cognome}" name="cognome"
+								required>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 							</div>
-							<div class="row mb-3">
-								<div class="col-sm-3">
-									<h6 class="mb-0">Password</h6>
-								</div>
-								<div class="col-sm-9 text-secondary">
-									<input type="password" class="form-control"
-										value="(239) 816-9029">
-								</div>
+							<input type="text" class="form-control" value="${email}" name="email"
+								required>
+						</div>
+						<div class="input-group form-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<div class="row">
-								<div class="col-12">
-									<input type="button" class="btn btn-primary"
-										value="Save Changes">
-								</div>
-							</div>
+							<input type="password" class="form-control" name="pass" id="password"
+								value="${password}">
+						</div>
+						<div class="form-group">
+							<input type="submit" value="Modifica"
+								class="btn float-right registrazione_btn">
+						</div>
+					</form>
 						</div>
 					</div>
 				</div>

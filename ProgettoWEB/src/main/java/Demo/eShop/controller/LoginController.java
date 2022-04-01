@@ -12,8 +12,6 @@ public class LoginController {
 
 	@PostMapping("loginService")
 	public String failLogin(HttpSession session, @ RequestBody Utente u){
-		System.out.println(u.getUsername());
-		System.out.println(u.getPassword());
 		if(DBManager.getInstance().utenteDAO().existsUser(u.getUsername())) {
 			if(DBManager.getInstance().utenteDAO().checkPassword(u.getUsername(), u.getPassword())) {
 				Utente utenteLoggato = DBManager.getInstance().utenteDAO().findByPrimaryKey(u.getUsername());

@@ -1,5 +1,4 @@
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <link href="../css/Login.css" rel="stylesheet" type="text/css"
 	/ id="bootstrap-css">
@@ -63,7 +62,7 @@
 						<div class="g-signin2" data-onsuccess="onSignIn"></div>
 						<div class="form-group">
 							<input type="submit" value="Accedi"
-								class="btn float-right login_btn" onClick="manda(document.getElementById('user').value,document.getElementById('password').value)">
+								class="btn float-right login_btn">
 						</div>
 					</form>
 				</div>

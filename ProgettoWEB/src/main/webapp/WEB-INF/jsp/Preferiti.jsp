@@ -62,16 +62,13 @@
 			<c:forEach items="${prodPreferiti}" var="prod">
 				<div class="col-xs-12 col-md-6">
 					<div class="product tumbnail" style="width: fit-content;">
-						<a href="#"><img src="${prod.img}" width="250" height="300"
-							alt=""></a>
+						<img src="${prod.img}" width="250" height="300" alt="">
 						<div class="caption">
-							<form id="formSetContenuto" method="post" action="PaginaProdotto">
-								<input type="hidden" id="idProdotto" name="idProdotto"
-									value="${prod.id}">
-								<button type="submit" class="btn btn-sm btn-outline-info"
-									style="float: right">
-									<i class="icon-cog"></i> Visualizza ${prod.nome}
-								</button>
+							<form id="formSetContenuto" method="GET" action="PaginaProdotto">
+								<input type="hidden" id="idProdotto" name="idProdotto" value="${prod.id}">
+								<c:if test="${username != null}">
+								<button type="submit" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Visualizza ${prod.nome} </button>
+								</c:if>
 							</form>
 							<form id="aggiungiPref" method="post" action="">
 							</form>

@@ -26,12 +26,13 @@ DBSource dbSource;
 		try {
 			if(!existsCarrello(c.getUtente(), c.getIdProdotto(), c.getTagliaProdotto())){
 				conn = dbSource.getConnection();
-				String query = "insert into carrello values(?,?,?,?);";
+				String query = "insert into carrello values(?,?,?,?,?);";
 				PreparedStatement st = conn.prepareStatement(query);
 				st.setString(1, c.getUtente());
 				st.setInt(2, c.getIdProdotto());
 				st.setInt(3, c.getTagliaProdotto());
 				st.setInt(4, c.getQuantita());
+				st.setFloat(5, c.getPrezzo());
 				st.executeUpdate();
 				st.close();
 			}
@@ -60,7 +61,8 @@ DBSource dbSource;
 				carrello.setUtente(rs.getString("utente"));				
 				carrello.setIdProdotto(rs.getInt("id_prodotto"));
 				carrello.setTagliaProdotto(rs.getInt("taglia_prodotto"));
-				carrello.setQuantita(rs.getInt("quantita"));		
+				carrello.setQuantita(rs.getInt("quantita"));
+				carrello.setPrezzo(rs.getFloat("prezzo"));
 			st.close();
 			
 			}
@@ -76,12 +78,13 @@ DBSource dbSource;
 		Connection connection = null;
 		try {
 			connection = this.dbSource.getConnection();
-			String update = "update carrello SET quantita = ? WHERE utente=? and id_prodotto=? and taglia_prodotto=?;";
+			String update = "update carrello SET quantita = ? WHERE utente=? and id_prodotto=? and taglia_prodotto=? and prezzo=?;";
 			PreparedStatement st = connection.prepareStatement(update);			
 			st.setInt(1, c.getQuantita());
 			st.setString(2, c.getUtente());
 			st.setInt(3, c.getIdProdotto());
 			st.setInt(4, c.getTagliaProdotto());
+			st.setFloat(5, c.getPrezzo());
 			st.executeUpdate();
 			st.close();
 		
@@ -133,7 +136,7 @@ DBSource dbSource;
 				prodotto.setDescrizione(rs.getString("descrizione"));
 				prodotto.setQuantita(rs.getInt("quantita"));
 				prodotto.setCategoria(rs.getString("categoria"));
-				prodotto.setImg(rs.getString("img"));	
+				prodotto.setImg(rs.getString("img"));
 				prodotti.add(prodotto);	
 			st.close();
 			
@@ -217,6 +220,7 @@ DBSource dbSource;
 				c.setIdProdotto(rs.getInt("id_prodotto"));
 				c.setTagliaProdotto(rs.getInt("taglia_prodotto"));
 				c.setQuantita(rs.getInt("quantita"));
+				c.setPrezzo(rs.getFloat("prezzo"));
 				carrelliUtente.add(c);
 			}
 		}
@@ -224,5 +228,25 @@ DBSource dbSource;
 			e.printStackTrace();
 		}
 		return carrelliUtente;
+	}
+
+	public float sommaTotale(String username) {
+		float somma=0;
+		try {
+			Connection con = dbSource.getConnection();
+			String query = "select prezzo, quantita from carrello where utente=?;";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, username);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {				
+				float quantita = rs.getInt("quantita");
+				float prezzo = rs.getFloat("prezzo");
+				somma += (quantita*prezzo);
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return somma;
 	}
 }

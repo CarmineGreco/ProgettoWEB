@@ -1,4 +1,6 @@
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -12,7 +14,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Dettagli ordine</title>
+<title>Preferiti</title>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -26,202 +28,58 @@
 <!--Custom styles-->
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
-	<div class="container-fluid my-5 d-flex justify-content-center">
-		<div class="card card-1">
-			<div class="card-header bg-white">
-				<div
-					class="media flex-sm-row flex-column-reverse justify-content-between ">
-					<div class="co my-auto">
-						<h4 class="mb-0">
-							LA TUA LISTA PREFERITI
-						</h4>
-					</div>
-					<div class="col-auto text-center my-auto pl-0 pt-sm-4">
-						
-						<p class="mb-4 pt-0 Glasses">Carla Ferroni Reggio Calabria</p>
-					</div>
-				</div>
-			</div>
-			<div class="card-body">
-				<div class="row justify-content-between mb-3">
-					<div class="col-auto">
-						<h6 class="color-1 mb-0 change-color">I tuoi preferiti:</h6>
-					</div>
-					<div class="col-auto ">
-						
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<div class="card card-2">
-							<div class="card-body">
-								<div class="media">
-									<div class="sq align-self-center ">
-										<img
-											class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0"
-											src="https://i.imgur.com/RJOW4BL.jpg" width="135"
-											height="135" />
-									</div>
-									<div class="media-body my-auto text-right">
-										<div class="row my-auto flex-column flex-md-row">
-											<div class="co my-auto">
-												<h6 class="mb-0">Jack Jacs</h6>
-											</div>
-											<div class="col-auto my-auto">
-												<small>Golden Rim </small>
-											</div>
-											<div class="color-choose">
-          <div>
-            <input data-image="red" type="radio" id="red" name="color" value="red" checked>
-            <label for="red"><span></span></label>
-          </div>
-											<div class="co my-auto">
-												
-											</div>
-											<div class="co my-auto">
-												<h6 class="mb-0">&#8377;3,600.00</h6>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="row">
-									<div class="col-md-3 mb-3">
-										<small>  <span><i
-												class=" ml-2 fa fa-refresh" aria-hidden="true"></i></span></small>
-									</div>
-									<div class="co mt-auto">
-										
-										<div class="media row justify-content-between ">
-											<div class="col-auto text-right">
-												
-											</div>
-											<div class="flex-col">
-												
-														
-											</div>
-											<div class="col-auto flex-col-auto">
-												
-													
-												</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+<body style="background: #f5f3f2">
+
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+		crossorigin="anonymous">
+
+	<link rel="stylesheet"
+		href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+		crossorigin="anonymous">
+
+	<!--Custom styles-->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body style="background: #f5f3f2">
+	<div id="nav-placeholder"></div>
+	<script>
+		$(function() {
+			$("#nav-placeholder").load("http://localhost:8080/navbar");
+		});
+	</script>
+	<div id="side-bar"></div>
+	<script>
+		$(function() {
+			$("#side-bar").load("http://localhost:8080/sidebar");
+		});
+	</script>
+	<div class="container bootstrap snipets">
+		<h1 class="text-center text-muted">Preferiti</h1>
+		<div class="row" style="display: flex; justify-content: center;">
+			<c:forEach items="${prodPreferiti}" var="prod">
+				<div class="col-xs-12 col-md-6">
+					<div class="product tumbnail" style="width: fit-content;">
+						<a href="#"><img src="${prod.img}" width="250" height="300"
+							alt=""></a>
+						<div class="caption">
+							<form id="formSetContenuto" method="post" action="PaginaProdotto">
+								<input type="hidden" id="idProdotto" name="idProdotto"
+									value="${prod.id}">
+								<button type="submit" class="btn btn-sm btn-outline-info"
+									style="float: right">
+									<i class="icon-cog"></i> Visualizza ${prod.nome}
+								</button>
+							</form>
+							<form id="aggiungiPref" method="post" action="">
+							</form>
+							<span class="price">${prod.prezzo}</span>
 						</div>
 					</div>
 				</div>
-				<div class="row mt-4">
-					<div class="col">
-						<div class="card card-2">
-							<div class="card-body">
-								<div class="media">
-									<div class="sq align-self-center ">
-										<img
-											class="img-fluid my-auto align-self-center mr-2 mr-md-4 pl-0 p-0 m-0"
-											src="https://i.imgur.com/fUWWpRS.jpg" width="135"
-											height="135" />
-									</div>
-									<div class="media-body my-auto text-right">
-										<div class="row my-auto flex-column flex-md-row">
-											<div class="col-auto my-auto ">
-												<h6 class="mb-0">Michel Mark</h6>
-											</div>
-											<div class="co my-auto ">
-												<small>Black Rim </small>
-											</div>
-											<div class="co my-auto ">
-												
-											</div>
-											<div class="co my-auto ">
-												
-											</div>
-											<div class="co my-auto ">
-												<h6 class="mb-0">&#8377;1,235.00</h6>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<div class="row ">
-									<div class="col-md-3 mb-3">
-										
-									</div>
-									<div class="co mt-auto">
-										
-										<div class="media row justify-content-between ">
-											<div class="col-auto text-right">
-												<span> 
-												</span>
-											</div>
-											<div class="flex-col">
-												
-											</div>
-											<div class="col-auto flex-col-auto">
-												
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row mt-4">
-					<div class="col">
-						<div class="row justify-content-between">
-							<div class="col-auto">
-								<p class="mb-1 text-dark">
-									
-								</p>
-							</div>
-							<div class="flex-sm-co text-right col">
-								<p class="mb-1">
-									
-								</p>
-							</div>
-							<div class="flex-sm-co col-auto">
-								
-							</div>
-						</div>
-						<div class="row justify-content-between">
-							<div class="flex-sm-co text-right col">
-								<p class="mb-1">
-									
-								</p>
-							</div>
-							<div class="flex-sm-co col-auto">
-								
-							</div>
-						</div>
-						<div class="row justify-content-between">
-							<div class="flex-sm-co text-right col">
-								<p class="mb-1">
-									
-								</p>
-							</div>
-							<div class="flex-sm-co col-auto">
-								
-							</div>
-						</div>
-						<div class="row justify-content-between">
-							<div class="flex-sm-co text-right col">
-								<p class="mb-1">
-									
-								</p>
-							</div>
-							<div class="flex-sm-co col-auto">
-								
-							</div>
-						</div>
-					</div>
-				</div>
-				
-			</div>
-			
+			</c:forEach>
 		</div>
-	</div>
 </body>
 </html>

@@ -104,7 +104,8 @@
 		</div>
 <!--     Product Pricing -->
      <div class="product-price"> 
-       <span>${prodotto.prezzo}€</span>
+       <span>${prodotto.prezzo}$</span>
+       <input type="hidden" id="prezzo" name="prezzo" value="${prodotto.prezzo}">
        <input type="hidden" id="idProdotto" name="idProdotto" value="${prodotto.id}">
        <input type="submit" id="btnCarrello" name="btnCarrello">
      </div>

@@ -25,7 +25,21 @@
 <!--Custom styles-->
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body>
+<body style="background:#f5f3f2">
+
+	<div id="nav-placeholder"></div>
+	<script>
+		$(function() {
+			$("#nav-placeholder").load("http://localhost:8080/navbar");
+		});
+	</script>
+	<div id="side-bar"></div>
+	<script>
+		$(function() {
+			$("#side-bar").load("http://localhost:8080/sidebar");
+		});
+	</script>
+
 	<div class="container-fluid my-5 d-flex justify-content-center">
 		<div class="card card-1">
 			<div class="card-header bg-white">

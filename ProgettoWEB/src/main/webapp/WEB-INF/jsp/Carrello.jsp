@@ -54,11 +54,16 @@
                <c:if test="${(prod.id != $prodCarrello.idProdotto) and (prod.taglia == prodCar.tagliaProdotto)}">
 	            <div class="d-sm-flex justify-content-between my-4 pb-4 border-bottom">
                 <div class="media d-block d-sm-flex text-center text-sm-left">
-                    <a class="cart-item-thumb mx-auto mr-sm-4" href="#"><img src="https://via.placeholder.com/240x240/FF0000/000000" alt="Product"></a>
+                    <a class="cart-item-thumb mx-auto mr-sm-4" href="#"><img src="${prod.img}" alt="Product"></a>
                     <div class="media-body pt-3">
-                        <h3 class="product-card-title font-weight-semibold border-0 pb-0"><a href="#">${prod.nome}</a></h3>
-                        <div class="font-size-sm"><span class="text-muted mr-2">${prodCar.tagliaProdotto}</span></div>
-                        <div class="font-size-lg text-primary pt-2">${prod.prezzo}</div>
+                        <form id="formSetContenuto" method="GET" action="PaginaProdotto">
+								<input type="hidden" id="idProdotto" name="idProdotto" value="${prod.id}">
+								<c:if test="${username != null}">
+								<button type="submit" class="btn btn-sm btn-outline-info" style="float:left"><i class="icon-cog"></i>${prod.nome} </button>
+								</c:if>
+							</form>
+                        <div class="font-size-sm"><span class="text-muted mr-2">Taglia: ${prodCar.tagliaProdotto}</span></div>
+                        <div class="font-size-lg text-primary pt-2">Prezzo: ${prod.prezzo}</div>
                     </div>
                 </div>
                 <div class="pt-2 pt-sm-0 pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left" style="max-width: 10rem;">
@@ -88,7 +93,7 @@
             </div>
             <div class="col-2 cont">
             <h2 class="h6 py-2 bg" style="background-color: red">Totale</h2>
-            <h2>$152,00</h2>
+            <h2>${sommaProdotti}</h2>
             <hr>
           	<a class="btn btn-primary" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-credit-card mr-2">

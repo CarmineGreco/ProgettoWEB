@@ -19,5 +19,5 @@ public interface CarrelloDAO {
 	public ArrayList<Prodotto> getProdotti(String username);
 	public boolean existsCarrello(String username, int idProdotto, int taglia);
 	public ArrayList<Carrello> getCarrelliUtente(String u);
-	
+	public float sommaTotale(String username);
 }
