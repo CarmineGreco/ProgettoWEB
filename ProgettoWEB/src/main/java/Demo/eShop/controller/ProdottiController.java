@@ -75,7 +75,7 @@ public class ProdottiController {
 	@GetMapping("/CollezioneFelpe")
 	public String vaiAllaCollezioneFelpe(HttpSession session) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("felpe");
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("felpa");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
@@ -84,7 +84,7 @@ public class ProdottiController {
 	@GetMapping("/CollezioneCamicie")
 	public String vaiAllaCollezioneCamicie(HttpSession session) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("camicia");
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("camicie");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
