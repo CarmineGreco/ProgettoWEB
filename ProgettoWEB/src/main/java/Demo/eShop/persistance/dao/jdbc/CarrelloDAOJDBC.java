@@ -87,7 +87,6 @@ DBSource dbSource;
 			st.setFloat(5, c.getPrezzo());
 			st.executeUpdate();
 			st.close();
-		
 		} catch (SQLException e) {
 			e.printStackTrace();			
 		}

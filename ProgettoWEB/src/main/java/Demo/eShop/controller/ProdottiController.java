@@ -108,8 +108,8 @@ public class ProdottiController {
 		c.setTagliaProdotto(taglia);
 		c.setPrezzo(prezzo);
 		DBManager.getInstance().carrelloDAO().save(c);
-		
 		session.setAttribute("carrello", c);
 		return "PaginaProdotto";
 	}
+	
 }
