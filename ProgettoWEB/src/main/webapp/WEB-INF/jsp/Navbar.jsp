@@ -319,7 +319,9 @@
 		                  <p> Gli amministratori del sito avranno accesso a dati sensibili riguardanti il tuo profilo (ad esclusione della password, inserita al momento della registrazione).<br> &#200 SEVERAMENTE VIETATO:</p>
 		                  		<ul> 
 		                  			<li> Rivendere i prodotti acquistati</li>
+		                  			<li> Registrarsi con identità falsa </li>
 		                  		</ul>
+		                  <p> Se non vengono rispettati i seguenti criteri, gli amministratori elimineranno il vostro account.<p>
 					   </div>   	               
 				   </div>
 			   </div>

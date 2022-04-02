@@ -41,7 +41,7 @@
 			$("#side-bar").load("http://localhost:8080/sidebar");
 		});
 	</script>
-	<div class="container bootstrap snipets" style="" >
+	<div class="container bootstrap snipets">
 		<h1 class="text-center text-muted">Catalogo</h1>
 		<div class="row" style="display: flex; justify-content: center;">
 			<c:forEach items="${prodotti}" var="prod">
