@@ -74,7 +74,7 @@
 						<c:if test="${username == null}">  <!--  se non c'è un username loggato mostrami il login -->
 			    			<i class="loginIcon fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login  -->   
 			    		</c:if>
-						<c:if test="${username != admin}">
+						<c:if test="${(username != admin) and (username!=null)}">
 							<i class="loginIcon fa fa-user-circle" style="font-size:36px" ></i>  <!-- icona login  -->   
 							<div class="dropdown-content" style="float: right;">
 								<a id="text" href="VisualizzaCarrello">Carrello</a>
@@ -84,7 +84,7 @@
 								<a id="text" href="Logout">Logout</a>
 							</div>
 						</c:if>
-						<c:if test="${username == admin}">
+						<c:if test="${(username == admin) and (username!=null)}">
 						<i class="loginIcon fa fa-user-circle" style="font-size:36px" ></i>  <!-- icona login  -->   
 							<div class="dropdown-content" style="float: right;">
 								<a id="text" href="PaginaAmministratore">Lista prodotti</a>
