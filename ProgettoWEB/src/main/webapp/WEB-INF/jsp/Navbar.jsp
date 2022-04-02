@@ -112,7 +112,7 @@
 					<div class="myform form ">
 						 <div class="logo mb-3">
 							 <div class="col-md-12 text-center">
-								<button type="button" class="close" data-dismiss="modal">×</button>
+								<button type="button" class="close" data-dismiss="modal"></button>
 								<h1 class="titolo-loginForm">Login</h1>
 							 </div>
 						</div>
@@ -124,9 +124,6 @@
 	                           <div class="form-group">
 	                              <label for="exampleInputEmail1">Password</label>
 	                              <input type="password" name="passwordLogin" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required>
-	                           </div>
-	                           <div class="form-group">
-	                              <p class="text-center">Registrandoti accetti i nostri<button style="box-shadow: none;" id="btnMostraTermini" type="button" class="btn btn-link" data-toggle="modal" data-target="#apriTermini">Termini e Condizioni d'uso</button></p>
 	                           </div>
 	                           <div class="col-md-12 text-center ">
 	                              <button type="submit" id="btnLogin" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
@@ -177,6 +174,10 @@
                         	<input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" >
                         	<p id="parametriPSW">Minimo otto caratteri, almeno una lettera maiuscola e un numero</p> 
                         </div>
+                        <div class="form-group">
+	                              <p class="text-center">Registrandoti accetti i nostri<button style="box-shadow: none;" id="btnMostraTermini" type="button" class="btn btn-link" data-toggle="modal" data-target="#apriTermini">Termini e Condizioni d'uso</button></p>
+	                           </div>
+	                           
                         <div class="col-md-12 text-center mb-3">
                            <button type="submit" id="btnIscriviti" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>                      
                         </div>                        
