@@ -81,10 +81,9 @@
  <form id="formCarrello" method="post" action="aggiungiCarrello">
 <!--       Cable Configuration -->
        <div class="cable-config"> 
-         <span>Seleziona una taglia</span> 
-		  <div>
+         <span>Seleziona una taglia: </span> 
 		    <input type="radio" id="taglia1"
-		     name="taglia" value="40">
+		     name="taglia" value="40" checked="True">
 		    <label for="contactChoice1">40</label>
 		
 		    <input type="radio" id="taglia2"
@@ -94,12 +93,12 @@
 		    <input type="radio" id="taglia3"
 		     name="taglia" value="44">
 		    <label for="contactChoice3">44</label>
-		  </div>
+		  
        
        </div>
 <!--      </div>  -->
 		<div class="form-group mb-2" >
-			<label>Quantity</label> <input class="form-control" type="number" id="quantity1" name = "quantita" value="1">
+			<label>Quantit&#224</label> <input class="form-control" type="number" id="quantity1" name = "quantita" value="1">
 			
 		</div>
 <!--     Product Pricing -->

@@ -41,7 +41,7 @@
 			$("#side-bar").load("http://localhost:8080/sidebar");
 		});
 	</script>
-	<div class="container bootstrap snipets" >
+	<div class="container bootstrap snipets" style="" >
 		<h1 class="text-center text-muted">Catalogo</h1>
 		<div class="row" style="display: flex; justify-content: center;">
 			<c:forEach items="${prodotti}" var="prod">
@@ -52,10 +52,11 @@
 							<form id="formSetContenuto" method="GET" action="PaginaProdotto">
 								<input type="hidden" id="idProdotto" name="idProdotto" value="${prod.id}">
 								<c:if test="${username != null}">
-								<button type="submit" class="btn btn-sm btn-outline-info" style="float:right"><i class="icon-cog"></i> Visualizza ${prod.nome} </button>
+								<button type="submit" class="btn btn-outline-info" style="border:transparent;padding-bottom: 0px;padding-left: 0px;padding-top: 0px;">${prod.nome}</button>
 								</c:if>
+								<br>
+							<span class="price">Prezzo: ${prod.prezzo}&#8364</span>
 							</form>
-							<span class="price">${prod.prezzo}</span>
 						</div>
 					</div>
 				</div>

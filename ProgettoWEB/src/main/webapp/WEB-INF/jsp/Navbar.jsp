@@ -45,10 +45,10 @@
 <body>
 	<div id="search-bar"></div>
 	<!-- Top header -->
-	<header class="row" style="background:#e9e4e2 ">
-		<!--  <img class="col-3" src="img/Logo.jpg" height="150" width="300" /> -->
+		
+	<header class="row" style="background:#e9e4e2;margin-right: 0px;margin-left: 0px;padding-right: 0px;padding-left: 0px;">
 		<div class="col-5" style="sfondo">
-			<div id="contenitore_logo">
+			<div style="width:100%;">
 			 	<a id="logo" href="index" >
 			 		<span class="col-3" style="font-size: 24px;">CARLA<br>FERRONI<br>REGGIO<br>CALABRIA </span>
 			 	</a>
@@ -58,11 +58,11 @@
 		<div class="col-5">
 			<div class="mx-auto order-0">
 				<div class="form-inline my-lg-0">
-					<div class="input-group ">
+					<div class="input-group">
 						<input class="form-control mr-sm-1"  type="search" placeholder="Cerca"
 							aria-label="Cerca" required>
 						<div class="input-group-append">
-							<button type="submit" class="btn btn-light"><i class="fa fa-search w3-margin-right"
+							<button type="submit" class="btn btn-light"><i class="fa fa-search "
 								style="font-size: x-large"></i></button>
 						</div>
 					</div>
@@ -128,12 +128,7 @@
 	                           <div class="col-md-12 text-center ">
 	                              <button type="submit" id="btnLogin" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
 	                           </div>
-	                           <div class="col-md-12 ">
-	                              <div class="login-or">
-	                                 <hr class="hr-or">
-	                                 <span class="span-or">oppure</span>
-	                              </div>
-	                           </div>
+	                           
 	                           </form>	 
 	                           <br>
 	                           <div class="form-group">
@@ -321,7 +316,7 @@
 					</div>
 	                  <div class="row" style="padding: 10px 10px 10px">
 		                  <p> Registrandoti al sito web Carla Ferroni Reggio Calabria decidi di accettare i termini e le condizioni di utilizzo.</p><br>
-		                  <p> Gli amministratori del sito avranno accesso a dati sensibili riguardanti il tuo profilo (ad esclusione della password, inserita al momento della registrazione). É SEVERAMENTE VIETATO:</p>
+		                  <p> Gli amministratori del sito avranno accesso a dati sensibili riguardanti il tuo profilo (ad esclusione della password, inserita al momento della registrazione).<br> &#200 SEVERAMENTE VIETATO:</p>
 		                  		<ul> 
 		                  			<li> Rivendere i prodotti acquistati</li>
 		                  		</ul>

@@ -39,6 +39,7 @@
 	<!-- Sidebar/menu -->
 	
 	<nav class="w3-sidebar w3-bar-block w3-collapse" style="background:#e9e4e2; padding-top: 50px" style=" width: fit-content;" id="mySidebar">
+<!-- 	<nav class="w3-bar-block w3-collapse" style="background:#e9e4e2; padding-top: 50px; width: 100px; position: fixed!important; overflow:auto;" id="mySidebar"> -->
 		<div class="w3-container w3-display-container w3-padding-16" style="background:#e9e4e2">
 			<i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright" style="background:#e9e4e2"></i>
 		</div>
@@ -55,6 +56,5 @@
 	<!-- Overlay effect when opening sidebar on small screens -->
 	<div class="w3-overlay w3-hide-large" onclick="w3_close()"
 		style="cursor: pointer; z-index:0;" title="close side menu" style="background:#e9e4e2" id="myOverlay"></div>
-	
 </body>
 </html>

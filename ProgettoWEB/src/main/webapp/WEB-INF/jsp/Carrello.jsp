@@ -28,7 +28,7 @@
 <!--Custom styles-->
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body style="background: #f5f3f2">
+<body>
 
 	<div id="nav-placeholder"></div>
 	<script>
@@ -44,7 +44,7 @@
 	</script>
 
 
-	<div class="container2">
+	<div class="container2" style="background: #f5f3f2">
 		<div class="row">
 			<div class="col-7 col-3">
 				<h2>Prodotti</h2>
