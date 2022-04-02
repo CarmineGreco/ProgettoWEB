@@ -90,15 +90,6 @@ public class ProdottiController {
 		return "Collezione";
 	}
 	
-	@GetMapping("/CollezioneBorse")
-	public String vaiAllaCollezioneBorse(HttpSession session) {
-		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("borsa");
-		session.setAttribute("prodotti", prodotti);
-		
-		return "Collezione";
-	}
-	
 	@PostMapping("/aggiungiCarrello")
 	public String aggiungiAlCarrello(HttpSession session, @RequestParam Integer taglia, @RequestParam Integer idProdotto, @RequestParam Integer quantita, @RequestParam float prezzo) {
 		Carrello c = new Carrello();		

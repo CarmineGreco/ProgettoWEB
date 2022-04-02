@@ -48,8 +48,7 @@
 				href="CollezioneVestiti" class="w3-bar-item w3-button">Vestiti</a> <a
 				href="CollezionePantaloni" class="w3-bar-item w3-button">Pantaloni</a> <a
 				href="CollezioneFelpe" class="w3-bar-item w3-button">Felpe</a> <a
-				href="CollezioneCamicie" class="w3-bar-item w3-button">Camicie</a> <a
-				href="CollezioneBorse" class="w3-bar-item w3-button">Borse</a>
+				href="CollezioneCamicie" class="w3-bar-item w3-button">Camicie</a>
 		</div>
 
 	</nav>

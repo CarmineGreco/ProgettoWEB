@@ -269,7 +269,7 @@
 							<button type="button" class="close" data-dismiss="modal">×</button>
 							 <br> <br>
 								<form id="recuperoPassword" action="#">
-				                     <h4>inserisci la tua email per recuperare la password</h4> <br>
+				                     <h4>Inserisci la tua email per recuperare la password</h4> <br>
 				                     <input style="font-size: 20px;" type="email" id="emailRecupero" name="emailrecupero" required><br><br>           
 				                     <button type="submit" id="btnRecuperoPassword" class="btn btn-sm btn-outline-info" style="float:right"> recupera</button> 
 				                 </form>
@@ -319,13 +319,10 @@
 						 </div>
 					</div>
 	                  <div class="row" style="padding: 10px 10px 10px">
-		                  <p> Registrandoti al sito web Device Is It decidi di accettare i termini e le condizioni di utilizzo.</p><br>
-		                  <p> Gli amministratori del sito avranno accesso a dati sensibili riguardanti il tuo profilo (ad esclusione della password, inserita al momento della registrazione) e potranno decidere 
-		                  		di disattivarlo nel caso si ritenesse che tu abbia violato le regole di utilizzo. 
-		                  		In particolare, è SEVERAMENTE VIETATO:</p>
+		                  <p> Registrandoti al sito web Carla Ferroni Reggio Calabria decidi di accettare i termini e le condizioni di utilizzo.</p><br>
+		                  <p> Gli amministratori del sito avranno accesso a dati sensibili riguardanti il tuo profilo (ad esclusione della password, inserita al momento della registrazione). É SEVERAMENTE VIETATO:</p>
 		                  		<ul> 
-		                  			<li> Ledere o danneggiare la sensibilità di altri utenti.</li>
-		                  			<li> Utilizzare e divulgare impropriamente il materiale presente sul sito web per scopi personali.</li>
+		                  			<li> Rivendere i prodotti acquistati</li>
 		                  		</ul>
 					   </div>   	               
 				   </div>
