@@ -20,6 +20,7 @@ public class LoginController {
 				session.setAttribute("email", utenteLoggato.getEmail());
 				session.setAttribute("username", utenteLoggato.getUsername());
 				session.setAttribute("password", utenteLoggato.getPassword());
+				session.setAttribute("admin", utenteLoggato.isAdmin());
 				return "successo";
 			}
 			else {

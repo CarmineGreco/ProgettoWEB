@@ -59,7 +59,7 @@
 									<a class="cart-item-thumb mx-auto mr-sm-4" href="#"><img
 										src="${prod.img}" alt="Product"></a>
 									<div class="media-body pt-3">
-										<form id="formSetContenuto" method="GET"
+										<form id="formSetContenuto" method="POST"
 											action="PaginaProdotto">
 											<input type="hidden" id="idProdotto" name="idProdotto"
 												value="${prod.id}">

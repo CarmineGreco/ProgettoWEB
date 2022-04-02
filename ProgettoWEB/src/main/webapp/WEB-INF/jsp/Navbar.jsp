@@ -74,13 +74,21 @@
 						<c:if test="${username == null}">  <!--  se non c'è un username loggato mostrami il login -->
 			    			<i class="loginIcon fa fa-user-circle" style="font-size:36px"  data-toggle="modal" data-target="#loginForm" ></i>  <!-- icona login  -->   
 			    		</c:if>
-						<c:if test="${username != null}">
+						<c:if test="${username != admin}">
 							<i class="loginIcon fa fa-user-circle" style="font-size:36px" ></i>  <!-- icona login  -->   
 							<div class="dropdown-content" style="float: right;">
 								<a id="text" href="VisualizzaCarrello">Carrello</a>
 								<a id="text" href="Profilo">Profilo</a>
 								<a id="text" href="PaginaPreferiti">Preferiti</a>
 								<a id="text" href="ListaOrdini">I tuoi ordini</a>
+								<a id="text" href="Logout">Logout</a>
+							</div>
+						</c:if>
+						<c:if test="${username == admin}">
+						<i class="loginIcon fa fa-user-circle" style="font-size:36px" ></i>  <!-- icona login  -->   
+							<div class="dropdown-content" style="float: right;">
+								<a id="text" href="PaginaAmministratore">Lista prodotti</a>
+								<a id="text" href="Profilo">Lista profilo</a>
 								<a id="text" href="Logout">Logout</a>
 							</div>
 						</c:if>
@@ -130,10 +138,6 @@
 	                              </div>
 	                           </div>
 	                           </form>	 
-	                            <div class="row" >								
-	                                 <div style="padding-left:15%" class="g-signin2" id="logginGoogle" data-onsuccess="accessoGoogle" onclick="ricarica()" ></div>
-	                           		<button style="margin-left:5%" onclick="accessofacebook()" class="loginBtn loginBtn--facebook" > Login con Facebook </button>
-	                           </div>
 	                           <br>
 	                           <div class="form-group">
 	                              <p class="text-center">Non hai un account? <a href="#" id="registrati">Registrati qui</a></p>

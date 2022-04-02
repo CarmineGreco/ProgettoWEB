@@ -45,6 +45,7 @@ public class CarrelloController {
 		return "Carrello";
 	}
 	
+	//EliminaProdotto
 	@GetMapping("/eliminaProdottoCarrello")
 	public String eliminaCarrello(HttpSession session, @RequestParam Integer idProdotto, @RequestParam Integer tagliaProdotto) {
 		Carrello c = new Carrello();
