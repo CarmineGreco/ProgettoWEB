@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 
 import Demo.eShop.model.Utente;
+import Demo.eShop.persistance.DBManager;
 import Demo.eShop.persistance.DBSource;
 import Demo.eShop.persistance.dao.UtenteDAO;
 
@@ -201,22 +202,20 @@ public class UtenteDAOJDBC implements UtenteDAO {
 				st.setString(1, "admin");
 				ResultSet rs = st.executeQuery();
 				while (rs.next()) {
+					String username=rs.getString("username");
 					String email = rs.getString("email");
 					String nome = rs.getString("nome");
 					String cognome = rs.getString("cognome");
 					String password = rs.getString("password");
-					String username = rs.getString("username");
-					
-					System.out.println(email + nome + cognome + password);
+					String us = rs.getString("username");
 					Utente utente = new Utente();
-					
+					utente.setUsername(us);
 					utente.setEmail(email);
 					utente.setNome(nome);
 					utente.setCognome(cognome);
 					utente.setPassword(password);
 					
 					utenti.add(utente);
-					System.out.println("creato");
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -276,6 +275,8 @@ public class UtenteDAOJDBC implements UtenteDAO {
 		Connection connection = null;
 		
 		try {
+			DBManager.getInstance().carrelloDAO().eliminaCarrelliUtente(username);
+			DBManager.getInstance().listaPreferitiDAO().eliminaPreferitiUtente(username);
 			connection = this.dbSource.getConnection();
 			String delete = "delete FROM utente WHERE username=? ";
 			PreparedStatement statement = connection.prepareStatement(delete);
@@ -387,7 +388,6 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			connection = this.dbSource.getConnection();
 			String update = "update utente SET nome = ?, cognome = ?, password = ?, email = ? WHERE username=?";
 			PreparedStatement statement = connection.prepareStatement(update);
-			
 			statement.setString(1, newu.getNome());			
 			statement.setString(2, newu.getCognome());			
 			statement.setString(3, BCrypt.hashpw(newu.getPassword(), BCrypt.gensalt(12)));		

@@ -10,4 +10,5 @@ public interface ListaPreferitiDAO {
 	public List<Prodotto> getPreferiti(String username);  
 	public void deletePreferito(String username, Integer idProdotto);
 	public boolean existPreferito(String username, Integer idProdotto);
+	public void eliminaPreferitiUtente(String username);
 }

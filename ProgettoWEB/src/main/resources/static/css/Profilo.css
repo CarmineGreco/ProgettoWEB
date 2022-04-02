@@ -3,6 +3,9 @@ body {
 	margin-top: 20px;
 }
 
+.bottone{
+	background: #e9e4e2!important;
+}
 .card {
 	position: relative;
 	display: flex;

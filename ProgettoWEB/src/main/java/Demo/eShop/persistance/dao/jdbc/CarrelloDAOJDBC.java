@@ -248,4 +248,26 @@ DBSource dbSource;
 		}
 		return somma;
 	}
+
+	@Override
+	public void eliminaCarrelliUtente(String username) {
+		Connection connection = null;
+		try {
+			connection = this.dbSource.getConnection();
+			String delete = "delete FROM carrello WHERE utente=?;";
+			PreparedStatement statement = connection.prepareStatement(delete);
+			statement.setString(1, username);
+			statement.executeUpdate();
+			statement.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e.getMessage());
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		
+	}
 }

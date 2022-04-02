@@ -72,3 +72,12 @@ body {
 	margin-left:100px;
 	}
 }
+
+input{
+	width: 50px;
+}
+
+.dim{
+	height: 30px;
+	width: 180px;
+}

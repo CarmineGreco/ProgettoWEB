@@ -12,7 +12,7 @@ public interface UtenteDAO {
 	public List<Utente> findAllOtherUsers(String username);     //  select*
 	public boolean update(Utente old, Utente newu); //Update
 	public void updateWithoutPsw(Utente old, Utente newu);
-	public void delete(String email); //Delete	
+	public void delete(String username); //Delete	
 	public String findUsername(String email);
 	public boolean checkPassword(String username, String password);
 	public String getUsername(String email);

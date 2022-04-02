@@ -98,16 +98,18 @@
        </div>
 <!--      </div>  -->
 		<div class="form-group mb-2" >
-			<label>Quantit&#224</label> <input class="form-control" type="number" id="quantity1" name = "quantita" value="1">
-			
+			<div class="row">
+			<h4 style="margin-left:15px; margin-right:10px">Quantit&#224:</h4> 
+			<input class="form-control inputQuantita" type="number" id="quantity1" name = "quantita" value="1">
+			</div>
 		</div>
 <!--     Product Pricing -->
      <div class="product-price"> 
-       <span>${prodotto.prezzo}$</span>
+       <span>Prezzo: ${prodotto.prezzo}&#8364</span>
        <input type="hidden" id="prezzo" name="prezzo" value="${prodotto.prezzo}">
        <input type="hidden" id="idProdotto" name="idProdotto" value="${prodotto.id}">
-       <input type="submit" id="btnCarrello" name="btnCarrello">
      </div>
+     <input type="submit" id="btnCarrello" name="btnCarrello" value="Aggiungi al carrello" style="float:right;">
 	</form>  
    </div> 
 </main>

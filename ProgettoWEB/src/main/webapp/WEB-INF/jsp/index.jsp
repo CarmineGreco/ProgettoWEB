@@ -40,12 +40,15 @@
 			$("#nav-placeholder").load("http://localhost:8080/navbar");
 		});
 	</script>
+	
+	<c:if test="${username!='admin'}">
 	<div id="side-bar"></div>
 	<script>
 		$(function() {
 			$("#side-bar").load("http://localhost:8080/sidebar");
 		});
 	</script>
+	</c:if>
 
 	<!-- !PAGE CONTENT! -->
 	<div class="w3-main" style="margin-left: 250px">

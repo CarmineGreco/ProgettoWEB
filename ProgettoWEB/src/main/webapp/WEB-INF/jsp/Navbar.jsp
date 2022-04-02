@@ -88,7 +88,7 @@
 						<i class="loginIcon fa fa-user-circle" style="font-size:36px" ></i>  <!-- icona login  -->   
 							<div class="dropdown-content" style="float: right;">
 								<a id="text" href="PaginaAmministratore">Lista prodotti</a>
-								<a id="text" href="Profilo">Lista profilo</a>
+								<a id="text" href="VisualizzaLista">Lista profilo</a>
 								<a id="text" href="Logout">Logout</a>
 							</div>
 						</c:if>

@@ -97,7 +97,7 @@
 						</div>
 						<div class="form-group">
 							<input type="submit" value="Modifica"
-								class="btn float-right registrazione_btn">
+								class="bottone btn float-right ">
 						</div>
 					</form>
 						</div>
