@@ -400,4 +400,24 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			return false;			
 		} 			
 	}
+
+	@Override
+	public String getEmail(String username) {
+Connection connection = null;
+		
+		try {
+			connection = this.dbSource.getConnection();
+			String query = "select email from utente where username=?;";
+			PreparedStatement statement = connection.prepareStatement(query);
+			statement.setString(1, username);
+			ResultSet result = statement.executeQuery();
+			if (result.isClosed()) {
+				return null;
+			}
+			String e=result.getString("email");
+			return e;
+		} catch (SQLException e) {
+			return null;			
+		} 			
+	}
 }

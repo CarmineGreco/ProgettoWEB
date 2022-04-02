@@ -30,6 +30,12 @@ public class ProdottiController {
 		if(!trovato) {
 			session.removeAttribute("prodPreferito");
 		}
+		int quantita40=DBManager.getInstance().prodottoDAO().getQuantitaPerTaglia(idProdotto, 40);
+		int quantita42=DBManager.getInstance().prodottoDAO().getQuantitaPerTaglia(idProdotto, 42);
+		int quantita44=DBManager.getInstance().prodottoDAO().getQuantitaPerTaglia(idProdotto, 44);
+		session.setAttribute("quantita40",quantita40);
+		session.setAttribute("quantita42",quantita42);
+		session.setAttribute("quantita44",quantita44);
 		return "PaginaProdotto";
 	}
 	

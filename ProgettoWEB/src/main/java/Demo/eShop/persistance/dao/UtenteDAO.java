@@ -21,4 +21,5 @@ public interface UtenteDAO {
 	public void setPassword(String username, String password); //Update
 	public List<Utente> findByName(String cercaNome);     // Retrieve  == select stud
 	public Utente getUtente(String username);
+	public String getEmail(String username);
 }

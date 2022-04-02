@@ -66,7 +66,7 @@
               </c:if>
            <c:if test="${prodPreferito!=null}">
              <form id="formRimozione" method="post" action="RimuoviPreferiti">
-					<input type="hidden" id="idProdotto" name="idProdotto" value="${prodotto.id}">
+					<input type="hidden" id="idP" name="idProdotto" value="${prodotto.id}">
 					<button type="submit" style="float:right; background: transparent; border: none;"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 </svg> Rimuovi dai preferiti</button>
@@ -83,15 +83,15 @@
        <div class="cable-config"> 
          <span>Seleziona una taglia: </span> 
 		    <input type="radio" id="taglia1"
-		     name="taglia" value="40" checked="True">
+		     name="taglia" value="40" checked="True" onClick="getTaglia(40)">
 		    <label for="contactChoice1">40</label>
 		
 		    <input type="radio" id="taglia2"
-		     name="taglia" value="42">
+		     name="taglia" value="42" onClick="getTaglia(42)">
 		    <label for="contactChoice2">42</label>
 		
 		    <input type="radio" id="taglia3"
-		     name="taglia" value="44">
+		     name="taglia" value="44" onClick="getTaglia(44)">
 		    <label for="contactChoice3">44</label>
 		  
        
@@ -100,12 +100,11 @@
 		<div class="form-group mb-2" >
 			<div class="row">
 			<h4 style="margin-left:15px; margin-right:10px">Quantit&#224:</h4> 
-			<input class="form-control inputQuantita" type="number" id="quantity1" name = "quantita" value="1">
+			<input class="form-control inputQuantita" type="number" id="quantity1" name = "quantita" value="0" min="0">
 			</div>
 		</div>
 <!--     Product Pricing -->
      <div class="product-price"> 
-       <span>Prezzo: ${prodotto.prezzo}&#8364</span>
        <input type="hidden" id="prezzo" name="prezzo" value="${prodotto.prezzo}">
        <input type="hidden" id="idProdotto" name="idProdotto" value="${prodotto.id}">
      </div>
@@ -113,5 +112,22 @@
 	</form>  
    </div> 
 </main>
+		<script defer>
+		var q=document.getElementById("quantity1");
+			function getTaglia(taglia){
+				if(taglia==40){
+					q.setAttribute("max",${quantita40});
+				}
+				if(taglia==42){
+					q.setAttribute("max",${quantita42});
+				}
+				if(taglia==44){
+					q.setAttribute("max",${quantita44});
+				}
+			}
+			getTaglia(40);
+		</script>
+		
+		 
 </body>
 </html>

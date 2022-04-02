@@ -216,4 +216,25 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 		}
 		return prodotti;
 	}
+
+	@Override
+	public int getQuantitaPerTaglia(int id, int taglia) {
+		try {
+			int quantita=-1;
+			Connection con = dbSource.getConnection();
+			String query = "select quantita from prodotto where id=? and taglia=?";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setInt(1,id);
+			st.setInt(2,taglia);
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				quantita=rs.getInt("quantita");
+			}
+			st.close();
+			return quantita;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 }

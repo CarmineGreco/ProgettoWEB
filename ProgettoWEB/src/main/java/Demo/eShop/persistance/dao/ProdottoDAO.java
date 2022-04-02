@@ -12,6 +12,5 @@ public interface ProdottoDAO {
 	public void delete(int  idProdotto);	//Delete	
 	public List<Prodotto> findByTipology(String categoria);
 	public List<Prodotto> sortPrezzo(String categoria);
-
-	
+	public int getQuantitaPerTaglia (int id, int taglia);
 }

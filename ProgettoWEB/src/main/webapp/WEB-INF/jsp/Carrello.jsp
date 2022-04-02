@@ -52,7 +52,7 @@
 				<c:forEach items="${prodCarrello}" var="prodCar">
 					<c:forEach items="${prodotti}" var="prod">
 						<c:if
-							test="${(prod.id != $prodCarrello.idProdotto) and (prod.taglia == prodCar.tagliaProdotto)}">
+							test="${(prod.id == prodCar.idProdotto) && (prod.taglia == prodCar.tagliaProdotto)}">
 							<div
 								class="d-sm-flex justify-content-between my-4 pb-4 border-bottom">
 								<div class="media d-block d-sm-flex text-center text-sm-left">

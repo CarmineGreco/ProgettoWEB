@@ -23,6 +23,14 @@ public class CarrelloController {
 		session.setAttribute("prodotti", prodotti);
 		List<Carrello> prodCarrello=DBManager.getInstance().carrelloDAO().getCarrelliUtente(session.getAttribute("username").toString());
 		session.setAttribute("prodCarrello", prodCarrello);
+		for (Prodotto p: prodotti) {
+			for(Carrello c:prodCarrello) {
+				if(c.getIdProdotto()==p.getId()) {
+					int q=DBManager.getInstance().prodottoDAO().getQuantitaPerTaglia(p.getId(), c.getTagliaProdotto());
+					session.setAttribute("quantita"+p.getId()+p.getTaglia(), q);
+				}
+			}
+		}
 		session.setAttribute("sommaProdotti", DBManager.getInstance().carrelloDAO().sommaTotale(session.getAttribute("username").toString()));
 		return "Carrello";
 	}
