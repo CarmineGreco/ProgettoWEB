@@ -8,6 +8,23 @@
 body {
     background-color: 	#e9e4e2;
     font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+table {
+margin: 0 auto;
+background: #fff;
+width: 200px;
+height: 200px;
+border-collapse: collapse;
+}
+
+table td {
+background: #e9e4e2;
+color: #111;
+padding: 20px;
+border: 10px solid #fff;
+/* allineamento di default vertical-align: middle; */
 }
 
 .wrapper {
@@ -17,7 +34,10 @@ body {
     margin:25px auto 0;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+    
 }
+
+
 
 .wrapper h2 {
     background-color: #fcfcfc;
@@ -27,6 +47,8 @@ body {
     margin-bottom: 8px;
     text-align: center;
     border: 1px dashed 	#8B636C;
+    margin: 0 auto;
+width: 760px;
 }
 
 .wrapper h4 {

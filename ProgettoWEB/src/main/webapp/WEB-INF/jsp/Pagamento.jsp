@@ -27,8 +27,19 @@
 		$(function() {
 			$("#nav-placeholder").load("http://localhost:8080/navbar");
 		});
+		
 	</script>
 	
+	<div id="side-bar"></div>
+	<script>
+		$(function() {
+		$("#side-bar").load("http://localhost:8080/sidebar");
+		});
+	</script>
+	
+	<table>
+	<tr>
+	<td>
     <div class="wrapper">
         <h2>Pagamento</h2>
 <!--         <form action="" method="post"> -->
@@ -58,7 +69,7 @@
             </div>
             <div class="input_group">
                 <div class="input_box">
-                    <input type="text" placeholder="CittÃ " required class="name">
+                    <input type="text" placeholder="Citta' " required class="name">
                     <i class="fa fa-institution icon"></i>
                 </div>
             </div>
@@ -152,7 +163,13 @@
 	   }
 	}).render('#paypal-button-container');
    }
+	</td>
+	</tr>
+	</table>
+	
 	</script>
+	
+	
            
 <!--         </form> -->
         
