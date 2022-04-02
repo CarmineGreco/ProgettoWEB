@@ -16,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento</title>
-    <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=AVTpbeGQa7-4WbeK2p0TPATh3T5rsoavzqsYM49CHKLYbJ0xD6B5krktKyLHMRTM_LbJ77mRUSqplmF7"></script>
+    <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=Ab5KJVe0alw9PCAaiMQs_3vi-8vQ6733sl5jfFWKX9dkqOZVpKbdCIO-8pwRo0rX8_M3QY9vpxAT_r-s"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </head>
@@ -28,15 +28,10 @@
 			$("#nav-placeholder").load("http://localhost:8080/navbar");
 		});
 	</script>
-	<div id="side-bar"></div>
-	<script>
-		$(function() {
-			$("#side-bar").load("http://localhost:8080/sidebar");
-		});
-	</script>
+	
     <div class="wrapper">
         <h2>Pagamento</h2>
-        <form action="" method="post">
+<!--         <form action="" method="post"> -->
             <!--Account Information Start-->
             <h4>Account</h4>
             <div class="input_group">
@@ -129,8 +124,8 @@
             <!--Payment Details End-->
 
 
-			<div style="background-color: green; display: none" id="transition">GRAZIE PER IL TUO PAGAMENTO</div>
-    <input type="text" id="payInput" /><button onClick="generatePayment(document.getElementById('payInput').value)">paga</button>
+			<div style="background-color: green; display: none" id="transition">GRAZIE PER IL TUO ACQUISTO</div>
+    <input type="text" id="payInput" value="${totale}" /><button onClick="generatePayment(document.getElementById('payInput').value)">paga</button>
 	<div id="paypal-button-container"></div>
 	
 	<script>
@@ -159,7 +154,7 @@
    }
 	</script>
            
-        </form>
+<!--         </form> -->
         
         
         
