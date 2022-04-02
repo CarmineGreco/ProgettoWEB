@@ -53,19 +53,20 @@
 											action="ModificaProdottoAdmin">
 											<input type="hidden" id="idProdotto" name="idProdotto"
 												value="${prod.id}">
-											<input type="text" id="nome" name="nome" value=" ${prod.nome}">
+											<a>Nome</a><input type="text" id="nome" name="nome" value=" ${prod.nome}">
 										
 										<div class="font-size-sm">
-											<input type="number" id="taglia" name="taglia" value="${prod.taglia}">
+											<a>Taglia</a><input type="text" id="taglia" name="taglia" value="${prod.taglia}" readonly>
 										</div>
-										<input type="number" id="prezzo" name="prezzo" value="${prod.prezzo}">
+										<a>Prezzo</a><input type="number" id="prezzo" name="prezzo" value="${prod.prezzo}">
 									</div>
 								</div>
 									<div
 										class="pt-2 pt-sm-0 pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left"
 										style="max-width: 10rem;">
 										<div class="form-group mb-2">
-											<label for="quantity1">Quantity</label> 
+											<label for="quantity1">Quantity</label>
+											<input type="number" id="qntProd" name="qntProd" value="${prod.quantita}"> 
 											<button type="submit" class="btn btn-sm btn-outline-info"
 												style="float: left">
 												<i class="icon-cog"><svg
@@ -87,29 +88,6 @@
 											</button>
 								</form>
 							</div>
-							</form>
-<!-- 							<form id="formElimina" method="GET" -->
-<!-- 								action="eliminaProdottoCarrello"> -->
-<!-- 								<input type="hidden" id="idProdotto" name="idProdotto" -->
-<%-- 									value="${prodCar.idProdotto}"> <input type="hidden" --%>
-<!-- 									id="tagliaProdotto" name="tagliaProdotto" -->
-<%-- 									value="${prodCar.tagliaProdotto}"> --%>
-<!-- 								<button type="submit" class="btn btn-sm btn-outline-info" -->
-<!-- 									style="float: left"> -->
-<!-- 									<i class="icon-cog"></i>Elimina -->
-<!-- 								</button> -->
-<!-- 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" -->
-<!-- 									viewBox="0 0 24 24" fill="none" stroke="currentColor" -->
-<!-- 									stroke-width="2" stroke-linecap="round" stroke-linejoin="round" -->
-<!-- 									class="feather feather-trash-2 mr-1"> -->
-<!-- <polyline points="3 6 5 6 21 6"></polyline> -->
-<!-- <path -->
-<!-- 										d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path> -->
-<!-- <line x1="10" y1="11" x2="10" y2="17"></line> -->
-<!-- <line x1="14" y1="11" x2="14" y2="17"></line> -->
-<!-- </svg> -->
-<!-- 								</button> -->
-<!-- 							</form> -->
 			</div>
 
 		</div>

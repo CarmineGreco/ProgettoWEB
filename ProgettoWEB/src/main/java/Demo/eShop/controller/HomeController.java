@@ -58,4 +58,9 @@ public class HomeController {
 		s.invalidate();
 		return "index";
 	}
+	
+	@GetMapping("/PaginaAdmin")
+	public String vaiAllaPaginaAdmin() {
+		return "PaginaAdmin";
+	}
 }

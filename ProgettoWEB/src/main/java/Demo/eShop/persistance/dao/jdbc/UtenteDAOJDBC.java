@@ -196,9 +196,10 @@ public class UtenteDAOJDBC implements UtenteDAO {
 			
 			try {
 				Connection conn = dbSource.getConnection();
-				String query = "select * from utente";
-				Statement st = conn.createStatement();
-				ResultSet rs = st.executeQuery(query);
+				String query = "select * from utente WHERE username != ?";
+				PreparedStatement st = conn.prepareStatement(query);
+				st.setString(1, "admin");
+				ResultSet rs = st.executeQuery();
 				while (rs.next()) {
 					String email = rs.getString("email");
 					String nome = rs.getString("nome");
