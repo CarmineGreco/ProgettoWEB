@@ -144,7 +144,7 @@
 		</c:forEach>
 	</div>
 	<div class="col-2 cont">
-		<h2 class="h6 py-2 bg" style="background-color: red">Totale</h2>
+		<h2>Totale</h2>
 		<h2>${sommaProdotti}</h2>
 		<hr>
 		<form id="formSetContenuto" method="GET" action="Pagamento">

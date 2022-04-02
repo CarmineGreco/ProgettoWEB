@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </head>
 
-<body>
+<body style="background:#f5f3f2">
 <div id="nav-placeholder"></div>
 	<script>
 		$(function() {
@@ -42,7 +42,7 @@
 	<td>
     <div class="wrapper">
         <h2>Pagamento</h2>
-<!--         <form action="" method="post"> -->
+<!-- <form action="" method="post">  -->
             <!--Account Information Start-->
             <h4>Account</h4>
             <div class="input_group">
@@ -85,7 +85,7 @@
                     <input type="text" placeholder="YYYY" required class="dob">
                 </div>
                 <div class="input_box">
-                    <h4>Gender</h4>
+                    <h4>Genere</h4>
                     <input type="radio" name="gender" class="radio" id="b1" checked>
                     <label for="b1">Uomo</label>
                     <input type="radio" name="gender" class="radio" id="b2">
@@ -171,7 +171,7 @@
 	
 	
            
-<!--         </form> -->
+<!-- </form> -->
         
         
         
