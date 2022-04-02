@@ -56,7 +56,7 @@ public class HomeController {
 	@GetMapping("/Logout")
 	public String logout(HttpSession s) {
 		s.invalidate();
-		return "index";
+		return "redirect:/";
 	}
 	
 	@GetMapping("/PaginaAdmin")

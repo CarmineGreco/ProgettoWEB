@@ -54,7 +54,7 @@
 	</nav>
 	<!-- Overlay effect when opening sidebar on small screens -->
 	<div class="w3-overlay w3-hide-large" onclick="w3_close()"
-		style="cursor: pointer" title="close side menu" style="background:#e9e4e2" id="myOverlay"></div>
+		style="cursor: pointer; z-index:0;" title="close side menu" style="background:#e9e4e2" id="myOverlay"></div>
 	
 </body>
 </html>

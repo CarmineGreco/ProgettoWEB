@@ -31,6 +31,6 @@ public class AdminController {
 		p.setQuantita(qntProd);
 		p.setTaglia(taglia);
 		DBManager.getInstance().prodottoDAO().update(p);
-		return "redirect:/PaginaAdmin";
+		return "redirect:/PaginaAmministratore";
 	}
 }

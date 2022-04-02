@@ -42,7 +42,7 @@ public class CarrelloController {
 		c.setTagliaProdotto(taglia);
 		c.setUtente(session.getAttribute("username").toString());
 		DBManager.getInstance().carrelloDAO().update(c);
-		return "Carrello";
+		return "redirect:/VisualizzaCarrello";
 	}
 	
 	//EliminaProdotto
@@ -53,6 +53,6 @@ public class CarrelloController {
 		c.setTagliaProdotto(tagliaProdotto);
 		c.setUtente(session.getAttribute("username").toString());
 		DBManager.getInstance().carrelloDAO().delete(c);
-		return "redirect:/Carrello";
+		return "redirect:/VisualizzaCarrello";
 	}
 }
