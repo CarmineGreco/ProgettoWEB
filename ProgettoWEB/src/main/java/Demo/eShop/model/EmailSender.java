@@ -18,6 +18,7 @@ import Demo.eShop.persistance.DBManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
@@ -153,6 +154,37 @@ public class EmailSender {
 	
 	
 		return corpoEmail;
+	}
+	
+	public void eliminazioneProfiloEmail(String email) throws Exception {
+			
+        Properties properties = new Properties();
+
+         
+         properties.put("mail.smtp.auth", "true");        
+         properties.put("mail.smtp.starttls.enable", "true");       
+         properties.put("mail.smtp.host", Server);        
+         properties.put("mail.smtp.port", Porta);
+       
+         Session session = Session.getInstance(properties, new Authenticator() {
+             @Override
+             protected PasswordAuthentication getPasswordAuthentication() {
+                 return new PasswordAuthentication(myEmail, myPass);
+             }
+         });
+         Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(myEmail));
+            message.setRecipient(Message.RecipientType.TO, new InternetAddress(email));
+            message.setSubject("CarlaFerroniReggioCalabria");
+            MimeBodyPart messageBodyPart = new MimeBodyPart();
+
+			messageBodyPart.setContent("Gentile utente "  + '\n' + "non ha rispettato i termini e le condizioni, per questo motivo le abbiamo eliminato l'account.", "text/plain");
+
+			Multipart multipart = new MimeMultipart();
+			multipart.addBodyPart(messageBodyPart);
+
+			message.setContent(multipart);
+            Transport.send(message);
 	}
    
 }

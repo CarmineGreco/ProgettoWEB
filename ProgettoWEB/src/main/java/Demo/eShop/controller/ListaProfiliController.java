@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import Demo.eShop.model.EmailSender;
 import Demo.eShop.model.Utente;
 import Demo.eShop.persistance.DBManager;
 
@@ -31,8 +32,14 @@ public class ListaProfiliController {
 	}
 	
 	@GetMapping("/eliminaProfilo")
-	public String eliminaProfilo(HttpSession session, @RequestParam String username){
-		DBManager.getInstance().utenteDAO().delete(username);
+	public String eliminaProfilo(HttpSession session, @RequestParam String username, @RequestParam String email){
+		try {
+			EmailSender.getInstance().eliminazioneProfiloEmail(email);
+			DBManager.getInstance().utenteDAO().delete(username);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return "redirect:/VisualizzaLista";
 	}
 }

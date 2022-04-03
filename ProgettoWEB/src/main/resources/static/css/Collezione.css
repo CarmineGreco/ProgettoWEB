@@ -17,6 +17,11 @@ body {
 	margin-top: 15px;
 }
 
+.btnSort{
+	background:#e9e4e2;	
+	border: 1px solid transparent;
+}
+
 .product .caption h6 {
 	color: #455a64;
 }
