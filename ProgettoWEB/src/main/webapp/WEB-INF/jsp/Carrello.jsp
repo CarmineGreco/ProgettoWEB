@@ -96,7 +96,7 @@
 </svg>
 <polyline points="3 6 5 6 21 6"></polyline>Rimuovi prodotto
 								</button>
-											
+<!-- 									commento prova		 -->
 								</form>
 							</div>
 							</form>
@@ -109,6 +109,7 @@
 		</c:forEach>
 	</div>
 	<div class="col-2 cont">
+	
 		<h2>Totale</h2>
 		<h2>${sommaProdotti}&#8364</h2>
 		<hr>
