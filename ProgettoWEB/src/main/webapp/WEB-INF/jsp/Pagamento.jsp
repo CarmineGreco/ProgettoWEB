@@ -30,17 +30,15 @@
 		
 	</script>
 	
-	<div id="side-bar"></div>
 	<script>
 		$(function() {
-		$("#side-bar").load("http://localhost:8080/sidebar");
+			$("#side-bar").load("http://localhost:8080/sidebar");
 		});
-	</script>
+	</script>	
 	
-	<table>
-	<tr>
-	<td>
-    <div class="wrapper">
+	
+	
+    <div class="wrapper col-12">
         <h2>Pagamento</h2>
 <!-- <form action="" method="post">  -->
             <!--Account Information Start-->
@@ -163,9 +161,7 @@
 	   }
 	}).render('#paypal-button-container');
    }
-	</td>
-	</tr>
-	</table>
+	
 	
 	</script>
 	

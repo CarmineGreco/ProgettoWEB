@@ -197,31 +197,59 @@ input[type='radio']:checked:after{
   background-color: #64af3d;
 }
 
-/* Responsive */
 @media (max-width: 940px) {
-  .container {
-    flex-direction: column;
-    margin-top: 60px;
-  }
- 
-  .left-column,
-  .right-column {
-    width: 100%;
-  }
- 
-  .left-column img {
-    width: 300px;
-    right: 0;
-    top: -65px;
-    left: initial;
-  }
+.container {
+flex-direction: column;
+margin-top: 60px;
 }
+
+.left-column,
+.right-column {
+width: 55%;
+}
+
+.left-column img {
+width: 200px;
+right: 0;
+left:0;
+top: -65px;
+left: initial;
+}
+}
+ 
+ 
  
 @media (max-width: 535px) {
   .left-column img {
     width: 220px;
     top: -85px;
   }
+}
+
+@media screen and (max-width: 992px){
+	.product-configuration{
+	margin-left:10px;
+	}
+	.cont{
+	margin-left:50px;
+	
+	margin-top:100px;
+	
+	}
+	
+}
+
+@media screen and (max-width: 600px){
+	.container{
+	margin-left:200px;
+	}
+	.cont{
+	margin-left:100px;
+	
+	margin-top:100px;
+
+	}
+	
 }
 
 #btnCarrello{
