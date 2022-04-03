@@ -96,7 +96,7 @@
 </svg>
 <polyline points="3 6 5 6 21 6"></polyline>Rimuovi prodotto
 								</button>
-											
+<!-- 									commento prova		 -->
 								</form>
 							</div>
 							</form>
