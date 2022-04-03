@@ -17,6 +17,7 @@ public interface UtenteDAO {
 	public boolean checkPassword(String username, String password);
 	public String getUsername(String email);
 	public boolean existsUser(String username);
+	public boolean existsUserEmail(String email);
 	public boolean existsUsername (String username);
 	public void setPassword(String username, String password); //Update
 	public List<Utente> findByName(String cercaNome);     // Retrieve  == select stud

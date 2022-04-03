@@ -267,7 +267,7 @@
 								<form id="recuperoPassword" action="#">
 				                     <h4>Inserisci la tua email per recuperare la password</h4> <br>
 				                     <input style="font-size: 20px;" type="email" id="emailRecupero" name="emailrecupero" required><br><br>           
-				                     <button type="submit" id="btnRecuperoPassword" class="btn btn-sm btn-outline-info" style="float:right"> recupera</button> 
+				                     <button type="submit" id="btnRecuperoPassword" class="btn btn-sm btn-outline-info" style="float:right"> Recupera</button> 
 				                 </form>
 							 <br>
 						 </div>
