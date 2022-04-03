@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import Demo.eShop.model.Utente;
 import Demo.eShop.persistance.DBManager;
 
@@ -50,4 +51,18 @@ public class LoginController {
 		}
 	}
 	
+/*	@PostMapping("RecuperoPassword")
+	public String recuperoPasswor(HttpSession session, @RequestBody Utente utente){
+		
+		if(DBManager.getInstance().utenteDAO().existsUser(utente.getEmail())){
+			try {			
+				String nuovaPassword= Mail.getInstance().ResetPassword(utente.getEmail());
+				DBManager.getInstance().utenteDAO().setPassword(utente.getEmail(), nuovaPassword);
+			} catch (Exception e) {			
+				e.printStackTrace();
+			}
+		}
+		return "success";	
+	}
+	*/
 }

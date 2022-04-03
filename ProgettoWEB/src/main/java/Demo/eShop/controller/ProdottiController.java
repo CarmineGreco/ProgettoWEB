@@ -1,5 +1,6 @@
 package Demo.eShop.controller;
 
+import java.util.Collections;
 import java.util.List;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -54,7 +55,8 @@ public class ProdottiController {
 	@GetMapping("/CollezioneMaglia")
 	public String vaiAllaCollezioneMaglia(HttpSession session) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("maglia");
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("Maglia");
+		session.setAttribute("categoria", "Maglia");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
@@ -63,7 +65,8 @@ public class ProdottiController {
 	@GetMapping("/CollezioneVestiti")
 	public String vaiAllaCollezioneVestiti(HttpSession session) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("vestito");
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("Vestiti");
+		session.setAttribute("categoria", "Vestiti");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
@@ -73,7 +76,8 @@ public class ProdottiController {
 	@GetMapping("/CollezionePantaloni")
 	public String vaiAllaCollezionePantaloni(HttpSession session) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("pantaloni");
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("Pantaloni");
+		session.setAttribute("categoria", "Pantaloni");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
@@ -81,7 +85,8 @@ public class ProdottiController {
 	@GetMapping("/CollezioneFelpe")
 	public String vaiAllaCollezioneFelpe(HttpSession session) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("felpa");
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("Felpe");
+		session.setAttribute("categoria", "Felpe");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
@@ -90,7 +95,8 @@ public class ProdottiController {
 	@GetMapping("/CollezioneCamicie")
 	public String vaiAllaCollezioneCamicie(HttpSession session) {
 		
-		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("camicie");
+		List<Prodotto> prodotti = DBManager.getInstance().prodottoDAO().findByTipology("Camicie");
+		session.setAttribute("categoria", "Camicie");
 		session.setAttribute("prodotti", prodotti);
 		
 		return "Collezione";
@@ -98,9 +104,10 @@ public class ProdottiController {
 	
 	@PostMapping("/aggiungiCarrello")
 	public String aggiungiAlCarrello(HttpSession session, @RequestParam Integer taglia, @RequestParam Integer idProdotto, @RequestParam Integer quantita, @RequestParam float prezzo) {
+		int quantCarrello=DBManager.getInstance().carrelloDAO().getQuantita(session.getAttribute("username").toString(), idProdotto, taglia);
 		Carrello c = new Carrello();		
 		c.setIdProdotto(idProdotto);
-		c.setQuantita(quantita);
+		c.setQuantita(quantita+quantCarrello);
 		c.setUtente(session.getAttribute("username").toString());
 		c.setTagliaProdotto(taglia);
 		c.setPrezzo(prezzo);
@@ -111,4 +118,18 @@ public class ProdottiController {
 		return "PaginaProdotto";
 	}
 	
+	@GetMapping("/PrezzoCrescente")
+	public String prezzoCrescente(HttpSession session, @RequestParam String categoria) {
+		List<Prodotto> prodotto=DBManager.getInstance().prodottoDAO().sortPrezzo(categoria);
+		session.setAttribute("prodotti", prodotto);
+		return "Collezione";
+	}
+	
+	@GetMapping("/PrezzoDecrescente")
+	public String prezzoDecrescente(HttpSession session, @RequestParam String categoria) {
+		List<Prodotto> prodotto=DBManager.getInstance().prodottoDAO().sortPrezzo(categoria);
+		Collections.reverse(prodotto);
+		session.setAttribute("prodotti", prodotto);
+		return "Collezione";
+	}
 }

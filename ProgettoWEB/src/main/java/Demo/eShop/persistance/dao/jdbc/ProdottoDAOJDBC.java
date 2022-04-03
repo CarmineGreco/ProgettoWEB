@@ -194,9 +194,10 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 		List<Prodotto> prodotti = new ArrayList <Prodotto>();
 		try {
 			Connection con = dbSource.getConnection();
-			String query = "select * from prodotto where categoria=? order by prezzo";
+			String query = "select * from prodotto where categoria=? and taglia=? order by prezzo";
 			PreparedStatement st = con.prepareStatement(query);
 			st.setString(1, categoria);
+			st.setInt(2, 40);
 			ResultSet rs = st.executeQuery();
 			while (rs.next()) {
 				Prodotto prodotto = new Prodotto();

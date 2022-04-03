@@ -45,9 +45,16 @@
 				<div class="dropdown w3-right" style="background:#e9e4e2">
 						<i class="bi bi-caret-down-fill">Ordina</i>  <!-- icona login  -->   
 							<div class="dropdown-content" style="float: right;">
-								<a id="text" href="PaginaAmministratore">Prezzo crescente</a>
-								<a id="text" href="VisualizzaLista">Prezzo decrescente</a>
-								<a id="text" href="Logout">Logout</a>
+							
+							<form id="formSetContenuto" method="GET" action="PrezzoCrescente">
+							<input type="hidden" id="categoria" name="categoria" value="${categoria}">
+								<button type="submit">Prezzo crescente</button>
+								</form>
+								
+							<form id="form" method="GET" action="PrezzoDecrescente">
+							<input type="hidden" id="categoria" name="categoria" value="${categoria}">
+								<button type="submit">Prezzo decrescente</button>
+								</form>
 							</div>
 					</div>
 				</div>
