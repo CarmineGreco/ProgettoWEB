@@ -17,8 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento</title>
     <script src="https://www.paypal.com/sdk/js?currency=EUR&client-id=Ab5KJVe0alw9PCAaiMQs_3vi-8vQ6733sl5jfFWKX9dkqOZVpKbdCIO-8pwRo0rX8_M3QY9vpxAT_r-s"></script>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 </head>
 
 <body style="background:#f5f3f2">
@@ -37,141 +37,147 @@
 	</script>	
 	
 	
-	
-    <div class="wrapper col-12">
-        <h2>Pagamento</h2>
-<!-- <form action="" method="post">  -->
-            <!--Account Information Start-->
-            <h4>Account</h4>
-            <div class="input_group">
-                <div class="input_box">
-                    <input type="text" placeholder="Nome completo" required class="name">
-                    <i class="fa fa-user icon"></i>
-                </div>
-                <div class="input_box">
-                    <input type="text" placeholder="Nome sulla carta" required class="name">
-                    <i class="fa fa-user icon"></i>
-                </div>
-            </div>
-            <div class="input_group">
-                <div class="input_box">
-                    <input type="email" placeholder="Email" required class="name">
-                    <i class="fa fa-envelope icon"></i>
-                </div>
-            </div>
-            <div class="input_group">
-                <div class="input_box">
-                    <input type="text" placeholder="Indirizzo" required class="name">
-                    <i class="fa fa-map-marker icon" aria-hidden="true"></i>
-                </div>
-            </div>
-            <div class="input_group">
-                <div class="input_box">
-                    <input type="text" placeholder="Citta' " required class="name">
-                    <i class="fa fa-institution icon"></i>
-                </div>
-            </div>
-            <!--Account Information End-->
-
-
-            <!--DOB & Gender Start-->
-            <div class="input_group">
-                <div class="input_box">
-                    <h4>Data di nascita</h4>
-                    <input type="text" placeholder="DD" required class="dob">
-                    <input type="text" placeholder="MM" required class="dob">
-                    <input type="text" placeholder="YYYY" required class="dob">
-                </div>
-                <div class="input_box">
-                    <h4>Genere</h4>
-                    <input type="radio" name="gender" class="radio" id="b1" checked>
-                    <label for="b1">Uomo</label>
-                    <input type="radio" name="gender" class="radio" id="b2">
-                    <label for="b2">Donna</label>
-                </div>
-            </div>
-            <!--DOB & Gender End-->
-
-
-            <!--Payment Details Start-->
-            <div class="input_group">
-                <div class="input_box">
-                    <h4>Dettagli pagamento</h4>
-                    
-                    
-                            
-                    
-                  
-                           
-                </div>
-            </div>
-            <div class="input_group">
-                <div class="input_box">
-                    <input type="tel" name="" class="name" placeholder="Numero carta" required>
-                    <i class="fa fa-credit-card icon"></i>
-                </div>
-            </div>
-            <div class="input_group">
-                <div class="input_box">
-                    <input type="tel" name="" class="name" placeholder="CVC" required>
-                    <i class="fa fa-user icon"></i>
-                </div>
-            </div>
-            <div class="input_group">
-                <div class="input_box">
-                    <div class="input_box">
-                        <input type="number" placeholder="Mese di scadenza" required class="name">
-                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="input_box">
-                    <input type="number" placeholder="Anno di scadenza" required class="name">
-                    <i class="fa fa-calendar-o icon" aria-hidden="true"></i>
-                </div>
-            </div>
-            
-            <!--Payment Details End-->
-
-
-			<div style="background-color: green; display: none" id="transition">GRAZIE PER IL TUO ACQUISTO</div>
-    <input type="text" id="payInput" value="${totale}" /><button onClick="generatePayment(document.getElementById('payInput').value)">paga</button>
-	<div id="paypal-button-container"></div>
-	
-	<script>
-	function generatePayment(value){
-		if(value==""){
-			alert("NESSUN IMPORTO");
-			return;
-		}
-		
-		paypal.Buttons({
-			createOrder: function(data, actions){
-				return actions.order.create({
-					purchase_units: [{
-						amount: {
-							value: value
+	<div class= "row ">
+	<div class= "col-3" ></div>
+    <div class="col-6" style="text-align: center">
+   
+			        <h2>Pagamento</h2>
+			<!-- <form action="" method="post">  -->
+			            <!--Account Information Start-->
+			            <h4>Account</h4>
+			            <div class="input_group">
+			                <div class="input_box">
+			                    <input type="text" placeholder="Nome completo" required class="name">
+			                    <i class="fa fa-user icon"></i>
+			                </div>
+			                <div class="input_box">
+			                    <input type="text" placeholder="Nome sulla carta" required class="name">
+			                    <i class="fa fa-user icon"></i>
+			                </div>
+			            </div>
+			            <div class="input_group">
+			                <div class="input_box">
+			                    <input type="email" placeholder="Email" required class="name">
+			                    <i class="fa fa-envelope icon"></i>
+			                </div>
+			            </div>
+			            <div class="input_group">
+			                <div class="input_box">
+			                    <input type="text" placeholder="Indirizzo" required class="name">
+			                    <i class="fa fa-map-marker icon" aria-hidden="true"></i>
+			                </div>
+			            </div>
+			            <div class="input_group">
+			                <div class="input_box">
+			                    <input type="text" placeholder="Citta' " required class="name">
+			                    <i class="fa fa-institution icon"></i>
+			                </div>
+			            </div>
+			            <!--Account Information End-->
+			
+			
+			            <!--DOB & Gender Start-->
+			            <div class="input_group">
+			                <div class="input_box">
+			                    <h4>Data di nascita</h4>
+			                    <input type="text" placeholder="DD" required class="dob">
+			                    <input type="text" placeholder="MM" required class="dob">
+			                    <input type="text" placeholder="YYYY" required class="dob">
+			                </div>
+			                <div class="input_box">
+			                    <h4>Genere</h4>
+			                    <input type="radio" name="gender" class="radio" id="b1" checked>
+			                    <label for="b1">Uomo</label>
+			                    <input type="radio" name="gender" class="radio" id="b2">
+			                    <label for="b2">Donna</label>
+			                </div>
+			            </div>
+			            <!--DOB & Gender End-->
+			
+			
+			            <!--Payment Details Start-->
+			            <div class="input_group">
+			                <div class="input_box">
+			                    <h4>Dettagli pagamento</h4>
+			                    
+			                    
+			                            
+			                    
+			                  
+			                           
+			                </div>
+			            </div>
+			            <div class="input_group">
+			                <div class="input_box">
+			                    <input type="tel" name="" class="name" placeholder="Numero carta" required>
+			                    <i class="fa fa-credit-card icon"></i>
+			                </div>
+			            </div>
+			            <div class="input_group">
+			                <div class="input_box">
+			                    <input type="tel" name="" class="name" placeholder="CVC" required>
+			                    <i class="fa fa-user icon"></i>
+			                </div>
+			            </div>
+			            <div class="input_group">
+			                <div class="input_box">
+			                    <div class="input_box">
+			                        <input type="number" placeholder="Mese di scadenza" required class="name">
+			                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
+			                    </div>
+			                </div>
+			                <div class="input_box">
+			                    <input type="number" placeholder="Anno di scadenza" required class="name">
+			                    <i class="fa fa-calendar-o icon" aria-hidden="true"></i>
+			                </div>
+			            </div>
+			            
+			            <!--Payment Details End-->
+			
+			
+						<div style="background-color: green; display: none" id="transition">GRAZIE PER IL TUO ACQUISTO</div>
+			    <input type="text" id="payInput" value="${totale}"  style="height: 45px;"/>
+			    <button class="button" onClick="generatePayment(document.getElementById('payInput').value)">paga</button>
+				<div id="paypal-button-container"></div>
+				<div class="row" style="height: 50px"> </div>
+				
+				<script>
+				function generatePayment(value){
+					if(value==""){
+						alert("NESSUN IMPORTO");
+						return;
 					}
-				}]
-			});
-		},
-	onApprove: function(data, actions){
-		return actions.order.capture().then(function(details) {
-			document.getElementById("transition").style.display= "block"; 
-		});
-	   }
-	}).render('#paypal-button-container');
-   }
-	
-	
-	</script>
-	
-	
-           
-<!-- </form> -->
-        
-        
-        
+					
+					paypal.Buttons({
+						createOrder: function(data, actions){
+							return actions.order.create({
+								purchase_units: [{
+									amount: {
+										value: value
+								}
+							}]
+						});
+					},
+				onApprove: function(data, actions){
+					return actions.order.capture().then(function(details) {
+						document.getElementById("transition").style.display= "block"; 
+					});
+				   }
+				}).render('#paypal-button-container');
+			   }
+				
+				
+				</script>
+				
+				
+			           
+			<!-- </form> -->
+			        
+			        
+			        
     </div>
+     <div class= "col-3">  </div>
+ </div>
     
     
 	
