@@ -54,10 +54,16 @@
 											<input type="hidden" id="idProdotto" name="idProdotto"
 												value="${prod.id}">
 											<a>Nome</a><input type="text" id="nome" name="nome" value=" ${prod.nome}">
+											
+											
+								           <p>  </p>
+										
 										
 										<div class="font-size-sm">
 											<a>Taglia</a><input type="text" id="taglia" name="taglia" value="${prod.taglia}" readonly>
 										</div>
+										
+										 <p>  </p>
 										<a>Prezzo</a><input type="number" id="prezzo" name="prezzo" value="${prod.prezzo}">
 									</div>
 								</div>
@@ -65,10 +71,18 @@
 										class="pt-2 pt-sm-0 pl-sm-3 mx-auto mx-sm-0 text-center text-sm-left"
 										style="max-width: 10rem;">
 										<div class="form-group mb-2">
-											<label for="quantity1">Quantity</label>
+											<label for="quantity1">Quantità</label>
+											
+											
+											
 											<input type="number" id="qntProd" name="qntProd" value="${prod.quantita}"> 
+											
+											 <p>  </p>
+											 <label for="quantity1">Aggiorna quantità</label>
 											<button type="submit" class="btn btn-sm btn-outline-info"
-												style="float: left">
+												 id="relative">
+												
+												
 												<i class="icon-cog"><svg
 														xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 														viewBox="0 0 24 24" fill="none" stroke="currentColor"

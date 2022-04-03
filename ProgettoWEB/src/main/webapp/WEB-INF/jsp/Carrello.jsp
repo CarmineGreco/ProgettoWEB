@@ -109,6 +109,7 @@
 		</c:forEach>
 	</div>
 	<div class="col-2 cont">
+	
 		<h2>Totale</h2>
 		<h2>${sommaProdotti}&#8364</h2>
 		<hr>

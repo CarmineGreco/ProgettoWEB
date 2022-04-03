@@ -55,26 +55,42 @@ body {
 	margin-left:200px;
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 992px){
 	.container2{
 	margin-left:0px;
 	}
 	.cont{
 	margin-left:50px;
+	
+	margin-top:100px;
+	
 	}
+	
 }
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 600px){
 	.container2{
 	margin-left:200px;
 	}
 	.cont{
 	margin-left:100px;
+	
+	margin-top:100px;
+
 	}
+	
+}
+
+#relative{
+	top: 120px;
+}
+
+#nome{
+	prezzo: 20px;
 }
 
 input{
-	width: 70px;
+	width: 150px;
 }
 
 .dim{
