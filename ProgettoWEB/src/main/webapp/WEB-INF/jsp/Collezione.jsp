@@ -41,24 +41,26 @@
 			$("#side-bar").load("http://localhost:8080/sidebar");
 		});
 	</script>
-	<div  style="float: right; margin-right:50px;">
-				<div class="dropdown w3-right" style="background:#e9e4e2">
-						<i class="bi bi-caret-down-fill">Ordina</i>  <!-- icona login  -->   
-							<div class="dropdown-content" style="float: right;">
+	</div>
+	
+	<div>
+				<div class="dropdown w3-right" style="background:#e9e4e2; margin-top:20px; margin-right:50px;">
+				<button style="background:#e9e4e2;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+</svg>Ordina</button> 
+							<div class="dropdown-content" style="float: right;background:#e9e4e2;">
 							
 							<form id="formSetContenuto" method="GET" action="PrezzoCrescente">
 							<input type="hidden" id="categoria" name="categoria" value="${categoria}">
-								<button type="submit">Prezzo crescente</button>
+								<button class="btnSort" type="submit">Prezzo crescente</button>
 								</form>
 								
 							<form id="form" method="GET" action="PrezzoDecrescente">
 							<input type="hidden" id="categoria" name="categoria" value="${categoria}">
-								<button type="submit">Prezzo decrescente</button>
+								<button class="btnSort" type="submit">Prezzo decrescente</button>
 								</form>
 							</div>
-					</div>
 				</div>
-			</div>
 	<div class="container bootstrap snipets" style="float:right;">
 		<h1 class="text-center text-muted">Catalogo</h1>
 		<div class="row" style="display: flex; justify-content: center;">
