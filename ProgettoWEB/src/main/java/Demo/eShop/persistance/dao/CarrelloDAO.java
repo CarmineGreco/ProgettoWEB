@@ -21,4 +21,5 @@ public interface CarrelloDAO {
 	public ArrayList<Carrello> getCarrelliUtente(String u);
 	public float sommaTotale(String username);
 	public void eliminaCarrelliUtente(String username);
+	public int getQuantita(String username, int id, int taglia);
 }

@@ -41,7 +41,18 @@
 			$("#side-bar").load("http://localhost:8080/sidebar");
 		});
 	</script>
-	<div class="container bootstrap snipets">
+	<div  style="float: right; margin-right:50px;">
+				<div class="dropdown w3-right" style="background:#e9e4e2">
+						<i class="bi bi-caret-down-fill">Ordina</i>  <!-- icona login  -->   
+							<div class="dropdown-content" style="float: right;">
+								<a id="text" href="PaginaAmministratore">Prezzo crescente</a>
+								<a id="text" href="VisualizzaLista">Prezzo decrescente</a>
+								<a id="text" href="Logout">Logout</a>
+							</div>
+					</div>
+				</div>
+			</div>
+	<div class="container bootstrap snipets" style="float:right;">
 		<h1 class="text-center text-muted">Catalogo</h1>
 		<div class="row" style="display: flex; justify-content: center;">
 			<c:forEach items="${prodotti}" var="prod">

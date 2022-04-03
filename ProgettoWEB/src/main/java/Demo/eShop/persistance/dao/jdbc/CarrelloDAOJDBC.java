@@ -270,4 +270,25 @@ DBSource dbSource;
 		}
 		
 	}
+
+	@Override
+	public int getQuantita(String username, int id, int taglia) {
+		int quantita=0;
+		try {
+			Connection con = dbSource.getConnection();
+			String query = "select quantita from carrello where utente=? and id_prodotto=? and taglia_prodotto=?;";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, username);
+			st.setInt(2, id);
+			st.setInt(3, taglia);
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				quantita=rs.getInt("quantita");
+			}
+			}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return quantita;
+	}
 }

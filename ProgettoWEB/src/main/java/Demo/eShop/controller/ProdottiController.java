@@ -106,6 +106,8 @@ public class ProdottiController {
 		c.setPrezzo(prezzo);
 		DBManager.getInstance().carrelloDAO().save(c);
 		session.setAttribute("carrello", c);
+		int q=DBManager.getInstance().prodottoDAO().getQuantitaPerTaglia(idProdotto, taglia);
+		DBManager.getInstance().prodottoDAO().modificaQuantita(idProdotto, taglia, q-quantita);
 		return "PaginaProdotto";
 	}
 	

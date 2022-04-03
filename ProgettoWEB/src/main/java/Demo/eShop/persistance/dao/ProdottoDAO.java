@@ -13,4 +13,5 @@ public interface ProdottoDAO {
 	public List<Prodotto> findByTipology(String categoria);
 	public List<Prodotto> sortPrezzo(String categoria);
 	public int getQuantitaPerTaglia (int id, int taglia);
+	public void modificaQuantita(int id, int taglia, int quantita);
 }

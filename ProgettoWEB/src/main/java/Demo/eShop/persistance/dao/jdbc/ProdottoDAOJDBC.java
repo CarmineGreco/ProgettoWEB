@@ -219,15 +219,15 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 
 	@Override
 	public int getQuantitaPerTaglia(int id, int taglia) {
+		int quantita=-1;
 		try {
-			int quantita=-1;
 			Connection con = dbSource.getConnection();
 			String query = "select quantita from prodotto where id=? and taglia=?";
 			PreparedStatement st = con.prepareStatement(query);
 			st.setInt(1,id);
 			st.setInt(2,taglia);
 			ResultSet rs = st.executeQuery();
-			while(rs.next()) {
+			if(rs.next()) {
 				quantita=rs.getInt("quantita");
 			}
 			st.close();
@@ -235,6 +235,21 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return -1;
+		return quantita;
+	}
+
+	@Override
+	public void modificaQuantita(int id, int taglia, int quantita) {
+		try {
+			Connection con = dbSource.getConnection();
+			String query = "update prodotto SET quantita=? where id=? and taglia=?;";
+			PreparedStatement st = con.prepareStatement(query);
+			st.setInt(1, quantita);
+			st.setInt(2,id);
+			st.setInt(3,taglia);
+			st.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

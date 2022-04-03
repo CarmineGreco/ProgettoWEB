@@ -288,7 +288,7 @@
 						 <div class="col-md-12 text-center">
 							<button id="chiudi" type="button" class="close" data-dismiss="modal">×</button>
 							 <br>							
-				               <p>se la tua email è presente sul sistema ti è stata inviata una nuova password, controlla tra la posta in arrivo :)<p> 					              		                 
+				               <p>Se la tua email è presente sul sistema ti è stata inviata una nuova password, controlla tra la posta in arrivo :)<p> 					              		                 
 							 <br>
 						 </div>
 					</div>	                   	               
