@@ -104,18 +104,18 @@ public class ProdottiController {
 	
 	@PostMapping("/aggiungiCarrello")
 	public String aggiungiAlCarrello(HttpSession session, @RequestParam Integer taglia, @RequestParam Integer idProdotto, @RequestParam Integer quantita, @RequestParam float prezzo) {
-		int quantCarrello=DBManager.getInstance().carrelloDAO().getQuantita(session.getAttribute("username").toString(), idProdotto, taglia);
-		Carrello c = new Carrello();		
-		c.setIdProdotto(idProdotto);
-		c.setQuantita(quantita+quantCarrello);
-		c.setUtente(session.getAttribute("username").toString());
-		c.setTagliaProdotto(taglia);
-		c.setPrezzo(prezzo);
-		DBManager.getInstance().carrelloDAO().save(c);
-		session.setAttribute("carrello", c);
-		int q=DBManager.getInstance().prodottoDAO().getQuantitaPerTaglia(idProdotto, taglia);
-		DBManager.getInstance().prodottoDAO().modificaQuantita(idProdotto, taglia, q-quantita);
-		return "PaginaProdotto";
+			int quantCarrello=DBManager.getInstance().carrelloDAO().getQuantita(session.getAttribute("username").toString(), idProdotto, taglia);
+			Carrello c = new Carrello();		
+			c.setIdProdotto(idProdotto);
+			c.setQuantita(quantita+quantCarrello);
+			c.setUtente(session.getAttribute("username").toString());
+			c.setTagliaProdotto(taglia);
+			c.setPrezzo(prezzo);
+			DBManager.getInstance().carrelloDAO().save(c);
+			session.setAttribute("carrello", c);
+			int q=DBManager.getInstance().prodottoDAO().getQuantitaPerTaglia(idProdotto, taglia);
+			DBManager.getInstance().prodottoDAO().modificaQuantita(idProdotto, taglia, q-quantita);
+			return "PaginaProdotto";
 	}
 	
 	@GetMapping("/PrezzoCrescente")

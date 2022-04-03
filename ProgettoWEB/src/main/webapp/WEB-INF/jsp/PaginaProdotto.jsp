@@ -100,7 +100,7 @@
 		<div class="form-group mb-2" >
 			<div class="row">
 			<h4 style="margin-left:15px; margin-right:10px">Quantit&#224:</h4> 
-			<input class="form-control inputQuantita" type="number" id="quantity1" name = "quantita" value="0" min="0">
+			<input class="form-control inputQuantita" type="number" id="quantity1" value="0" name ="quantita" min="0" onchange="verifica()">
 			</div>
 		</div>
 <!--     Product Pricing -->
@@ -114,6 +114,7 @@
 </main>
 		<script defer>
 		var q=document.getElementById("quantity1");
+		var btn=document.getElementById("btnCarrello"); 
 			function getTaglia(taglia){
 				if(taglia==40){
 					q.setAttribute("max",${quantita40});
@@ -125,7 +126,16 @@
 					q.setAttribute("max",${quantita44});
 				}
 			}
+			function verifica(){
+				if(document.getElementById("quantity1").valueAsNumber == 0){
+					btn.setAttribute("disabled",true);
+				}else{
+					btn.removeAttribute("disabled");
+				}
+			}
+			verifica();
 			getTaglia(40);
+			
 		</script>
 		
 		 

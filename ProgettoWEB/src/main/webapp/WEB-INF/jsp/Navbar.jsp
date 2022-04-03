@@ -8,14 +8,14 @@
 	<link rel="stylesheet" href="/css/style.css">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!-- 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/v4-shims.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/v4-shims.min.js">
 	<link rel="stylesheet"href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"crossorigin="anonymous">
-	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<!-- 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
 	
 	
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -49,8 +49,8 @@
 	<header class="row" style="background:#e9e4e2;margin-right: 0px;margin-left: 0px;padding-right: 0px;padding-left: 0px;">
 		<div class="col-5" style="sfondo">
 			<div style="width:100%;">
-			 	<a id="logo" href="index" >
-			 		<span class="col-3" style="font-size: 24px;">CARLA<br>FERRONI<br>REGGIO<br>CALABRIA </span>
+			 	<a id="logo" href="index" style="text-decoration:none;">
+			 		<span class="col-3" style="font-size: 24px; color:black;">CARLA<br>FERRONI<br>REGGIO<br>CALABRIA </span>
 			 	</a>
 			 	
 			</div>
@@ -126,7 +126,7 @@
 	                              <input type="password" name="passwordLogin" id="passwordLogin"  class="form-control" aria-describedby="emailHelp" placeholder="Inserisci Password" required>
 	                           </div>
 	                           <div class="col-md-12 text-center ">
-	                              <button type="submit" id="btnLogin" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+	                              <button type="submit" id="btnLogin" class="mybtn btn btn-block " style="background:#e9e4e2!important;">Login</button>
 	                           </div>
 	                           
 	                           </form>	 
@@ -174,7 +174,7 @@
 	                           </div>
 	                           
                         <div class="col-md-12 text-center mb-3">
-                           <button type="submit" id="btnIscriviti" class=" btn btn-block mybtn btn-primary tx-tfm">Iscriviti</button>                      
+                           <button type="submit" id="btnIscriviti" class=" btn btn-block mybtn x-tfm " style="background:#e9e4e2!important;">Iscriviti</button>                      
                         </div>                        
                         <div class="col-md-12 ">
                            <div class="form-group">
@@ -265,9 +265,9 @@
 							<button type="button" class="close" data-dismiss="modal">×</button>
 							 <br> <br>
 								<form id="recuperoPassword" action="#">
-				                     <h4>Inserisci la tua email per recuperare la password</h4> <br>
-				                     <input style="font-size: 20px;" type="email" id="emailRecupero" name="emailrecupero" required><br><br>           
-				                     <button type="submit" id="btnRecuperoPassword" class="btn btn-sm btn-outline-info" style="float:right"> Recupera</button> 
+				                     <h5>Inserisci la tua email per recuperare la password</h5> <br>
+				                     <input style="font-size: 15px;" type="email" id="emailRecupero" name="emailrecupero" required><br><br>           
+				                     <button type="submit" id="btnRecuperoPassword" class="btn" style="float:right; background:#e9e4e2;"> Recupera</button> 
 				                 </form>
 							 <br>
 						 </div>

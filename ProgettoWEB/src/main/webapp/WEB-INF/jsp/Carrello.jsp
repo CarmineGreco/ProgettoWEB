@@ -64,7 +64,7 @@
 											<input type="hidden" id="idProdotto" name="idProdotto"
 												value="${prod.id}">
 											<c:if test="${username != null}">
-												<button type="submit" class="btn btn-outline-info" style="border:transparent;padding-bottom: 0px;padding-left: 0px;padding-top: 0px; float:"left">
+												<button type="submit" class="btn" style="border:transparent;padding-bottom: 0px;padding-left: 0px;padding-top: 0px; float:"left">
 													<i class="icon-cog"></i>${prod.nome}
 												</button>
 											</c:if>
@@ -73,9 +73,9 @@
 											<span class="text-muted mr-2">Taglia:
 												${prodCar.tagliaProdotto}</span>
 										</div>
-										<div class="font-size-lg text-primary pt-2">Prezzo:
+										<div class="text-muted mr-2">Prezzo:
 											${prod.prezzo}&#8364</div>
-											<div class="font-size-lg text-primary pt-2">Quantita: ${prodCar.quantita}</div>
+											<div class="text-muted mr-2">Quantita: ${prodCar.quantita}</div>
 									</div>
 								</div>
 								<form id="formElimina" method="GET"
@@ -110,8 +110,8 @@
 	</div>
 	<div class="col-2 cont">
 	
-		<h2>Totale</h2>
-		<h2>${sommaProdotti}&#8364</h2>
+		<h4>Totale</h4>
+		<h4>${sommaProdotti}&#8364</h4>
 		<hr>
 		<form id="formSetContenuto" method="GET" action="Pagamento">
 			<input type="hidden" id="totale" name="totale"

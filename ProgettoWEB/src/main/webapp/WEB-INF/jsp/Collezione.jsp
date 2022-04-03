@@ -72,7 +72,7 @@
 							<form id="formSetContenuto" method="GET" action="PaginaProdotto">
 								<input type="hidden" id="idProdotto" name="idProdotto" value="${prod.id}">
 								<c:if test="${username != null}">
-								<button type="submit" class="btn btn-outline-info" style="border:transparent;padding-bottom: 0px;padding-left: 0px;padding-top: 0px;">${prod.nome}</button>
+								<button type="submit" class="btn" style="border:transparent;padding-bottom: 0px;padding-left: 0px;padding-top: 0px;">${prod.nome}</button>
 								</c:if>
 								<br>
 							<span class="price">Prezzo: ${prod.prezzo}&#8364</span>
