@@ -60,12 +60,13 @@
 				<div class="form-inline my-lg-0">
 					<div class="input-group">
 					
-		<form method="post" action="cerca">
+			<form method="post" action="cerca">
+					<div class="row">
 					<input class="form-control mr-sm-1" id="daCercare" name="daCercare" type="search" placeholder="Cerca" aria-label="Cerca" required>
-						<div class="input-group-append">
 						<div class="input-group-append"> 
 							<button type="submit" class="btn btn-light"><i class="fa fa-search "
 								style="font-size: x-large"></i></button>
+						</div>
 						</div>
 					</div>
 			</form>
