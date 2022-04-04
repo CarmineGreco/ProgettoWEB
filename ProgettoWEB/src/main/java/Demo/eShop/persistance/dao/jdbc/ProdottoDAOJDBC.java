@@ -253,4 +253,36 @@ public class ProdottoDAOJDBC implements ProdottoDAO{
 			e.printStackTrace();
 		}
 	}
+	@Override
+	public List<Prodotto> risultatiProdotto(String string) {
+		List<Prodotto> prodotti = new ArrayList <Prodotto>();
+		try {
+			Connection con = dbSource.getConnection();
+			String query = "select *  from prodotto where (nome ILIKE ? or descrizione ILIKE ? or categoria ILIKE ? or img ILIKE ?) and taglia=?"; 
+			PreparedStatement st = con.prepareStatement(query);
+			st.setString(1, string);
+			st.setString(2, string);
+			st.setString(3, string);
+			st.setString(4, string);
+			st.setInt(5, 40);
+			ResultSet rs = st.executeQuery();
+			while (rs.next()) {
+				Prodotto p=new Prodotto();
+				p.setId(rs.getInt("id"));
+				p.setPrezzo(rs.getFloat("prezzo"));
+				p.setNome(rs.getString("nome"));
+				p.setTaglia(rs.getInt("taglia"));
+				p.setDescrizione(rs.getString("descrizione"));
+				p.setCategoria(rs.getString("categoria"));
+				p.setQuantita(rs.getInt("quantita"));
+				p.setImg(rs.getString("img"));
+				prodotti.add(p);
+			}
+			st.close();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return prodotti;
+	}
 }

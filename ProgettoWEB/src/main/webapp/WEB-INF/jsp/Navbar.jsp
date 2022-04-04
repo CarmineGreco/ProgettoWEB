@@ -59,13 +59,16 @@
 			<div class="mx-auto order-0">
 				<div class="form-inline my-lg-0">
 					<div class="input-group">
-						<input class="form-control mr-sm-1"  type="search" placeholder="Cerca"
-							aria-label="Cerca" required>
+					
+		<form method="post" action="cerca">
+					<input class="form-control mr-sm-1" id="daCercare" name="daCercare" type="search" placeholder="Cerca" aria-label="Cerca" required>
 						<div class="input-group-append">
+						<div class="input-group-append"> 
 							<button type="submit" class="btn btn-light"><i class="fa fa-search "
 								style="font-size: x-large"></i></button>
 						</div>
 					</div>
+			</form>
 				</div>
 			</div>
 			</div>
