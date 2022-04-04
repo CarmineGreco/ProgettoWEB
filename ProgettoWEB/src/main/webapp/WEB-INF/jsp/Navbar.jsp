@@ -84,7 +84,6 @@
 								<a id="text" href="VisualizzaCarrello">Carrello</a>
 								<a id="text" href="Profilo">Profilo</a>
 								<a id="text" href="PaginaPreferiti">Preferiti</a>
-								<a id="text" href="ListaOrdini">I tuoi ordini</a>
 								<a id="text" href="Logout">Logout</a>
 							</div>
 						</c:if>

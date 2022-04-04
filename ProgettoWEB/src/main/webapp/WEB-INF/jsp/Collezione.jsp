@@ -74,6 +74,9 @@
 								<c:if test="${username != null}">
 								<button type="submit" class="btn" style="border:transparent;padding-bottom: 0px;padding-left: 0px;padding-top: 0px;">${prod.nome}</button>
 								</c:if>
+								<c:if test="${username==null}">
+								<label>${prod.nome}</label>
+								</c:if>
 								<br>
 							<span class="price">Prezzo: ${prod.prezzo}&#8364</span>
 							</form>

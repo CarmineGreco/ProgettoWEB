@@ -75,7 +75,7 @@
 										</div>
 										<div class="text-muted mr-2">Prezzo:
 											${prod.prezzo}&#8364</div>
-											<div class="text-muted mr-2">Quantita: ${prodCar.quantita}</div>
+											<div class="text-muted mr-2">Quantit&#224: ${prodCar.quantita}</div>
 									</div>
 								</div>
 								<form id="formElimina" method="GET"

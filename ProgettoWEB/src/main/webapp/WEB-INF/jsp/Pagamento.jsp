@@ -134,13 +134,11 @@
 			            
 			            <!--Payment Details End-->
 			
-			
-						<div style="background-color: green; display: none" id="transition">GRAZIE PER IL TUO ACQUISTO</div>
-			    <input type="text" id="payInput" value="${totale}"  style="height: 45px;"/>
-			    <button class="button" onClick="generatePayment(document.getElementById('payInput').value)">paga</button>
-				<div id="paypal-button-container"></div>
-				<div class="row" style="height: 50px"> </div>
-				
+					<div style="background-color: green; display: none" id="transition">GRAZIE PER IL TUO ACQUISTO</div>
+				    <input type="text" id="payInput" value="${totale}"  style="height: 45px;"/>
+				    <button class="button" onClick="generatePayment(document.getElementById('payInput').value)">paga</button>
+					<div id="paypal-button-container"></div>
+					<div class="row" style="height: 50px"> </div>
 				<script>
 				function generatePayment(value){
 					if(value==""){

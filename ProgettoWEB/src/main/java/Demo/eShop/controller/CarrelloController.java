@@ -54,4 +54,6 @@ public class CarrelloController {
 		DBManager.getInstance().prodottoDAO().modificaQuantita(idP, tagliaP, q1);
 		return "redirect:/VisualizzaCarrello";
 	}
+	
+
 }

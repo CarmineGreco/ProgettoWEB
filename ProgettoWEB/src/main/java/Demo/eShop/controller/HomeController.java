@@ -37,11 +37,6 @@ public class HomeController {
 		return "Preferiti";
 	}
 
-	@GetMapping("/ListaOrdini")
-	public String vaiAllaListaOrdini() {
-		return "ListaOrdini";
-	}
-
 	@GetMapping("/Login")
 	public String vaiAlLogin() {
 		return "Login";
